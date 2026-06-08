@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fast Ferrum</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================================
+   GLOBAL
+========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        /* =========================================================
+   CHANGE WEBSITE SIDE SPACING HERE
+========================================================= */
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+
+            /* CHANGE THESE VALUES */
+            padding-left: 40px;
+            padding-right: px;
+        }
+
+        /* =========================================================
+   HEADER
+========================================================= */
+
+        header {
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid #e8e8e8;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .topbar {
+            padding: 16px 0 8px;
+            font-size: 10px;
+            color: #777;
+            font-weight: 600;
+            letter-spacing: .3px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 1px 0 28px;
+        }
+
+        /* =========================================================
+   LOGO
+========================================================= */
+
+        .logo {
+            width: 110px;
+
+            /* CHANGE LOGO SPACING */
+            margin-right: 40px;
+        }
+
+        .logo-placeholder {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            color: #fff;
+            ;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+   MENU
+========================================================= */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+        .dropdown {
+            position: relative;
+        }
+
+        /* PRODUCTS BUTTON */
+
+        .dropdown-btn {
+            padding: 16px 28px;
+            border-radius: 2px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: .35s ease;
+            color: #222;
+            display: block;
+        }
+
+        .dropdown-btn:hover {
+            background: #0A6EA8;
+            color: #fff;
+        }
+
+        /* DROPDOWN BOX */
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            width: 420px;
+
+            background: #fff;
+
+            padding: 24px 30px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px 40px;
+
+            border: 1px solid #d8d8d8;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+
+            transition: .35s ease;
+
+            z-index: 999;
+        }
+
+        /* SHOW ON HOVER */
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* MENU ITEMS */
+
+        .dropdown-menu a {
+            font-size: 15px;
+            color: #666;
+            transition: .3s ease;
+
+            padding: 3px 0;
+        }
+
+        /* ITEM HOVER */
+
+        .dropdown-menu a:hover {
+            color: #0A6EA8;
+            transform: translateX(4px);
+        }
+
+        .nav-links a {
+            padding: 10px 15px;
+            align-items: right;
+            border-radius: 1px;
+            font-size: 15px;
+            font-weight: 400;
+            transition: .35s ease;
+            color: #222;
+        }
+
+        .nav-links a:hover {
+            background: #0A6EA8;
+            color: #fff;
+        }
+
+
+
+        /* =========================================================
+   GLOBAL SECTION SPACING
+========================================================= */
+
+        section {
+            padding: 50px 00px;
+
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #666;
+        }
+/* =========================================================
+   Css placement
+========================================================= */
+.legal-page {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.legal-page .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.legal-page h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.legal-meta {
+    margin-bottom: 40px;
+}
+
+.legal-meta p {
+    margin-bottom: 8px;
+}
+
+.legal-page h2 {
+    font-size: 28px;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.legal-page p,
+.legal-page li {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.legal-page ul {
+    margin: 15px 0 20px 25px;
+}
+
+.legal-footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
+}
+        /* =========================================================
+   FOOTER
+========================================================= */
+
+        footer {
+            background: #fff;
+            border-top: 1px solid #e5e5e5;
+           
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+
+            padding: 90px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: .3s;
+        }
+
+        .footer-links a:hover {
+            color: #0A6EA8;
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            border-top: 1px solid #e8e8e8;
+            padding: 22px 0;
+            text-align: center;
+            color: #777;
+        }
+
+        /* =========================================================
+   RESPONSIVE
+========================================================= */
+
+        @media(max-width:992px) {
+
+            .pillars,
+            .products-grid,
+            .blog-grid,
+            .quality-grid,
+            .footer-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            /* this was overruling by container in above css */
+            /* .container {
+                width: 100%;
+                max-width: 1000px;
+                margin: auto;
+                padding-left: 0px;
+                padding-right: 0px;
+            } */
+
+            .navbar {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 650px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+HEADER
+========================================================= -->
+
+    <header>
+
+        <div class="container topbar">
+            CANADA'S #1 AUTO PARTS STORE
+        </div>
+
+        <div class="container navbar">
+
+            <div class="logo">
+                <div class="logo-placeholder">
+                    <img src="Logos/Fast Ferrum basic.svg" alt="">
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+
+                    <a href="#" class="dropdown-btn">
+                        Products
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="brake-calipers.html">Brake Calipers</a>
+                        <a href="brake-pads.html">Brake Pads</a>
+
+                        <a href="brake-rotors.html">Brake Rotors</a>
+                        <a href="control-arms.html">Control Arms</a>
+
+                        <a href="hub-assembly.html">Hub Assembly</a>
+                        <a href="shock-absorber.html">Shock Absorber</a>
+
+                        <a href="spark-plugs.html">Spark Plugs</a>
+                        <a href="sway-bars.html">Sway Bars</a>
+
+                        <a href="tie-rods.html">Tie Rods</a>
+                        <a href="wheels.html">Wheels</a>
+
+                        <a href="complete-strut-assembly.html">
+                            Complete Strut Assembly
+                        </a>
+
+                    </div>
+
+                </div>
+                <a href="quality.html">Quality</a>
+                <a href="about.html">About</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- =========================================================
+Content here
+========================================================= -->
+
+<section class="legal-page">
+    <div class="container">
+
+        <h1>Privacy Policy</h1>
+
+        <div class="legal-meta">
+            <p><strong>JUMP JUICE</strong></p>
+            <p><strong>Effective Date:</strong> May 20, 2026</p>
+        </div>
+
+        <p>
+            Jump Juice ("we," "us," or "our") is a Canadian consumer electronics brand based in
+            Mississauga, Ontario, that designs and sells vehicle jump starters.
+            This Privacy Policy explains how we handle information when you visit our website at
+            [www.jumpjuice.com] (the "Website").
+        </p>
+
+        <p>
+            Our Website is an informational and product display platform only.
+            You cannot purchase products directly from us online — there is no checkout,
+            no payment system, and no account registration.
+            When you're ready to buy, we redirect you to trusted third-party retailers such as Amazon.
+        </p>
+
+        <p>
+            We are committed to being transparent about our data practices and to respecting your privacy
+            in accordance with Canada's Personal Information Protection and Electronic Documents Act (PIPEDA)
+            and applicable provincial privacy laws.
+        </p>
+
+        <h2>1. Information We Collect</h2>
+
+        <p>
+            We collect only what is necessary to operate our Website and respond to your questions.
+        </p>
+
+        <h3>A. Information You Provide to Us</h3>
+
+        <p>
+            If you contact us through our Contact / Support form, you may submit:
+        </p>
+
+        <ul>
+            <li>Your name</li>
+            <li>Your email address</li>
+            <li>A subject line</li>
+            <li>Your message or inquiry</li>
+        </ul>
+
+        <p>
+            This information is used solely to respond to your support request.
+            We do not use it for marketing, newsletters, promotional campaigns,
+            or advertising purposes.
+        </p>
+
+        <h3>B. Information Collected Automatically</h3>
+
+        <p>
+            Google Analytics automatically collects certain non-personal,
+            technical information when you visit our Website.
+        </p>
+
+        <ul>
+            <li>Device type and browser information</li>
+            <li>Pages viewed and time spent on the Website</li>
+            <li>Referring website or search engine</li>
+            <li>General geographic location (country or city level)</li>
+            <li>Aggregated demographic insights</li>
+            <li>IP-based analytics data used in aggregate form</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+
+        <p>
+            We use collected information only for limited purposes, including:
+        </p>
+
+        <ul>
+            <li>Responding to customer support inquiries</li>
+            <li>Analyzing website traffic and usage patterns</li>
+            <li>Improving Website functionality and performance</li>
+            <li>Identifying technical issues and maintaining security</li>
+        </ul>
+
+        <p>We do not:</p>
+
+        <ul>
+            <li>Send marketing emails or newsletters</li>
+            <li>Run advertising or remarketing campaigns</li>
+            <li>Create user profiles</li>
+            <li>Sell, rent, or trade personal information</li>
+        </ul>
+
+        <h2>3. Cookies and Google Analytics</h2>
+
+        <p>
+            We do not use cookies for advertising, tracking, or personalization purposes.
+            However, Google Analytics uses standard analytics cookies to collect
+            anonymized aggregate data regarding Website usage.
+        </p>
+
+        <p>
+            These cookies do not collect personally identifiable information and are not used for marketing.
+        </p>
+
+        <p>
+            You may opt out of Google Analytics tracking through Google's
+            Analytics Opt-Out Browser Add-On or manage cookies through your browser settings.
+        </p>
+
+        <h2>4. Third-Party Links and Marketplaces</h2>
+
+        <p>
+            Our Website contains links to third-party retailers such as Amazon and other
+            authorized sellers through our "Where to Buy" feature.
+        </p>
+
+        <p>
+            Once you leave our Website, the privacy practices of those external websites
+            are governed by their own policies.
+            We encourage you to review their privacy policies before submitting personal
+            information or making purchases.
+        </p>
+
+        <h2>5. How We Share Your Information</h2>
+
+        <p>
+            We do not sell, trade, or rent personal information.
+        </p>
+
+        <p>
+            Information may only be shared:
+        </p>
+
+        <ul>
+            <li>With Google as our analytics provider</li>
+            <li>When required by law or court order</li>
+            <li>To protect the rights, safety, or property of Jump Juice or its users</li>
+        </ul>
+
+        <p>
+            Contact form submissions are never sold or shared for marketing purposes.
+        </p>
+
+        <h2>6. Data Retention</h2>
+
+        <p>
+            We retain contact form submissions only as long as necessary to respond
+            to inquiries and manage reasonable follow-up communication.
+        </p>
+
+        <p>
+            Google Analytics data is retained according to Google's standard retention settings.
+        </p>
+
+        <h2>7. Data Security</h2>
+
+        <p>
+            We take reasonable measures to protect information submitted through our Website.
+            Data transmitted through our contact form is protected using HTTPS encryption.
+        </p>
+
+        <p>
+            While we strive to safeguard information, no internet transmission or storage
+            system can be guaranteed to be completely secure.
+        </p>
+
+        <h2>8. Your Privacy Rights</h2>
+
+        <p>
+            Under PIPEDA and applicable Canadian privacy laws, you may have the right to:
+        </p>
+
+        <ul>
+            <li>Know what personal information we hold about you</li>
+            <li>Request access to your information</li>
+            <li>Request corrections to inaccurate information</li>
+            <li>Withdraw consent where applicable</li>
+            <li>Request deletion of personal information subject to legal obligations</li>
+        </ul>
+
+        <p>
+            Residents of Quebec may also have additional rights under Law 25.
+        </p>
+
+        <h2>9. Children's Privacy</h2>
+
+        <p>
+            Our Website is not directed toward children under the age of 13,
+            and we do not knowingly collect personal information from children.
+        </p>
+
+        <p>
+            If you believe a child has submitted information through our Website,
+            please contact us and we will take reasonable steps to remove it.
+        </p>
+
+        <h2>10. Changes to This Policy</h2>
+
+        <p>
+            We may update this Privacy Policy periodically to reflect changes in legal requirements,
+            business practices, or Website functionality.
+        </p>
+
+        <p>
+            Any updates will be reflected by revising the Effective Date shown at the top of this page.
+        </p>
+
+        <h2>11. Contact Us</h2>
+
+        <p>
+            If you have questions about this Privacy Policy or our privacy practices,
+            please contact us:
+        </p>
+
+        <p>
+            <strong>Brand:</strong> Jump Juice<br>
+            <strong>Location:</strong> Mississauga, Ontario, Canada<br>
+            <strong>Website:</strong> [www.jumpjuice.com]<br>
+            <strong>Email:</strong> [privacy@jumpjuice.com]
+        </p>
+
+        <div class="legal-footer">
+            <strong>Jump Juice — Power when you need it most</strong>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+    <!-- =========================================================
+FOOTER
+========================================================= -->
+
+    <footer>
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <div class="logo" style="margin-bottom:25px;">
+
+                    <div class="logo-placeholder">
+                        <img src="Logos/Fast Ferrum basic.svg" alt="">
+                    </div>
+
+                </div>
+
+                <p style="line-height:1.9;color:#777;">
+                    Innovative regular upgrades for our products.
+                    Premium automotive components engineered for reliability.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="quality.html">Quality</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contacts.html">Contact</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Contact</h3>
+
+                <a href="#">Address Placeholder</a>
+                <a href="#">Phone Number</a>
+                <a href="#">Email Address</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            Copyright © 2026 Fast Ferrum. All Rights Reserved. &nbsp;&nbsp;
+            <a href="privacy-policy.html">
+                Privacy Policy
+            </a>
+            &nbsp; &nbsp;
+            <a href="terms-of-use.html">
+                Terms of Use
+            </a>
+
+        </div>
+
+    </footer>
+
+    <!-- =========================================================
+JS
+========================================================= -->
+
+    <script>
+
+        const toggleBtn = document.getElementById('toggleBtn');
+        const productsGrid = document.getElementById('productsGrid');
+
+        let expanded = false;
+
+        toggleBtn.addEventListener('click', () => {
+
+            expanded = !expanded;
+
+            if (expanded) {
+
+                productsGrid.classList.add('expanded');
+                toggleBtn.innerText = 'View Less';
+
+            } else {
+
+                productsGrid.classList.remove('expanded');
+                toggleBtn.innerText = 'View All';
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

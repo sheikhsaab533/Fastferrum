@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fast Ferrum</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================================
+   GLOBAL
+========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        /* =========================================================
+   CHANGE WEBSITE SIDE SPACING HERE
+========================================================= */
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+
+            /* CHANGE THESE VALUES */
+            padding-left: 40px;
+            padding-right: px;
+        }
+
+        /* =========================================================
+   HEADER
+========================================================= */
+
+        header {
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid #e8e8e8;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .topbar {
+            padding: 16px 0 8px;
+            font-size: 10px;
+            color: #777;
+            font-weight: 600;
+            letter-spacing: .3px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 1px 0 28px;
+        }
+
+        /* =========================================================
+   LOGO
+========================================================= */
+
+        .logo {
+            width: 110px;
+
+            /* CHANGE LOGO SPACING */
+            margin-right: 40px;
+        }
+
+        .logo-placeholder {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            color: #fff;
+            ;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+   MENU
+========================================================= */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+        .dropdown {
+            position: relative;
+        }
+
+        /* PRODUCTS BUTTON */
+
+        .dropdown-btn {
+            padding: 16px 28px;
+            border-radius: 2px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: .35s ease;
+            color: #222;
+            display: block;
+        }
+
+        .dropdown-btn:hover {
+            background: #0A6EA8;
+            color: #fff;
+        }
+
+        /* DROPDOWN BOX */
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            width: 420px;
+
+            background: #fff;
+
+            padding: 24px 30px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px 40px;
+
+            border: 1px solid #d8d8d8;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+
+            transition: .35s ease;
+
+            z-index: 999;
+        }
+
+        /* SHOW ON HOVER */
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* MENU ITEMS */
+
+        .dropdown-menu a {
+            font-size: 15px;
+            color: #666;
+            transition: .3s ease;
+
+            padding: 3px 0;
+        }
+
+        /* ITEM HOVER */
+
+        .dropdown-menu a:hover {
+            color: #0A6EA8;
+            transform: translateX(4px);
+        }
+
+        .nav-links a {
+            padding: 10px 15px;
+            align-items: right;
+            border-radius: 1px;
+            font-size: 15px;
+            font-weight: 400;
+            transition: .35s ease;
+            color: #222;
+        }
+
+        .nav-links a:hover {
+            background: #0A6EA8;
+            color: #fff;
+        }
+
+
+
+        /* =========================================================
+   HERO
+========================================================= */
+
+        .hero {
+            position: relative;
+            height: 760px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.52);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+        }
+
+        .hero h1 {
+            width: 500px;
+            /* Fixed width */
+            font-size: 36px;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 5px;
+            font-weight: 700;
+            letter-spacing: 0px;
+        }
+
+        .hero p {
+            width: 300px;
+            /* Fixed width */
+            color: #e8e8e8;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        /* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+        .hero-buttons {
+            display: flex;
+            gap: 22px;
+        }
+
+        .hero-btn {
+            background: #fff;
+            color: #666;
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 28px;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            transition: .35s ease;
+        }
+
+        .hero-btn:hover {
+            background: #0A6EA8;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .arrow-circle {
+            width: 26px;
+            height: 26px;
+
+            border-radius: 50%;
+            border: 1px solid #8b8b8b;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 24px;
+            transition: .35s ease;
+        }
+
+        .hero-btn:hover .arrow-circle {
+            border-color: #fff;
+        }
+
+        /* =========================================================
+   GLOBAL SECTION SPACING
+========================================================= */
+
+        section {
+            padding: 50px 00px;
+
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            font-weight: 700;
+            color: #666;
+        }
+
+        /* =========================================================
+   PILLARS
+========================================================= */
+
+        .pillars {
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0px;
+            align-items: center;
+
+
+        }
+
+        .pillar-card {
+
+            color: #777;
+            padding: 20px 28px;
+            text-align: center;
+            transition: .35s ease;
+        }
+
+
+        .icon-placeholder {
+
+            width: 40px;
+            height: 40px;
+            background: #f5f5f5;
+            margin: 0 auto 24px;
+        }
+
+        .pillar-card h2 {
+            color: #777;
+            margin-bottom: 18px;
+            font-size: 16px;
+            align-items: center;
+            width: 180px;
+            /* Fixed width */
+
+        }
+
+        .pillar-card p {
+            padding-top: 10px;
+            padding-left: 0px;
+            color: #777;
+            line-height: 1.8;
+            font-size: small;
+            width: 260px;
+            /* Fixed width */
+
+        }
+
+        /* =========================================================
+   PRODUCTS
+========================================================= */
+
+        .products-grid {
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+
+            overflow: hidden;
+            max-height: 880px;
+
+            transition: max-height .6s ease;
+        }
+
+        .products-grid.expanded {
+            max-height: 4000px;
+        }
+
+        .product-card {
+            background: #fff;
+
+            padding: 15px 15px 15px 15px;
+            transition: .35s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+
+            margin-bottom: 11px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #777;
+            font-weight: 700;
+        }
+
+        .product-card h3 {
+            font-size: 16px;
+            margin-bottom: 14px;
+            margin-top: 18px;
+            color: #232323;
+        }
+
+        .product-card p {
+            color: #777;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .read-more {
+            color: #D39A82;
+            font-weight: 700;
+            transition: .3s;
+            font-size: 10px;
+            font-weight: 100;
+        }
+
+        .read-more:hover {
+            letter-spacing: 1px;
+        }
+
+        .view-toggle {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* =========================================================
+   BUTTONS
+========================================================= */
+
+        .btn {
+            background: #ffffff;
+            color: #717171;
+            border: none;
+            padding: 16px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .35s ease;
+            font-weight: 300;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            opacity: .92;
+            color: #0A6EA8;
+        }
+
+        /* =========================================================
+   QUALITY
+========================================================= */
+
+        /* FULL WIDTH SECTION */
+
+        .quality-section {
+            width: 100%;
+            background: #fff;
+        }
+
+        /* FULL WIDTH BG */
+
+        .quality-grid {
+            width: 100%;
+            background: #fff;
+            padding: 90px 0;
+        }
+
+        /* CONTENT INSIDE */
+
+        .quality-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .qualitybtn {
+            background: #D39A82;
+            color: #ffffff;
+            border: none;
+            padding: 16px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .35s ease;
+            font-weight: 300;
+        }
+
+        .qualitybtn:hover {
+            transform: translateY(-3px);
+            opacity: .92;
+            color: #0A6EA8;
+            background: #ffffff;
+        }
+
+        /* =========================================================
+   TEAM
+========================================================= */
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        /* =========================================================
+   BLOGS
+========================================================= */
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .blog-card {
+            background: #fff;
+            overflow: hidden;
+            transition: .35s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .blog-image {
+            height: auto;
+            background: #e3e3e3;
+
+        }
+
+        .blog-content {
+            padding: 28px;
+        }
+
+        .blog-content h3 {
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+
+        .blog-content p {
+            color: #777;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================================
+   FOOTER
+========================================================= */
+
+        footer {
+            background: #fff;
+            border-top: 1px solid #e5e5e5;
+            
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+
+            padding: 90px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: .3s;
+        }
+
+        .footer-links a:hover {
+            color: #0A6EA8;
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            border-top: 1px solid #e8e8e8;
+            padding: 22px 0;
+            text-align: center;
+            color: #777;
+        }
+
+        /* =========================================================
+   RESPONSIVE
+========================================================= */
+
+        @media(max-width:992px) {
+
+            .pillars,
+            .products-grid,
+            .blog-grid,
+            .quality-grid,
+            .footer-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            /* this was overruling by container in above css */
+            /* .container {
+                width: 100%;
+                max-width: 1000px;
+                margin: auto;
+                padding-left: 0px;
+                padding-right: 0px;
+            } */
+
+            .navbar {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 650px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+HEADER
+========================================================= -->
+
+    <header>
+
+        <div class="container topbar">
+            CANADA'S #1 AUTO PARTS STORE
+        </div>
+
+        <div class="container navbar">
+
+            <div class="logo">
+                <div class="logo-placeholder">
+                    <img src="Logos/Fast Ferrum basic.svg" alt="">
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+
+                    <a href="#" class="dropdown-btn">
+                        Products
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="brake-calipers.html">Brake Calipers</a>
+                        <a href="brake-pads.html">Brake Pads</a>
+
+                        <a href="brake-rotors.html">Brake Rotors</a>
+                        <a href="control-arms.html">Control Arms</a>
+
+                        <a href="hub-assembly.html">Hub Assembly</a>
+                        <a href="shock-absorber.html">Shock Absorber</a>
+
+                        <a href="spark-plugs.html">Spark Plugs</a>
+                        <a href="sway-bars.html">Sway Bars</a>
+
+                        <a href="tie-rods.html">Tie Rods</a>
+                        <a href="cv-axle-shaft.html">CV Axle</a>
+
+                        <a href="complete-strut-assembly.html">
+                            Complete Strut Assembly
+                        </a>
+                        <a href="rack&pinions.html"> Rack & Pinions</a>
+
+                    </div>
+
+                </div>
+                <a href="quality.html">Quality</a>
+                <a href="about.html">About</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- =========================================================
+HERO
+========================================================= -->
+
+    <section class="hero">
+
+        <!-- REPLACE WITH YOUR IMAGE -->
+        <img src="Home Page/Main banner.png" class="hero-image">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <h1>
+                    Engineered Strength.
+                    Predictable Control.
+                </h1>
+
+                <p>
+                    FAST FERRUM delivers OE-grade braking and suspension
+                    components built for durability, balance and confident
+                    daily performance.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#" class="hero-btn">
+
+                        View Products
+
+                        <span class="arrow-circle">
+                            →
+                        </span>
+
+                    </a>
+
+                    <a href="#" class="hero-btn">
+
+                        Become a Dealer
+
+                        <span class="arrow-circle">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+PILLARS
+========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>BUILT ON THREE CORE PILLARS</h2>
+            </div>
+
+            <div class="pillars">
+
+                <div class="pillar-card">
+
+                    <div class="icon-placeholder"><img src="Home Page/icon 1.png" alt=""></div>
+
+                    <h3>Built for Daily</h3>
+
+                    <p>
+                        Heat-treated materials and corrosion-resistant coatings engineered for real road conditions.
+                    </p>
+
+                </div>
+
+                <div class="pillar-card">
+
+                    <div class="icon-placeholder"><img src="Home Page/icon 2.png" alt=""></div>
+
+                    <h3>Controlled Performance</h3>
+
+                    <p>
+                        Designed to maintain balanced load transfer and consistent response, similar to original factory
+                        specifications.
+                    </p>
+
+                </div>
+
+                <div class="pillar-card">
+
+                    <div class="icon-placeholder"><img src="Home Page/icon 3.png" alt=""></div>
+
+                    <h3>Tested for Longevity</h3>
+
+                    <p>
+                        Manufacturing processes focused on fit accuracy, durability, and reduced noise and vibration.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+PRODUCTS
+========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Browse Our Products</h2>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+
+                <!-- PRODUCT -->
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/Brake Caliper.png" alt=""></div>
+                    <h3>Brake Calipers</h3>
+                    <p>Precision engineered braking components for smooth stopping performance.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/brake pads.png" alt=""></div>
+                    <h3>Brake Pads</h3>
+                    <p>High performance brake pads designed for durability and control.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/Brake rotors.png" alt=""></div>
+                    <h3>Brake Rotors</h3>
+                    <p>Reliable brake rotors built for thermal stability and safety.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/Control arms.png" alt=""></div>
+                    <h3>Control Arms</h3>
+                    <p>Enhanced suspension geometry for improved handling response.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/Shock absorber.png" alt=""></div>
+                    <h3>Shock Absorbers</h3>
+                    <p>Advanced shock absorbers for comfort and controlled travel.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/CV Axle.png" alt=""></div>
+                    <h3>CV Axle Shaft</h3>
+                    <p>Heavy duty CV shafts built for torque transfer and durability.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <!-- EXPANDABLE -->
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/Hub assembly.png" alt=""></div>
+                    <h3>Hub Assembly</h3>
+                    <p>Precision wheel hub assemblies for improved reliability.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/sway bars.png" alt=""></div>
+                    <h3>Sway Bars</h3>
+                    <p>Reduce body roll with durable sway bars.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/Rack & pinion.png" alt=""></div>
+                    <h3>Rack & Pinions</h3>
+                    <p>High quality steering systems built for smooth handling.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/tie rods.png" alt=""></div>
+                    <h3>Tie Rods</h3>
+                    <p>High quality steering systems built for smooth handling.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/Spark plugs.png" alt=""></div>
+                    <h3>Spark Plugs</h3>
+                    <p>High quality steering systems built for smooth handling.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image"><img src="Home Page/Complete strut assembly.png" alt=""></div>
+                    <h3>Complete Strut Assembly</h3>
+                    <p>High quality steering systems built for smooth handling.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <div class="view-toggle">
+
+                <button class="btn" id="toggleBtn">
+                    View All
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+QUALITY
+========================================================= -->
+
+    <section class="quality-section">
+
+        <div class="quality-grid">
+
+            <div class="container quality-inner">
+
+                <div class="quality-box">
+
+                    <h3 style="font-size:30px;margin-bottom:22px;color: #717171;">
+                        Quality Preview
+                    </h3>
+
+                    <p style="line-height:1.9;color:#777;margin-bottom:28px;">
+                        Every Fast Ferrum component is designed and tested
+                        to meet demanding automotive performance standards.
+                    </p>
+
+                    <button class="qualitybtn">
+                        Read More
+                    </button>
+
+                </div>
+
+                <div class="image-placeholder-large">
+                    <img src="Home Page/quality preview 1.png" alt="">
+                </div>
+
+                <div class="image-placeholder-large">
+                    <img src="Home Page/quality preview 2.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================================================
+TEAM
+========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="team-grid">
+
+                <div>
+
+                    <h2 style="font-size:30px;margin-bottom:22px;color: #717171;">
+                        Meet Our Team
+                    </h2>
+
+                    <p style="line-height:1.9;color:#777;margin-bottom:28px;">
+                        Behind Fast Ferrum is a driven team focused on solving real-world automotive challenges with
+                        smart, dependable solutions. We design products that deliver strength, reliability, and ease of
+                        use—built for performance when it matters most.
+                        <br> <br>
+
+                        So drivers can stay prepared, confident, and in control wherever the road takes them. Get to
+                        know the people powering innovation at Fast Ferrum.
+                    </p>
+
+                    <button class="qualitybtn">
+                        Read More
+                    </button>
+
+                </div>
+
+                <div class="image-placeholder-large">
+                    <img src="Home Page/Meet our team.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+BLOGS
+========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Blogs & Updates</h2>
+            </div>
+
+            <div class="blog-grid">
+
+                <div class="blog-card">
+
+                    <div class="blog-image"><img src="Home Page/Blog.png" alt=""></div>
+
+                    <div class="blog-content">
+
+                        <h3>How To Install Brake Calipers</h3>
+
+                        <p>
+                            Learn how to install brake calipers safely
+                            with this easy guide.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Read More
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="blog-card">
+
+                    <div class="blog-image"><img src="Home Page/blog 2.png" alt=""></div>
+
+                    <div class="blog-content">
+
+                        <h3>Do You Need To Change Shockers?</h3>
+
+                        <p>
+                            Discover the signs your suspension needs
+                            replacement.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Read More
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="blog-card">
+
+                    <div class="blog-image"><img src="Home Page/blog 3.png" alt=""></div>
+
+                    <div class="blog-content">
+
+                        <h3>Vehicle Maintenance Tips</h3>
+
+                        <p>
+                            Keep your vehicle performing at its best
+                            year round.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Read More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+FOOTER
+========================================================= -->
+
+    <footer>
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <div class="logo" style="margin-bottom:25px;">
+
+                    <div class="logo-placeholder">
+                        <img src="Logos/Fast Ferrum basic.svg" alt="">
+                    </div>
+
+                </div>
+
+                <p style="line-height:1.9;color:#777;">
+                    Innovative regular upgrades for our products.
+                    Premium automotive components engineered for reliability.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="quality.html">Quality</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contacts.html">Contact</a>
+
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Contact</h3>
+
+                <a href="#">Address Placeholder</a>
+                <a href="#">Phone Number</a>
+                <a href="#">Email Address</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            Copyright © 2026 Fast Ferrum. All Rights Reserved. &nbsp;&nbsp;
+            <a href="privacy-policy.html">
+                Privacy Policy
+            </a>
+            &nbsp; &nbsp;
+            <a href="terms-of-use.html">
+                Terms of Use
+            </a>
+
+        </div>
+
+    </footer>
+
+    <!-- =========================================================
+JS
+========================================================= -->
+
+    <script>
+
+        const toggleBtn = document.getElementById('toggleBtn');
+        const productsGrid = document.getElementById('productsGrid');
+
+        let expanded = false;
+
+        toggleBtn.addEventListener('click', () => {
+
+            expanded = !expanded;
+
+            if (expanded) {
+
+                productsGrid.classList.add('expanded');
+                toggleBtn.innerText = 'View Less';
+
+            } else {
+
+                productsGrid.classList.remove('expanded');
+                toggleBtn.innerText = 'View All';
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

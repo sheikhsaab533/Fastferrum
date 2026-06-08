@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fast Ferrum</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================================
+   GLOBAL
+========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        /* =========================================================
+   CHANGE WEBSITE SIDE SPACING HERE
+========================================================= */
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+
+            /* CHANGE THESE VALUES */
+            padding-left: 40px;
+            padding-right: px;
+        }
+
+        /* =========================================================
+   HEADER
+========================================================= */
+
+        header {
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid #e8e8e8;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .topbar {
+            padding: 16px 0 8px;
+            font-size: 10px;
+            color: #777;
+            font-weight: 600;
+            letter-spacing: .3px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 1px 0 28px;
+        }
+
+        /* =========================================================
+   LOGO
+========================================================= */
+
+        .logo {
+            width: 110px;
+
+            /* CHANGE LOGO SPACING */
+            margin-right: 40px;
+        }
+
+        .logo-placeholder {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            color: #fff;
+            ;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+   MENU
+========================================================= */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+        .dropdown {
+            position: relative;
+        }
+
+        /* PRODUCTS BUTTON */
+
+        .dropdown-btn {
+            padding: 16px 28px;
+            border-radius: 2px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: .35s ease;
+            color: #222;
+            display: block;
+        }
+
+        .dropdown-btn:hover {
+            background: #0A6EA8;
+            color: #fff;
+        }
+
+        /* DROPDOWN BOX */
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            width: 420px;
+
+            background: #fff;
+
+            padding: 24px 30px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px 40px;
+
+            border: 1px solid #d8d8d8;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+
+            transition: .35s ease;
+
+            z-index: 999;
+        }
+
+        /* SHOW ON HOVER */
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* MENU ITEMS */
+
+        .dropdown-menu a {
+            font-size: 15px;
+            color: #666;
+            transition: .3s ease;
+
+            padding: 3px 0;
+        }
+
+        /* ITEM HOVER */
+
+        .dropdown-menu a:hover {
+            color: #0A6EA8;
+            transform: translateX(4px);
+        }
+
+        .nav-links a {
+            padding: 10px 15px;
+            align-items: right;
+            border-radius: 1px;
+            font-size: 15px;
+            font-weight: 400;
+            transition: .35s ease;
+            color: #222;
+        }
+
+        .nav-links a:hover {
+            background: #0A6EA8;
+            color: #fff;
+        }
+
+
+
+        /* =========================================================
+   HERO
+========================================================= */
+
+        .hero {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 400px;
+
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+        }
+
+        .hero h1 {
+            width: 500px;
+            /* Fixed width */
+            font-size: 36px;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 5px;
+            font-weight: 700;
+            letter-spacing: 0px;
+        }
+
+        .hero p {
+            width: 300px;
+            /* Fixed width */
+            color: #e8e8e8;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        /* =========================================================
+   GLOBAL SECTION SPACING
+========================================================= */
+
+        section {
+            padding: 50px 00px;
+
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #666;
+        }
+/* =========================================================
+   Css placement
+========================================================= */
+
+/* ====================================
+   FAST FERRUM CONTACT PAGE
+==================================== */
+
+.ff-contact {
+    background: #f5f5f5;
+    padding: 70px 0;
+}
+
+.ff-contact-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* ==========================
+   TOP SECTION
+========================== */
+
+.ff-contact-top {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 0;
+    margin-bottom: 90px;
+}
+
+.ff-contact-info {
+    background: #fff;
+    padding: 50px 40px;
+}
+
+.ff-contact-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.ff-contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.ff-contact-icon {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #8b8b8b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 14px;
+
+    flex-shrink: 0;
+}
+
+.ff-contact-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.ff-contact-item p {
+    font-size: 15px;
+    line-height: 2;
+    color: #9b9b9b;
+}
+
+/* ==========================
+   IMAGE
+========================== */
+
+.ff-contact-image {
+    background: #ddd;
+}
+
+.ff-contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================
+   FORM
+========================== */
+
+.ff-contact-form-box {
+    background: #fff;
+    padding: 80px;
+}
+
+.ff-contact-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 60px;
+}
+
+.ff-contact-form {
+    width: 100%;
+}
+
+.ff-contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.ff-contact-input,
+.ff-contact-textarea {
+    width: 100%;
+    border: none;
+    background: #f4f4f4;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    color: #444;
+
+    padding: 18px 20px;
+}
+
+.ff-contact-input:focus,
+.ff-contact-textarea:focus {
+    outline: none;
+}
+
+.ff-contact-full {
+    margin-bottom: 25px;
+}
+
+.ff-contact-textarea {
+    height: 180px;
+    resize: none;
+    margin-bottom: 35px;
+}
+
+.ff-contact-btn {
+    width: 100%;
+    border: none;
+
+    background: #7f7f7f;
+
+    color: #fff;
+
+    height: 62px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.ff-contact-btn:hover {
+    background: #0A6EA8;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+
+    .ff-contact-top {
+        grid-template-columns: 1fr;
+    }
+
+    .ff-contact-form-box {
+        padding: 40px 25px;
+    }
+
+    .ff-contact-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .ff-contact-title {
+        font-size: 38px;
+    }
+
+}
+        /* =========================================================
+   FOOTER
+========================================================= */
+
+        footer {
+            background: #fff;
+            border-top: 1px solid #e5e5e5;
+           
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+
+            padding: 90px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: .3s;
+        }
+
+        .footer-links a:hover {
+            color: #0A6EA8;
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            border-top: 1px solid #e8e8e8;
+            padding: 22px 0;
+            text-align: center;
+            color: #777;
+        }
+
+        /* =========================================================
+   RESPONSIVE
+========================================================= */
+
+        @media(max-width:992px) {
+
+            .pillars,
+            .products-grid,
+            .blog-grid,
+            .quality-grid,
+            .footer-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            /* this was overruling by container in above css */
+            /* .container {
+                width: 100%;
+                max-width: 1000px;
+                margin: auto;
+                padding-left: 0px;
+                padding-right: 0px;
+            } */
+
+            .navbar {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 650px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+HEADER
+========================================================= -->
+
+    <header>
+
+        <div class="container topbar">
+            CANADA'S #1 AUTO PARTS STORE
+        </div>
+
+        <div class="container navbar">
+
+            <div class="logo">
+                <div class="logo-placeholder">
+                    <img src="Logos/Fast Ferrum basic.svg" alt="">
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+
+                    <a href="#" class="dropdown-btn">
+                        Products
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="brake-calipers.html">Brake Calipers</a>
+                        <a href="brake-pads.html">Brake Pads</a>
+
+                        <a href="brake-rotors.html">Brake Rotors</a>
+                        <a href="control-arms.html">Control Arms</a>
+
+                        <a href="hub-assembly.html">Hub Assembly</a>
+                        <a href="shock-absorber.html">Shock Absorber</a>
+
+                        <a href="spark-plugs.html">Spark Plugs</a>
+                        <a href="sway-bars.html">Sway Bars</a>
+
+                        <a href="tie-rods.html">Tie Rods</a>
+                        <a href="cv-axle-shaft.html">CV Axle</a>
+
+                        <a href="complete-strut-assembly.html">
+                            Complete Strut Assembly
+                        </a>
+                        <a href="rack&pinions.html"> Rack & Pinions</a>
+
+                    </div>
+
+                </div>
+                <a href="quality.html">Quality</a>
+                <a href="about.html">About</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- =========================================================
+HERO
+========================================================= -->
+
+    <section class="hero">
+
+        <!-- REPLACE WITH YOUR IMAGE -->
+        <img src="Contact/contact us page.jpg.png" class="hero-image">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <h1>
+                    Contact Us
+                </h1>
+
+                <p>
+                    General Inquiries
+                </p>
+
+                <!-- <div class="hero-buttons">
+
+                    <a href="#" class="hero-btn">
+
+                        View Products
+
+                        <span class="arrow-circle">
+                            →
+                        </span>
+
+                    </a>
+
+                    <a href="#" class="hero-btn">
+
+                        Become a Dealer
+
+                        <span class="arrow-circle">
+                            →
+                        </span>
+
+                    </a>
+
+                </div> -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+PILLARS
+========================================================= -->
+
+<section class="ff-contact">
+
+    <div class="ff-contact-wrap">
+
+        <!-- Top Contact Section -->
+
+        <div class="ff-contact-top">
+
+            <div class="ff-contact-info">
+
+                <div class="ff-contact-item">
+
+                    <div class="ff-contact-icon">☎</div>
+
+                    <div>
+                        <h3>Call Us</h3>
+
+                        <p>PH: +00 123 456</p>
+                        <p>CS: +00 321 654</p>
+                    </div>
+
+                </div>
+
+                <div class="ff-contact-item">
+
+                    <div class="ff-contact-icon">✉</div>
+
+                    <div>
+                        <h3>Email Us</h3>
+
+                        <p>marketing@fastferrum.com</p>
+                        <p>contact@fastferrum.com</p>
+                    </div>
+
+                </div>
+
+                <div class="ff-contact-item">
+
+                    <div class="ff-contact-icon">📍</div>
+
+                    <div>
+                        <h3>Office</h3>
+
+                        <p>PO Box 2314 Gotham Street West</p>
+                        <p>Metropolis 8007 USA</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ff-contact-image">
+
+                <img src="Contact/Contact us.jpg" alt="Contact">
+
+            </div>
+
+        </div>
+
+        <!-- Contact Form -->
+
+        <div class="ff-contact-form-box">
+
+            <h2 class="ff-contact-title">
+                Get In Touch
+            </h2>
+
+            <form class="ff-contact-form">
+
+                <div class="ff-contact-row">
+
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        class="ff-contact-input"
+                    >
+
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        class="ff-contact-input"
+                    >
+
+                </div>
+
+                <input
+                    type="text"
+                    placeholder="Subject"
+                    class="ff-contact-input ff-contact-full"
+                >
+
+                <textarea
+                    placeholder="Message"
+                    class="ff-contact-textarea"
+                ></textarea>
+
+                <button
+                    type="submit"
+                    class="ff-contact-btn"
+                >
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- =========================================================
+FOOTER
+========================================================= -->
+
+    <footer>
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <div class="logo" style="margin-bottom:25px;">
+
+                    <div class="logo-placeholder">
+                        <img src="Logos/Fast Ferrum basic.svg" alt="">
+                    </div>
+
+                </div>
+
+                <p style="line-height:1.9;color:#777;">
+                    Innovative regular upgrades for our products.
+                    Premium automotive components engineered for reliability.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="quality.html">Quality</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contacts.html">Contact</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Contact</h3>
+
+                <a href="#">Address Placeholder</a>
+                <a href="#">Phone Number</a>
+                <a href="#">Email Address</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            Copyright © 2026 Fast Ferrum. All Rights Reserved. &nbsp;&nbsp;
+            <a href="privacy-policy.html">
+                Privacy Policy
+            </a>
+            &nbsp; &nbsp;
+            <a href="terms-of-use.html">
+                Terms of Use
+            </a>
+
+        </div>
+
+    </footer>
+
+    <!-- =========================================================
+JS
+========================================================= -->
+
+    <script>
+
+        const toggleBtn = document.getElementById('toggleBtn');
+        const productsGrid = document.getElementById('productsGrid');
+
+        let expanded = false;
+
+        toggleBtn.addEventListener('click', () => {
+
+            expanded = !expanded;
+
+            if (expanded) {
+
+                productsGrid.classList.add('expanded');
+                toggleBtn.innerText = 'View Less';
+
+            } else {
+
+                productsGrid.classList.remove('expanded');
+                toggleBtn.innerText = 'View All';
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

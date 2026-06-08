@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fast Ferrum</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================================
+   GLOBAL
+========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        /* =========================================================
+   CHANGE WEBSITE SIDE SPACING HERE
+========================================================= */
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+
+            /* CHANGE THESE VALUES */
+            padding-left: 40px;
+            padding-right: px;
+        }
+
+        /* =========================================================
+   HEADER
+========================================================= */
+
+        header {
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid #e8e8e8;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .topbar {
+            padding: 16px 0 8px;
+            font-size: 10px;
+            color: #777;
+            font-weight: 600;
+            letter-spacing: .3px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 1px 0 28px;
+        }
+
+        /* =========================================================
+   LOGO
+========================================================= */
+
+        .logo {
+            width: 110px;
+
+            /* CHANGE LOGO SPACING */
+            margin-right: 40px;
+        }
+
+        .logo-placeholder {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            color: #fff;
+            ;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+   MENU
+========================================================= */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+        .dropdown {
+            position: relative;
+        }
+
+        /* PRODUCTS BUTTON */
+
+        .dropdown-btn {
+            padding: 16px 28px;
+            border-radius: 2px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: .35s ease;
+            color: #222;
+            display: block;
+        }
+
+        .dropdown-btn:hover {
+            background: #0A6EA8;
+            color: #fff;
+        }
+
+        /* DROPDOWN BOX */
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            width: 420px;
+
+            background: #fff;
+
+            padding: 24px 30px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px 40px;
+
+            border: 1px solid #d8d8d8;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+
+            transition: .35s ease;
+
+            z-index: 999;
+        }
+
+        /* SHOW ON HOVER */
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* MENU ITEMS */
+
+        .dropdown-menu a {
+            font-size: 15px;
+            color: #666;
+            transition: .3s ease;
+
+            padding: 3px 0;
+        }
+
+        /* ITEM HOVER */
+
+        .dropdown-menu a:hover {
+            color: #0A6EA8;
+            transform: translateX(4px);
+        }
+
+        .nav-links a {
+            padding: 10px 15px;
+            align-items: right;
+            border-radius: 1px;
+            font-size: 15px;
+            font-weight: 400;
+            transition: .35s ease;
+            color: #222;
+        }
+
+        .nav-links a:hover {
+            background: #0A6EA8;
+            color: #fff;
+        }
+
+
+
+        /* =========================================================
+   HERO
+========================================================= */
+
+        .hero {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 400px;
+
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+        }
+
+        .hero h1 {
+            width: 500px;
+            /* Fixed width */
+            font-size: 36px;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 5px;
+            font-weight: 700;
+            letter-spacing: 0px;
+        }
+
+        .hero p {
+            width: 300px;
+            /* Fixed width */
+            color: #e8e8e8;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        /* =========================================================
+   GLOBAL SECTION SPACING
+========================================================= */
+
+        section {
+            padding: 50px 00px;
+
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #666;
+        }
+/* =========================================================
+   Css placement
+========================================================= */
+/* ===================================
+   FAST FERRUM BLOG PAGE
+=================================== */
+
+.ff-blog {
+    background: #f5f5f5;
+    padding: 70px 0 100px;
+}
+
+.ff-blog-wrap {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.ff-blog-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0c1a0f;
+    margin-bottom: 60px;
+}
+
+/* GRID */
+
+.ff-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* CARD */
+
+.ff-blog-card {
+    background: #fff;
+    border: 1px solid #ececec;
+    overflow: hidden;
+    transition: .3s ease;
+}
+
+.ff-blog-card:hover {
+    transform: translateY(-4px);
+}
+
+/* IMAGE */
+
+.ff-blog-image {
+    overflow: hidden;
+}
+
+.ff-blog-image img {
+    width: 100%;
+    display: block;
+    transition: .4s ease;
+}
+
+.ff-blog-card:hover .ff-blog-image img {
+    transform: scale(1.05);
+}
+
+/* META */
+
+.ff-blog-meta {
+    display: flex;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+
+.ff-blog-date {
+    width: 80px;
+    text-align: center;
+    padding: 12px 8px;
+    border-right: 1px solid #ececec;
+}
+
+.ff-blog-date span {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+}
+
+.ff-blog-date strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+}
+
+.ff-blog-info {
+    padding: 12px 16px;
+}
+
+.ff-blog-info span {
+    display: block;
+    font-size: 11px;
+    color: #444;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.ff-blog-info p {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+
+/* CONTENT */
+
+.ff-blog-content {
+    padding: 20px 18px 24px;
+}
+
+.ff-blog-content h3 {
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 18px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ff-blog-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #999;
+    margin-bottom: 18px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ff-blog-content a {
+    font-size: 14px;
+    color: #e5b5a6;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.ff-blog-content a:hover {
+    color: #0A6EA8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .ff-blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .ff-blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ff-blog-title {
+        font-size: 42px;
+    }
+
+}
+        /* =========================================================
+   FOOTER
+========================================================= */
+
+        footer {
+            background: #fff;
+            border-top: 1px solid #e5e5e5;
+           
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+
+            padding: 90px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: .3s;
+        }
+
+        .footer-links a:hover {
+            color: #0A6EA8;
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            border-top: 1px solid #e8e8e8;
+            padding: 22px 0;
+            text-align: center;
+            color: #777;
+        }
+
+        /* =========================================================
+   RESPONSIVE
+========================================================= */
+
+        @media(max-width:992px) {
+
+            .pillars,
+            .products-grid,
+            .blog-grid,
+            .quality-grid,
+            .footer-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            /* this was overruling by container in above css */
+            /* .container {
+                width: 100%;
+                max-width: 1000px;
+                margin: auto;
+                padding-left: 0px;
+                padding-right: 0px;
+            } */
+
+            .navbar {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 650px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+HEADER
+========================================================= -->
+
+    <header>
+
+        <div class="container topbar">
+            CANADA'S #1 AUTO PARTS STORE
+        </div>
+
+        <div class="container navbar">
+
+            <div class="logo">
+                <div class="logo-placeholder">
+                    <img src="Logos/Fast Ferrum basic.svg" alt="">
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+
+                    <a href="#" class="dropdown-btn">
+                        Products
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="brake-calipers.html">Brake Calipers</a>
+                        <a href="brake-pads.html">Brake Pads</a>
+
+                        <a href="brake-rotors.html">Brake Rotors</a>
+                        <a href="control-arms.html">Control Arms</a>
+
+                        <a href="hub-assembly.html">Hub Assembly</a>
+                        <a href="shock-absorber.html">Shock Absorber</a>
+
+                        <a href="spark-plugs.html">Spark Plugs</a>
+                        <a href="sway-bars.html">Sway Bars</a>
+
+                        <a href="tie-rods.html">Tie Rods</a>
+                        <a href="cv-axle-shaft.html">CV Axle</a>
+
+                        <a href="complete-strut-assembly.html">
+                            Complete Strut Assembly
+                        </a>
+                        <a href="rack&pinions.html"> Rack & Pinions</a>
+
+                    </div>
+
+                </div>
+                <a href="quality.html">Quality</a>
+                <a href="about.html">About</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- =========================================================
+HERO
+========================================================= -->
+
+    <section class="hero">
+
+        <!-- REPLACE WITH YOUR IMAGE -->
+        <img src="Blog/Blog.jpg" class="hero-image">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <h1>
+                    Blogs
+                </h1>
+
+                <p>
+                    General Info & Updates
+                </p>
+
+                <!-- <div class="hero-buttons">
+
+                    <a href="#" class="hero-btn">
+
+                        View Products
+
+                        <span class="arrow-circle">
+                            →
+                        </span>
+
+                    </a>
+
+                    <a href="#" class="hero-btn">
+
+                        Become a Dealer
+
+                        <span class="arrow-circle">
+                            →
+                        </span>
+
+                    </a>
+
+                </div> -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+Content here
+========================================================= -->
+<section class="ff-blog">
+
+    <div class="ff-blog-wrap">
+
+        <h2 class="ff-blog-title">
+            Blogs
+        </h2>
+
+        <div class="ff-blog-grid">
+
+            <!-- BLOG CARD -->
+
+            <article class="ff-blog-card">
+
+                <div class="ff-blog-image">
+                    <img src="Blog/brake pada ffect.png" alt="">
+                </div>
+
+                <div class="ff-blog-meta">
+
+                    <div class="ff-blog-date">
+                        <span>02</span>
+                        <strong>FEB</strong>
+                    </div>
+
+                    <div class="ff-blog-info">
+                        <span>POST INFO</span>
+                        <p>By Fast Ferrum &nbsp; | &nbsp; Business</p>
+                    </div>
+
+                </div>
+
+                <div class="ff-blog-content">
+
+                    <h3>
+                        How to Install Brake Calipers...
+                    </h3>
+
+                    <p>
+                        Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt.
+                    </p>
+
+                    <a href="#">
+                        Read More
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- DUPLICATE CARD -->
+
+            <article class="ff-blog-card">
+
+                <div class="ff-blog-image">
+                    <img src="Blog/BrakePads-HERO-2308-600x400.png" alt="">
+                </div>
+
+                <div class="ff-blog-meta">
+
+                    <div class="ff-blog-date">
+                        <span>02</span>
+                        <strong>FEB</strong>
+                    </div>
+
+                    <div class="ff-blog-info">
+                        <span>POST INFO</span>
+                        <p>By Fast Ferrum &nbsp; | &nbsp; Business</p>
+                    </div>
+
+                </div>
+
+                <div class="ff-blog-content">
+
+                    <h3>
+                        Do you need to change Shockers after every...
+                    </h3>
+
+                    <p>
+                        Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt.
+                    </p>
+
+                    <a href="#">
+                        Read More
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- DUPLICATE -->
+
+            <article class="ff-blog-card">
+
+                <div class="ff-blog-image">
+                    <img src="Blog/Brake-Pads_worn_2.png" alt="">
+                </div>
+
+                <div class="ff-blog-meta">
+
+                    <div class="ff-blog-date">
+                        <span>02</span>
+                        <strong>FEB</strong>
+                    </div>
+
+                    <div class="ff-blog-info">
+                        <span>POST INFO</span>
+                        <p>By Fast Ferrum &nbsp; | &nbsp; Business</p>
+                    </div>
+
+                </div>
+
+                <div class="ff-blog-content">
+
+                    <h3>
+                        If you don't remember when you changed sp...
+                    </h3>
+
+                    <p>
+                        Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt.
+                    </p>
+
+                    <a href="#">
+                        Read More
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- Repeat more cards -->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- =========================================================
+FOOTER
+========================================================= -->
+
+    <footer>
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <div class="logo" style="margin-bottom:25px;">
+
+                    <div class="logo-placeholder">
+                        <img src="Logos/Fast Ferrum basic.svg" alt="">
+                    </div>
+
+                </div>
+
+                <p style="line-height:1.9;color:#777;">
+                    Innovative regular upgrades for our products.
+                    Premium automotive components engineered for reliability.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="quality.html">Quality</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contacts.html">Contact</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Contact</h3>
+
+                <a href="#">Address Placeholder</a>
+                <a href="#">Phone Number</a>
+                <a href="#">Email Address</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            Copyright © 2026 Fast Ferrum. All Rights Reserved. &nbsp;&nbsp;
+            <a href="privacy-policy.html">
+                Privacy Policy
+            </a>
+            &nbsp; &nbsp;
+            <a href="terms-of-use.html">
+                Terms of Use
+            </a>
+
+        </div>
+
+    </footer>
+
+    <!-- =========================================================
+JS
+========================================================= -->
+
+    <script>
+
+        const toggleBtn = document.getElementById('toggleBtn');
+        const productsGrid = document.getElementById('productsGrid');
+
+        let expanded = false;
+
+        toggleBtn.addEventListener('click', () => {
+
+            expanded = !expanded;
+
+            if (expanded) {
+
+                productsGrid.classList.add('expanded');
+                toggleBtn.innerText = 'View Less';
+
+            } else {
+
+                productsGrid.classList.remove('expanded');
+                toggleBtn.innerText = 'View All';
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
