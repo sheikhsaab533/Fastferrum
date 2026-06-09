@@ -220,53 +220,69 @@
 ========================================================= */
 
         .hero {
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        .hero-wrapper {
             position: relative;
-            height: 400px;
+            width: 1350px;
+            max-width: 100%;
+            height: 660px;
+            margin: 0 auto;
             overflow: hidden;
-            display: flex;
-            align-items: center;
         }
 
         .hero-image {
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 400px;
-
+            height: 100%;
             object-fit: cover;
         }
 
         .hero-overlay {
             position: absolute;
-            inset: 0;
-
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.52);
+            z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 760px;
+
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+
+            margin: 0 auto;
+            padding-left: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero h1 {
             width: 500px;
-            /* Fixed width */
             font-size: 36px;
             line-height: 1.05;
             color: #fff;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
             font-weight: 700;
-            letter-spacing: 0px;
         }
 
         .hero p {
             width: 300px;
-            /* Fixed width */
             color: #e8e8e8;
             font-size: 18px;
             line-height: 1.7;
             margin-bottom: 20px;
-            max-width: 700px;
         }
 
         /* =========================================================
@@ -295,7 +311,7 @@
 
         .ff-about {
             background: #fff;
-            
+
         }
 
         .ff-about-wrap {
@@ -455,7 +471,7 @@
                 text-transform: uppercase;
 
             }
-            
+
 
             .ff-about-image-wide {
                 height: 250px;
@@ -469,7 +485,7 @@
         footer {
             background: #fff;
             border-top: 1px solid #e5e5e5;
-           
+
         }
 
         .footer-grid {
@@ -612,7 +628,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        <a href="rack&pinions.html"> Rack & Pinions</a>
+                        
 
                     </div>
 
@@ -631,40 +647,29 @@ HEADER
 HERO
 ========================================================= -->
 
-    <section class="hero">
+ <section class="hero">
 
-        <!-- REPLACE WITH YOUR IMAGE -->
-        <img src="About/Hero.png" class="hero-image">
+        <div class="hero-wrapper">
 
-        <div class="hero-overlay"></div>
+            <img src="About/Hero.png" class="hero-image">
 
-        <div class="container">
+            <div class="hero-overlay"></div>
 
             <div class="hero-content">
 
                 <h1>
-                    About Us
+                   About Us
                 </h1>
 
                 <p>
-                    What Fast Ferrum is
+                   What Fast Ferrum is
                 </p>
 
                 <!-- <div class="hero-buttons">
 
-                    <a href="#" class="hero-btn">
+                    <a href="#products" class="hero-btn">
 
                         View Products
-
-                        <span class="arrow-circle">
-                            →
-                        </span>
-
-                    </a>
-
-                    <a href="#" class="hero-btn">
-
-                        Become a Dealer
 
                         <span class="arrow-circle">
                             →
@@ -677,6 +682,8 @@ HERO
             </div>
 
         </div>
+
+
 
     </section>
 
@@ -696,11 +703,16 @@ PILLARS
 
                 <div class="ff-about-copy">
                     <p>
-                       FAST FERRUM was founded in 2024 with a clear goal: to create dependable braking and suspension components that meet the real needs of modern drivers. The brand was established to address a growing demand for automotive parts that balance performance, durability, and proper fitment—without overcomplication or unnecessary claims.
+                        FAST FERRUM was founded in 2024 with a clear goal: to create dependable braking and suspension
+                        components that meet the real needs of modern drivers. The brand was established to address a
+                        growing demand for automotive parts that balance performance, durability, and proper
+                        fitment—without overcomplication or unnecessary claims.
 
                     </p>
 
-                    <p>From the beginning, FAST FERRUM has focused on practical engineering and controlled manufacturing processes. Every product is developed with an emphasis on consistency, long-term reliability, and confidence in everyday driving conditions.
+                    <p>From the beginning, FAST FERRUM has focused on practical engineering and controlled manufacturing
+                        processes. Every product is developed with an emphasis on consistency, long-term reliability,
+                        and confidence in everyday driving conditions.
                     </p>
                 </div>
 
@@ -719,7 +731,9 @@ PILLARS
 
                 <p>
                     The name FAST FERRUM reflects the core values of the brand.
-“Ferrum,” derived from the Latin word for iron, represents strength, durability, and the foundation of high-quality metal components. Combined with “Fast,” the name reflects responsiveness, performance, and modern automotive expectations.
+                    “Ferrum,” derived from the Latin word for iron, represents strength, durability, and the foundation
+                    of high-quality metal components. Combined with “Fast,” the name reflects responsiveness,
+                    performance, and modern automotive expectations.
                 </p>
 
             </div>
@@ -733,9 +747,11 @@ PILLARS
                 </div>
 
                 <h3>
-                   We started FAST FERRUM to build the kind of braking and suspension components we would trust on our own vehicles—products that balance reliability, proper fitment, and consistent performance without compromise.
+                    We started FAST FERRUM to build the kind of braking and suspension components we would trust on our
+                    own vehicles—products that balance reliability, proper fitment, and consistent performance without
+                    compromise.
                 </h3>
-<br>
+                <br>
                 <span>
                     — FAST FERRUM | Brand Statement
                 </span>
@@ -747,13 +763,17 @@ PILLARS
             <div class="ff-about-content">
 
                 <p>
-                    From our early beginnings in [Year Founded], FAST FERRUM was built around a simple idea: critical automotive components should be engineered with care, manufactured with consistency, and supported by clear standards. What began as a focused effort to deliver dependable parts has grown into a brand committed to supporting drivers and technicians across a wide range of vehicle applications.
+                    From our early beginnings in [Year Founded], FAST FERRUM was built around a simple idea: critical
+                    automotive components should be engineered with care, manufactured with consistency, and supported
+                    by clear standards. What began as a focused effort to deliver dependable parts has grown into a
+                    brand committed to supporting drivers and technicians across a wide range of vehicle applications.
 
                 </p>
 
                 <p>
-                    
-Every product reflects our emphasis on controlled processes, durable materials, and OE-like fitment—because long-term reliability and confidence on the road matter.
+
+                    Every product reflects our emphasis on controlled processes, durable materials, and OE-like
+                    fitment—because long-term reliability and confidence on the road matter.
                 </p>
 
             </div>
@@ -768,15 +788,23 @@ Every product reflects our emphasis on controlled processes, durable materials, 
                 </h3>
 
                 <p>
-                    FAST FERRUM was founded in Canada with a clear purpose: to create braking and suspension components designed around the realities of Canadian driving. From long highway commutes and city traffic to seasonal temperature changes and demanding road conditions, our products are developed with local needs in mind.
+                    FAST FERRUM was founded in Canada with a clear purpose: to create braking and suspension components
+                    designed around the realities of Canadian driving. From long highway commutes and city traffic to
+                    seasonal temperature changes and demanding road conditions, our products are developed with local
+                    needs in mind.
 
 
                 </p>
 
                 <p>
-                    Designed and managed by Canadian teams, FAST FERRUM focuses on durability, material integrity, and consistent performance. Every component is engineered using controlled processes and defined quality standards to help ensure proper fitment, dependable operation, and long-term reliability in everyday driving environments.
+                    Designed and managed by Canadian teams, FAST FERRUM focuses on durability, material integrity, and
+                    consistent performance. Every component is engineered using controlled processes and defined quality
+                    standards to help ensure proper fitment, dependable operation, and long-term reliability in everyday
+                    driving environments.
 
-We believe reliability isn’t optional—it’s essential. That’s why FAST FERRUM products are built to support vehicles that Canadians rely on every day, delivering confidence on the road through all seasons.
+                    We believe reliability isn’t optional—it’s essential. That’s why FAST FERRUM products are built to
+                    support vehicles that Canadians rely on every day, delivering confidence on the road through all
+                    seasons.
                 </p>
 
             </div>
@@ -796,13 +824,17 @@ We believe reliability isn’t optional—it’s essential. That’s why FAST FE
                     <h3>Quality Beyond the Product</h3>
 
                     <p>
-                        Quality at FAST FERRUM extends beyond the component itself. Packaging is designed to protect products during handling and transport, helping ensure parts arrive in proper condition. Clear labeling and organized presentation support easy identification and efficient installation, reflecting the same attention to detail applied throughout development and production.
+                        Quality at FAST FERRUM extends beyond the component itself. Packaging is designed to protect
+                        products during handling and transport, helping ensure parts arrive in proper condition. Clear
+                        labeling and organized presentation support easy identification and efficient installation,
+                        reflecting the same attention to detail applied throughout development and production.
 
                     </p>
 
                     <p>
-                        
-By aligning product design, manufacturing standards, and packaging practices, FAST FERRUM delivers a reliable and professional ownership experience from unboxing to installation.
+
+                        By aligning product design, manufacturing standards, and packaging practices, FAST FERRUM
+                        delivers a reliable and professional ownership experience from unboxing to installation.
                     </p>
 
                 </div>
@@ -824,7 +856,7 @@ By aligning product design, manufacturing standards, and packaging practices, FA
             <div class="ff-about-grid">
 
                 <div class="ff-about-image ff-about-image-warranty">
-                   <img src="About/4.png" alt="">
+                    <img src="About/4.png" alt="">
                 </div>
 
                 <div class="ff-about-copy">
@@ -832,9 +864,11 @@ By aligning product design, manufacturing standards, and packaging practices, FA
                     <h3>Warranty & Support</h3>
 
                     <p>
-                        FAST FERRUM products are backed by a limited manufacturer warranty covering defects in materials and workmanship. This warranty reflects the brand’s commitment to consistent quality and controlled production standards.
+                        FAST FERRUM products are backed by a limited manufacturer warranty covering defects in materials
+                        and workmanship. This warranty reflects the brand’s commitment to consistent quality and
+                        controlled production standards.
 
-To help ensure proper performance and safety:
+                        To help ensure proper performance and safety:
 
                     </p>
 
@@ -849,7 +883,8 @@ To help ensure proper performance and safety:
                         </li>
 
                         <li>
-                            For warranty claims, technical assistance, or product support, customers can contact the FAST FERRUM support team
+                            For warranty claims, technical assistance, or product support, customers can contact the
+                            FAST FERRUM support team
                         </li>
 
                     </ul>
@@ -865,7 +900,10 @@ To help ensure proper performance and safety:
                 <h3>Our Commitment</h3>
 
                 <p>
-                    Since its establishment in [Year Founded], FAST FERRUM has remained committed to building automotive components that drivers and technicians can trust. Through controlled processes, practical engineering, and defined quality standards, the brand continues to focus on reliability, proper fit, and everyday performance.
+                    Since its establishment in [Year Founded], FAST FERRUM has remained committed to building automotive
+                    components that drivers and technicians can trust. Through controlled processes, practical
+                    engineering, and defined quality standards, the brand continues to focus on reliability, proper fit,
+                    and everyday performance.
                 </p>
 
             </div>

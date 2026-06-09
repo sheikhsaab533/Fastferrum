@@ -220,16 +220,23 @@
 ========================================================= */
 
         .hero {
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        .hero-wrapper {
             position: relative;
-            height: 760px;
+            width: 1350px;
+            max-width: 100%;
+            height: 660px;
+            margin: 0 auto;
             overflow: hidden;
-            display: flex;
-            align-items: center;
         }
 
         .hero-image {
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -237,35 +244,45 @@
 
         .hero-overlay {
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.52);
+            z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 760px;
+
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+
+            margin: 0 auto;
+            padding-left: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero h1 {
             width: 500px;
-            /* Fixed width */
             font-size: 36px;
             line-height: 1.05;
             color: #fff;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
             font-weight: 700;
-            letter-spacing: 0px;
         }
 
         .hero p {
             width: 300px;
-            /* Fixed width */
             color: #e8e8e8;
             font-size: 18px;
             line-height: 1.7;
             margin-bottom: 20px;
-            max-width: 700px;
         }
 
         /* =========================================================
@@ -594,7 +611,7 @@
         footer {
             background: #fff;
             border-top: 1px solid #e5e5e5;
-            
+
         }
 
         .footer-grid {
@@ -737,7 +754,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        <a href="rack&pinions.html"> Rack & Pinions</a>
+
 
                     </div>
 
@@ -755,15 +772,13 @@ HEADER
     <!-- =========================================================
 HERO
 ========================================================= -->
-
     <section class="hero">
 
-        <!-- REPLACE WITH YOUR IMAGE -->
-        <img src="Home Page/Main banner.png" class="hero-image">
+        <div class="hero-wrapper">
 
-        <div class="hero-overlay"></div>
+            <img src="Home Page/Main banner.png" class="hero-image">
 
-        <div class="container">
+            <div class="hero-overlay"></div>
 
             <div class="hero-content">
 
@@ -780,19 +795,9 @@ HERO
 
                 <div class="hero-buttons">
 
-                    <a href="#" class="hero-btn">
+                    <a href="#products" class="hero-btn">
 
                         View Products
-
-                        <span class="arrow-circle">
-                            →
-                        </span>
-
-                    </a>
-
-                    <a href="#" class="hero-btn">
-
-                        Become a Dealer
 
                         <span class="arrow-circle">
                             →
@@ -805,6 +810,8 @@ HERO
             </div>
 
         </div>
+
+
 
     </section>
 
@@ -869,7 +876,7 @@ PILLARS
 PRODUCTS
 ========================================================= -->
 
-    <section>
+    <section id="products">
 
         <div class="container">
 
@@ -882,89 +889,93 @@ PRODUCTS
                 <!-- PRODUCT -->
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/Brake Caliper.png" alt=""></div>
-                    <h3>Brake Calipers</h3>
-                    <p>Precision engineered braking components for smooth stopping performance.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="brake-calipers.html">
+                        <div class="product-image"><img src="Home Page/Brake Caliper.png" alt=""></div>
+                        <h3>Brake Calipers</h3>
+                        <p>Precision engineered braking components for smooth stopping performance.</p>
+                    </a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/brake pads.png" alt=""></div>
-                    <h3>Brake Pads</h3>
-                    <p>High performance brake pads designed for durability and control.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="brake-pads.html">
+                        <div class="product-image"><img src="Home Page/brake pads.png" alt=""></div>
+                        <h3>Brake Pads</h3>
+                        <p>High performance brake pads designed for durability and control.</p>
+                    </a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/Brake rotors.png" alt=""></div>
-                    <h3>Brake Rotors</h3>
-                    <p>Reliable brake rotors built for thermal stability and safety.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="brake-rotors.html">
+                        <div class="product-image"><img src="Home Page/Brake rotors.png" alt=""></div>
+                        <h3>Brake Rotors</h3>
+                        <p>Reliable brake rotors built for thermal stability and safety.</p>
+                    </a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/Control arms.png" alt=""></div>
-                    <h3>Control Arms</h3>
-                    <p>Enhanced suspension geometry for improved handling response.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="control-arms.html">
+                        <div class="product-image"><img src="Home Page/Control arms.png" alt=""></div>
+                        <h3>Control Arms</h3>
+                        <p>Enhanced suspension geometry for improved handling response.</p>
+                    </a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/Shock absorber.png" alt=""></div>
-                    <h3>Shock Absorbers</h3>
-                    <p>Advanced shock absorbers for comfort and controlled travel.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="shock-absorber.html">
+                        <div class="product-image"><img src="Home Page/Shock absorber.png" alt=""></div>
+                        <h3>Shock Absorbers</h3>
+                        <p>Advanced shock absorbers for comfort and controlled travel.</p>
+                    </a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/CV Axle.png" alt=""></div>
-                    <h3>CV Axle Shaft</h3>
-                    <p>Heavy duty CV shafts built for torque transfer and durability.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="cv-axle-shaft.html">
+                        <div class="product-image"><img src="Home Page/CV Axle.png" alt=""></div>
+                        <h3>CV Axle Shaft</h3>
+                        <p>Heavy duty CV shafts built for torque transfer and durability.</p>
+                    </a>
                 </div>
 
                 <!-- EXPANDABLE -->
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/Hub assembly.png" alt=""></div>
-                    <h3>Hub Assembly</h3>
-                    <p>Precision wheel hub assemblies for improved reliability.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="hub-assembly.html">
+                        <div class="product-image"><img src="Home Page/Hub assembly.png" alt=""></div>
+                        <h3>Hub Assembly</h3>
+                        <p>Precision wheel hub assemblies for improved reliability.</p>
+                    </a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/sway bars.png" alt=""></div>
-                    <h3>Sway Bars</h3>
-                    <p>Reduce body roll with durable sway bars.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="sway-bars.html">
+                        <div class="product-image"><img src="Home Page/sway bars.png" alt=""></div>
+                        <h3>Sway Bars</h3>
+                        <p>Reduce body roll with durable sway bars.</p>
+                    </a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/Rack & pinion.png" alt=""></div>
-                    <h3>Rack & Pinions</h3>
-                    <p>High quality steering systems built for smooth handling.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="tie-rods.html">
+                        <div class="product-image"><img src="Home Page/tie rods.png" alt=""></div>
+                        <h3>Tie Rods</h3>
+                        <p>High quality steering systems built for smooth handling.</p>
+                    </a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/tie rods.png" alt=""></div>
-                    <h3>Tie Rods</h3>
-                    <p>High quality steering systems built for smooth handling.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="spark-plugs.html">
+                        <div class="product-image"><img src="Home Page/Spark plugs.png" alt=""></div>
+                        <h3>Spark Plugs</h3>
+                        <p>High quality steering systems built for smooth handling.</p>
+                    </a>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image"><img src="Home Page/Spark plugs.png" alt=""></div>
-                    <h3>Spark Plugs</h3>
-                    <p>High quality steering systems built for smooth handling.</p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image"><img src="Home Page/Complete strut assembly.png" alt=""></div>
-                    <h3>Complete Strut Assembly</h3>
-                    <p>High quality steering systems built for smooth handling.</p>
-                    <a href="#" class="read-more">Read More</a>
+                    <a href="complete-strut-assembly.html">
+                        <div class="product-image"><img src="Home Page/Complete strut assembly.png" alt=""></div>
+                        <h3>Complete Strut Assembly</h3>
+                        <p>High quality steering systems built for smooth handling.</p>
+                    </a>
                 </div>
             </div>
 
@@ -1000,11 +1011,11 @@ QUALITY
                         Every Fast Ferrum component is designed and tested
                         to meet demanding automotive performance standards.
                     </p>
-
-                    <button class="qualitybtn">
-                        Read More
-                    </button>
-
+                    <a href="quality.html">
+                        <button class="qualitybtn">
+                            Read More
+                        </button>
+                    </a>
                 </div>
 
                 <div class="image-placeholder-large">
@@ -1045,10 +1056,12 @@ TEAM
                         So drivers can stay prepared, confident, and in control wherever the road takes them. Get to
                         know the people powering innovation at Fast Ferrum.
                     </p>
+                    <a href="about.html">
+                        <button class="qualitybtn">
 
-                    <button class="qualitybtn">
-                        Read More
-                    </button>
+                            Read More
+                        </button>
+                    </a>
 
                 </div>
 

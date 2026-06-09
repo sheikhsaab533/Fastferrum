@@ -220,53 +220,69 @@
 ========================================================= */
 
         .hero {
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        .hero-wrapper {
             position: relative;
-            height: 400px;
+            width: 1350px;
+            max-width: 100%;
+            height: 660px;
+            margin: 0 auto;
             overflow: hidden;
-            display: flex;
-            align-items: center;
         }
 
         .hero-image {
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 400px;
-
+            height: 100%;
             object-fit: cover;
         }
 
         .hero-overlay {
             position: absolute;
-            inset: 0;
-
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.52);
+            z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 760px;
+
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+
+            margin: 0 auto;
+            padding-left: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero h1 {
             width: 500px;
-            /* Fixed width */
             font-size: 36px;
             line-height: 1.05;
             color: #fff;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
             font-weight: 700;
-            letter-spacing: 0px;
         }
 
         .hero p {
             width: 300px;
-            /* Fixed width */
             color: #e8e8e8;
             font-size: 18px;
             line-height: 1.7;
             margin-bottom: 20px;
-            max-width: 700px;
         }
 
         /* =========================================================
@@ -610,7 +626,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        <a href="rack&pinions.html"> Rack & Pinions</a>
+                       
 
                     </div>
 
@@ -629,40 +645,29 @@ HEADER
 HERO
 ========================================================= -->
 
-    <section class="hero">
+   <section class="hero">
 
-        <!-- REPLACE WITH YOUR IMAGE -->
-        <img src="Blog/Blog.jpg" class="hero-image">
+        <div class="hero-wrapper">
 
-        <div class="hero-overlay"></div>
+            <img src="Blog/Blog.jpg" class="hero-image">
 
-        <div class="container">
+            <div class="hero-overlay"></div>
 
             <div class="hero-content">
 
                 <h1>
-                    Blogs
+                  Blogs
                 </h1>
 
                 <p>
-                    General Info & Updates
+                   General Info & Updates
                 </p>
 
                 <!-- <div class="hero-buttons">
 
-                    <a href="#" class="hero-btn">
+                    <a href="#products" class="hero-btn">
 
                         View Products
-
-                        <span class="arrow-circle">
-                            →
-                        </span>
-
-                    </a>
-
-                    <a href="#" class="hero-btn">
-
-                        Become a Dealer
 
                         <span class="arrow-circle">
                             →
@@ -675,6 +680,8 @@ HERO
             </div>
 
         </div>
+
+
 
     </section>
 
@@ -720,7 +727,7 @@ Content here
                     </h3>
 
                     <p>
-                        Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt.
+                        Learn the essential steps to install brake calipers correctly for safe braking performance and reliable vehicle control.
                     </p>
 
                     <a href="#">
@@ -760,7 +767,7 @@ Content here
                     </h3>
 
                     <p>
-                        Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt.
+                        Discover when shock absorbers should be replaced and how proper maintenance improves comfort and handling.
                     </p>
 
                     <a href="#">
@@ -800,7 +807,7 @@ Content here
                     </h3>
 
                     <p>
-                        Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt.
+                        Signs your spark plugs may need replacement and how timely changes help maintain engine performance.
                     </p>
 
                     <a href="#">

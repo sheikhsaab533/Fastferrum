@@ -50,11 +50,8 @@
         .container {
             width: 100%;
             max-width: 1000px;
-            margin: auto;
-
-            /* CHANGE THESE VALUES */
-            padding-left: 40px;
-            padding-right: 40px;
+            margin: 0 auto;
+            padding: 0 40px;
         }
 
         /* =========================================================
@@ -68,6 +65,7 @@
             position: sticky;
             top: 0;
             z-index: 999;
+
         }
 
         .topbar {
@@ -78,6 +76,15 @@
             letter-spacing: .3px;
         }
 
+        header {
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid #e8e8e8;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
         .navbar {
             display: flex;
             align-items: center;
@@ -86,11 +93,114 @@
         }
 
         /* =========================================================
+PRODUCT CARDS
+========================================================= */
+
+        .pads-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 55px;
+        }
+
+        .pad-card {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .pad-info {
+            padding: 55px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pad-info h2 {
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .pad-info p {
+            line-height: 1.8;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .pad-image {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .pad-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s ease;
+        }
+
+        /* =========================================================
+HOVER EFFECT
+========================================================= */
+
+        .hover-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 110, 168, 0.35);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            opacity: 0;
+            transition: .4s ease;
+        }
+
+        .hover-overlay span {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 500;
+            transform: translateY(20px);
+            transition: .4s ease;
+        }
+
+        .pad-card:hover .hover-overlay {
+            opacity: 1;
+        }
+
+        .pad-card:hover .hover-overlay span {
+            transform: translateY(0);
+        }
+
+        .pad-card:hover .pad-image img {
+            transform: scale(1.05);
+        }
+
+        /* =========================================================
+COLOR VARIANTS
+========================================================= */
+
+        .standard .pad-info {
+            background: #0A6EA8;
+            color: #fff;
+        }
+
+        .pro .pad-info {
+            background: #ffffff;
+        }
+
+        .elite .pad-info {
+            background: #222;
+            color: #fff;
+        }
+
+        /* =========================================================
    LOGO
 ========================================================= */
 
         .logo {
-            width: 110px;
+            width: 160px;
 
             /* CHANGE LOGO SPACING */
             margin-right: 40px;
@@ -213,60 +323,120 @@
             color: #fff;
         }
 
-
-
         /* =========================================================
    HERO
 ========================================================= */
-
         .hero {
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        .hero-wrapper {
             position: relative;
-            height: 400px;
+            width: 1350px;
+            max-width: 100%;
+            height: 660px;
+            margin: 0 auto;
             overflow: hidden;
-            display: flex;
-            align-items: center;
         }
 
         .hero-image {
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 400px;
-
+            height: 100%;
             object-fit: cover;
         }
 
         .hero-overlay {
             position: absolute;
-            inset: 0;
-
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .52);
+            z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 760px;
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            padding-left: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero h1 {
             width: 500px;
-            /* Fixed width */
             font-size: 36px;
             line-height: 1.05;
             color: #fff;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
             font-weight: 700;
-            letter-spacing: 0px;
         }
 
         .hero p {
-            width: 300px;
-            /* Fixed width */
+            width: 400px;
             color: #e8e8e8;
             font-size: 18px;
             line-height: 1.7;
-            margin-bottom: 20px;
-            max-width: 700px;
+        }
+
+        /* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+        .hero-buttons {
+            display: flex;
+            gap: 22px;
+        }
+
+        .hero-btn {
+            background: #fff;
+            color: #666;
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 28px;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            transition: .35s ease;
+        }
+
+        .hero-btn:hover {
+            background: #0A6EA8;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .arrow-circle {
+            width: 26px;
+            height: 26px;
+
+            border-radius: 50%;
+            border: 1px solid #8b8b8b;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 24px;
+            transition: .35s ease;
+        }
+
+        .hero-btn:hover .arrow-circle {
+            border-color: #fff;
         }
 
         /* =========================================================
@@ -284,182 +454,317 @@
         }
 
         .section-title h2 {
-            font-size: 20px;
+            font-size: 34px;
             font-weight: 700;
             color: #666;
         }
 
-        /* =========================
-   FAST FERRUM ABOUT PAGE
-   ========================= */
+        .intro {
+            padding: 80px 40px;
+        }
 
-        .ff-about {
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            line-height: 1.1;
+        }
+
+        .intro-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+            color: #444;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .divider {
+            width: 320px;
+            height: 1px;
+            background: #cfcfcf;
+            margin: 80px auto;
+        }
+
+        .buy-section {
+            text-align: center;
+        }
+
+        .buy-title {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+
+        .buy-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+
+        }
+
+        .buy-btn {
+            background: #717171;
+            color: #fff;
+            padding: 20px 30px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .features-wrap {
+            max-width: 1180px;
+            margin: auto;
+            padding: 0 40px 80px;
+        }
+
+        .features-box {
+            background: #e7e7e7;
+            padding: 50px;
+        }
+
+        .features-image {
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .feature h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform .5s ease;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        /* BUTTONS */
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: 60px;
+            height: 60px;
+
+            border: none;
+            border-radius: 50%;
+
             background: #fff;
 
+            z-index: 998;
+            /* VERY IMPORTANT */
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
         }
 
-        .ff-about-wrap {
-            max-width: 920px;
+        /* LEFT */
+
+        .prev {
+            left: 20px;
+        }
+
+        /* RIGHT */
+
+        .next {
+            right: 20px;
+        }
+
+        .icons-bar {
+            width: 1350px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 0 20px;
+            background: #717171;
+            padding: 50px 40px;
         }
 
-        .ff-about-title {
+        .icons-grid {
+            max-width: 1180px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
             text-align: center;
-            font-size: 30px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 60px;
-            line-height: 1.15;
-            color: #111;
         }
 
-        .ff-about-title-small {
-            font-size: 20px;
+        .Italic {
+            font-style: italic;
+            font-weight: 200
+        }
+
+        .icon-item {
+            color: #fff;
+        }
+
+        .icon-circle {
+            width: 90px;
+            height: 90px;
+            border: 0px solid #fff;
+            border-radius: 50%;
+            margin: 0 auto 18px;
+        }
+
+        .brake-comparison {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .compare-card {
+            text-align: center;
+        }
+
+        .compare-card img {
+            width: 100%;
+            max-width: 260px;
+            margin-bottom: 20px;
+        }
+
+        .compare-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .pro-red {
+            color: #e30613;
+        }
+
+        .compare-desc {
+            min-height: 70px;
+            margin-bottom: 0px;
+        }
+
+        .compare-row {
+            min-height: 72px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 6px 0;
+        }
+
+        .compare-row strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .compare-divider {
+            width: 140px;
+            height: 1px;
+            background: #d8d8d8;
+            margin: 20px auto;
+        }
+
+        .compare-bottom {
+            font-weight: 700;
+            min-height: 80px;
+        }
+
+        @media (max-width: 991px) {
+            .brake-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .faq-section {
+            padding: 0 40px 100px;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 900;
             margin-bottom: 50px;
         }
 
-        .ff-about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 70px;
+        .faq-wrap {
+            max-width: 1000px;
+            margin: auto;
         }
 
-        .ff-about-copy p,
-        .ff-about-content p {
-            font-size: 14px;
-            line-height: 1.9;
-            color: #555;
-            margin-bottom: 18px;
-        }
-
-        .ff-about-content {
-            max-width: 760px;
-            margin: 0 auto 55px;
-        }
-
-        .ff-about-content h3,
-        .ff-about-copy h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 18px;
-            color: #111;
-        }
-
-        .ff-about-divider {
-            width: 180px;
-            height: 1px;
-            background: #d9d9d9;
-            margin: 60px auto;
-        }
-
-        .ff-about-quote {
-            text-align: center;
-            max-width: 760px;
-            margin: 30px 30px;
-        }
-
-        .ff-about-quote-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: #e5e5e5;
-            margin: 0 auto 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 34px;
-            color: #666;
-        }
-
-        .ff-about-quote h4 {
-            font-size: 28px;
-            line-height: 1.45;
-            font-weight: 700;
-            color: #111;
-            margin-bottom: 18px;
-        }
-
-        .ff-about-quote span {
-            font-size: 13px;
-            color: #777;
-        }
-
-        .ff-about-image {
+        .faq-item {
             background: #f5f5f5;
             border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            padding: 26px 30px;
+            cursor: pointer;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: #888;
+            justify-content: space-between;
         }
 
-        .ff-about-image-team {
-            height: 260px;
+        .faq-answer {
+            display: none;
+            padding: 0 30px 25px;
+            line-height: 1.7;
+            color: #444;
         }
 
-        .ff-about-image-wide {
-            height: auto;
-            margin-bottom: 70px;
+        .faq-item.active .faq-answer {
+            display: block;
         }
 
-        .ff-about-image-box {
-            height: 320px;
-        }
+        @media(max-width:992px) {
 
-        .ff-about-image-warranty {
-            height: 300px;
-        }
-
-        .ff-about-list {
-            margin-top: 20px;
-            padding-left: 18px;
-        }
-
-        .ff-about-list li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-            color: #555;
-            font-size: 14px;
-        }
-
-        .ff-about-bottomline {
-            text-align: center;
-            margin-top: 70px;
-            font-size: 22px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: #111;
-        }
-
-        @media (max-width: 768px) {
-
-            .ff-about-grid {
+            .intro-grid,
+            .features-grid,
+            .icons-grid,
+            .products-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
             }
 
-            .ff-about-title {
-                font-size: 28px;
+            .section-title,
+            .buy-title,
+            .faq-title {
+                font-size: 32px;
             }
 
-            .ff-about-title-small {
-                font-size: 26px;
+            .slide img {
+                height: 400px;
             }
 
-            .ff-about-quote h3 {
-                font-size: 50px;
-                text-transform: uppercase;
-
-            }
-
-
-            .ff-about-image-wide {
-                height: 250px;
-            }
         }
 
         /* =========================================================
@@ -476,6 +781,7 @@
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
             gap: 50px;
+
             padding: 90px 0;
         }
 
@@ -560,206 +866,6 @@
             }
 
         }
-
-
-        /* Mobile Version */
-        /* ==========================================
-TABLET
-========================================== */
-
-        @media (max-width: 1024px) {
-
-            .container {
-                padding-left: 25px;
-                padding-right: 25px;
-            }
-
-            .hero h1 {
-                width: 100%;
-                font-size: 46px;
-            }
-
-            .hero p {
-                width: 100%;
-            }
-
-            .ff-about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-            }
-
-            .dropdown-menu {
-                width: 350px;
-            }
-        }
-
-        /* ==========================================
-MOBILE
-========================================== */
-
-        @media (max-width: 768px) {
-
-            .navbar {
-                position: relative;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 15px 20px;
-            }
-
-            .menu-toggle {
-                display: block;
-                font-size: 34px;
-                background: none;
-                border: none;
-                cursor: pointer;
-                color: #000;
-                z-index: 1001;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #fff;
-                flex-direction: column;
-                align-items: flex-start;
-                display: none;
-                border-top: 1px solid #eee;
-                z-index: 1000;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a,
-            .dropdown-btn {
-                width: 100%;
-                padding: 15px 20px;
-            }
-
-            .dropdown {
-                width: 100%;
-            }
-
-            .dropdown-menu {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-
-                width: 100%;
-
-                display: grid;
-                grid-template-columns: 1fr;
-
-                border: none;
-                padding: 0 20px 10px;
-
-                box-shadow: none;
-            }
-
-            .hero {
-                height: 500px;
-            }
-
-            .hero-image {
-                height: 500px;
-            }
-
-            .hero-content {
-                max-width: 100%;
-            }
-
-            .hero h1 {
-                width: 100%;
-                font-size: 34px;
-                line-height: 1.15;
-            }
-
-            .hero p {
-                width: 100%;
-                font-size: 16px;
-            }
-
-            .ff-about-title {
-                font-size: 26px;
-            }
-
-            .ff-about-content h3,
-            .ff-about-copy h3 {
-                font-size: 22px;
-            }
-
-            .ff-about-quote h3 {
-                font-size: 24px;
-                line-height: 1.4;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 50px 0;
-            }
-
-            .copyright {
-                font-size: 13px;
-                line-height: 1.8;
-                padding: 20px;
-            }
-        }
-
-        /* ==========================================
-SMALL PHONES
-========================================== */
-
-        @media (max-width: 480px) {
-
-            .hero {
-                height: 420px;
-            }
-
-            .hero-image {
-                height: 420px;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .ff-about-title {
-                font-size: 22px;
-            }
-
-            .ff-about-bottomline {
-                font-size: 18px;
-            }
-
-            .logo {
-                width: 90px;
-                margin-right: 0;
-            }
-        }
-
-        /* Hamburger */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 32px;
-            cursor: pointer;
-            color: #222;
-        }
     </style>
 </head>
 
@@ -779,18 +885,14 @@ HEADER
 
             <div class="logo">
                 <div class="logo-placeholder">
-                    <img src="Logos/Fast Ferrum basic.svg" alt="">
+                    <img src="Logos/fast ferrum pro.svg" alt="">
                 </div>
             </div>
 
-            <button class="menu-toggle" id="menuToggle">
-                ☰
-            </button>
-
-            <div class="nav-links" id="mobileMenu">
-
-                <a href="home.html">Home</a>
-
+            <div class="nav-links">
+                <a href="index.html">
+                    <Home class="html">Home</Home>
+                </a>
                 <div class="dropdown">
 
                     <a href="#" class="dropdown-btn">
@@ -818,19 +920,13 @@ HEADER
                             Complete Strut Assembly
                         </a>
 
-                        <a href="rack&pinions.html">
-                            Rack & Pinions
-                        </a>
-
                     </div>
 
                 </div>
-
                 <a href="quality.html">Quality</a>
                 <a href="about.html">About</a>
                 <a href="blogs.html">Blogs</a>
                 <a href="contact.html">Contact</a>
-
             </div>
 
         </div>
@@ -840,49 +936,165 @@ HEADER
     <!-- =========================================================
 HERO
 ========================================================= -->
-
     <section class="hero">
 
-        <!-- REPLACE WITH YOUR IMAGE -->
-        <img src="About/Hero.png" class="hero-image">
+        <div class="hero-wrapper">
 
-        <div class="hero-overlay"></div>
+            <img src="Brake Calipers/brake pads Hero.png" class="hero-image">
 
-        <div class="container">
+            <div class="hero-overlay"></div>
 
             <div class="hero-content">
 
                 <h1>
-                    About Us
+                    FAST FERRUM
+                    <br>
+                    Brake Calipers-PRO
                 </h1>
 
                 <p>
-                    What Fast Ferrum is
+                    Precision engineered brake calipers built for
+                    superior control and dependable braking
+                    performance.
                 </p>
 
-                <!-- <div class="hero-buttons">
+            </div>
 
-                    <a href="#" class="hero-btn">
+        </div>
 
-                        View Products
+    </section>
+    <!-- PRODUCT INTRO -->
 
-                        <span class="arrow-circle">
-                            →
-                        </span>
+    <section class="container intro">
 
-                    </a>
+        <h2 class="section-title">
+            Precision Engineered Brake Calipers Built for Superior Control
 
-                    <a href="#" class="hero-btn">
+        </h2>
 
-                        Become a Dealer
+        <div class="intro-grid">
 
-                        <span class="arrow-circle">
-                            →
-                        </span>
+            <div class="intro-text">
+                <p>
+                    FAST FERRUM Pro Brake Calipers are engineered using premium-grade components designed to meet or
+                    exceed OEM standards. Built for drivers who expect confident braking, improved heat management, and
+                    long-term reliability, these brake calipers deliver precise braking control with consistent clamping
+                    force.
+                </p>
 
-                    </a>
+                <p>
 
-                </div> -->
+                    Manufactured with high-strength materials and precision-machined internals, FAST FERRUM Pro Brake
+                    Calipers are designed to support smoother braking performance, improved pedal feel, and dependable
+                    operation across daily driving and demanding conditions.
+                </p>
+
+            </div>
+
+            <div>
+                <img src="Brake Calipers/Brake_Caliper_Mockup.jpg" alt="">
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- WHERE TO BUY -->
+
+        <div class="container buy-section">
+
+            <h2 class="buy-title">WHERE TO BUY</h2>
+
+            <div class="buy-buttons">
+                <a href="#" class="buy-btn"><img src="Logos/amazon.svg" alt=""></a>
+                <a href="#" class="buy-btn"><img src="Logos/PA Logo white.svg" alt=""></a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="container features-wrap">
+
+        <div class="container features-box">
+
+            <div class="carousel">
+
+                <button class="carousel-btn prev">&#10094;</button>
+
+                <div class="carousel-track">
+
+                    <div class="slide">
+                        <img src="Brake Calipers/Brake Caliper/1.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="Brake Calipers/Brake Caliper/2.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="Brake Calipers/Brake Caliper/3.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Calipers/Brake Caliper/4.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Calipers/Brake Caliper/5.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Calipers/Brake Caliper/6.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Calipers/Brake Caliper/7.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Calipers/Brake Caliper/8.jpeg">
+                    </div>
+                </div>
+
+                <button class="carousel-btn next">&#10095;</button>
+
+            </div>
+
+
+            <div class="features-grid">
+
+                <div class="feature">
+                    <h3>Consistent Braking Force</h3>
+                    <p>
+                        Engineered to provide balanced and reliable clamping pressure for improved braking confidence.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Smooth & Controlled Response</h3>
+                    <p>
+                        Designed to deliver precise brake engagement with enhanced pedal feel.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Durable High-Strength Construction</h3>
+                    <p>
+                        Built using premium materials for long-lasting durability and dependable operation.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>OEM-Equivalent Fit & Performance</h3>
+                    <p>
+                        Designed for accurate fitment and factory-level braking compatibility.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Improved Heat Management</h3>
+                    <p>
+                        Optimized construction helps maintain stable performance under repeated braking conditions.
+                    </p>
+                </div>
 
             </div>
 
@@ -890,234 +1102,150 @@ HERO
 
     </section>
 
-    <!-- =========================================================
-PILLARS
-========================================================= -->
-    <section class="ff-about">
+    <!-- IMAGE CAROUSEL
 
-        <div class="ff-about-wrap">
+    <section class="carousel-section">
 
-            <!-- HERO -->
-            <h2 class="ff-about-title">
-                BUILT WITH PURPOSE. ENGINEERED FOR RELIABILITY.
-            </h2>
+        <div class="carousel">
 
-            <div class="ff-about-grid">
+            <button class="carousel-btn prev">&#10094;</button>
 
-                <div class="ff-about-copy">
-                    <p>
-                        FAST FERRUM was founded in 2024 with a clear goal: to create dependable braking and suspension
-                        components that meet the real needs of modern drivers. The brand was established to address a
-                        growing demand for automotive parts that balance performance, durability, and proper
-                        fitment—without overcomplication or unnecessary claims.
+            <div class="carousel-track">
 
-                    </p>
-
-                    <p>From the beginning, FAST FERRUM has focused on practical engineering and controlled manufacturing
-                        processes. Every product is developed with an emphasis on consistency, long-term reliability,
-                        and confidence in everyday driving conditions.
-                    </p>
+                <div class="slide">
+                    <img src="Brake Calipers/Brake Caliper/1.jpeg">
                 </div>
 
-                <div class="ff-about-image ff-about-image-team">
-                    <img src="About/image-10.png" alt="">
+                <div class="slide">
+                    <img src="Brake Calipers/Brake Caliper/2.jpeg">
                 </div>
 
-            </div>
-
-            <div class="ff-about-divider"></div>
-
-            <!-- WHY -->
-            <div class="ff-about-content">
-
-                <h3>Why FAST FERRUM</h3>
-
-                <p>
-                    The name FAST FERRUM reflects the core values of the brand.
-                    “Ferrum,” derived from the Latin word for iron, represents strength, durability, and the foundation
-                    of high-quality metal components. Combined with “Fast,” the name reflects responsiveness,
-                    performance, and modern automotive expectations.
-                </p>
-
-            </div>
-
-            <!-- QUOTE -->
-
-            <div class="ff-about-quote">
-
-                <div class="ff-about-quote-icon">
-                    "
+                <div class="slide">
+                    <img src="Brake Calipers/Brake Caliper/3.jpeg">
                 </div>
-
-                <h3>
-                    We started FAST FERRUM to build the kind of braking and suspension components we would trust on our
-                    own vehicles—products that balance reliability, proper fitment, and consistent performance without
-                    compromise.
-                </h3>
-                <br>
-                <span>
-                    — FAST FERRUM | Brand Statement
-                </span>
-
-            </div>
-
-            <!-- DESCRIPTION -->
-
-            <div class="ff-about-content">
-
-                <p>
-                    From our early beginnings in [Year Founded], FAST FERRUM was built around a simple idea: critical
-                    automotive components should be engineered with care, manufactured with consistency, and supported
-                    by clear standards. What began as a focused effort to deliver dependable parts has grown into a
-                    brand committed to supporting drivers and technicians across a wide range of vehicle applications.
-
-                </p>
-
-                <p>
-
-                    Every product reflects our emphasis on controlled processes, durable materials, and OE-like
-                    fitment—because long-term reliability and confidence on the road matter.
-                </p>
-
-            </div>
-
-            <!-- CANADA -->
-
-            <div class="ff-about-content">
-
-                <h3>
-                    Built by Canadian.<br>
-                    Driven by Canadian.
-                </h3>
-
-                <p>
-                    FAST FERRUM was founded in Canada with a clear purpose: to create braking and suspension components
-                    designed around the realities of Canadian driving. From long highway commutes and city traffic to
-                    seasonal temperature changes and demanding road conditions, our products are developed with local
-                    needs in mind.
-
-
-                </p>
-
-                <p>
-                    Designed and managed by Canadian teams, FAST FERRUM focuses on durability, material integrity, and
-                    consistent performance. Every component is engineered using controlled processes and defined quality
-                    standards to help ensure proper fitment, dependable operation, and long-term reliability in everyday
-                    driving environments.
-
-                    We believe reliability isn’t optional—it’s essential. That’s why FAST FERRUM products are built to
-                    support vehicles that Canadians rely on every day, delivering confidence on the road through all
-                    seasons.
-                </p>
-
-            </div>
-
-            <!-- LARGE IMAGE -->
-
-            <div class="ff-about-image ff-about-image-wide">
-                <img src="About/3.png" alt="">
-            </div>
-
-            <!-- QUALITY -->
-
-            <div class="ff-about-grid">
-
-                <div class="ff-about-copy">
-
-                    <h3>Quality Beyond the Product</h3>
-
-                    <p>
-                        Quality at FAST FERRUM extends beyond the component itself. Packaging is designed to protect
-                        products during handling and transport, helping ensure parts arrive in proper condition. Clear
-                        labeling and organized presentation support easy identification and efficient installation,
-                        reflecting the same attention to detail applied throughout development and production.
-
-                    </p>
-
-                    <p>
-
-                        By aligning product design, manufacturing standards, and packaging practices, FAST FERRUM
-                        delivers a reliable and professional ownership experience from unboxing to installation.
-                    </p>
-
+                <div class="slide">
+                    <img src="Brake Calipers/Brake Caliper/4.jpeg">
                 </div>
-
-                <div class="ff-about-image ff-about-image-box">
-                    <img src="About/2.png" alt="">
+                <div class="slide">
+                    <img src="Brake Calipers/Brake Caliper/5.jpeg">
                 </div>
-
+                <div class="slide">
+                    <img src="Brake Calipers/Brake Caliper/6.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake Calipers/Brake Caliper/7.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake Calipers/Brake Caliper/8.jpeg">
+                </div>
             </div>
 
-            <div class="ff-about-divider"></div>
+            <button class="carousel-btn next">&#10095;</button>
 
-            <!-- WARRANTY -->
+        </div>
 
-            <h2 class="ff-about-title ff-about-title-small">
-                WARRANTY & SUPPORT
-            </h2>
+    </section> -->
 
-            <div class="ff-about-grid">
+    <!-- ICONS BAR -->
 
-                <div class="ff-about-image ff-about-image-warranty">
-                    <img src="About/4.png" alt="">
-                </div>
+    <section class=" icons-bar">
 
-                <div class="ff-about-copy">
+        <div class="icons-grid">
 
-                    <h3>Warranty & Support</h3>
-
-                    <p>
-                        FAST FERRUM products are backed by a limited manufacturer warranty covering defects in materials
-                        and workmanship. This warranty reflects the brand’s commitment to consistent quality and
-                        controlled production standards.
-
-                        To help ensure proper performance and safety:
-
-                    </p>
-
-                    <ul class="ff-about-list">
-
-                        <li>
-                            Installation should be performed by qualified technicians
-                        </li>
-
-                        <li>
-                            Vehicle compatibility should always be verified prior to installation
-                        </li>
-
-                        <li>
-                            For warranty claims, technical assistance, or product support, customers can contact the
-                            FAST FERRUM support team
-                        </li>
-
-                    </ul>
-
-                </div>
-
+            <div class="icon-item">
+                <div class="icon-circle"><img src="Brake Calipers/icon 1.png" alt=""></div>
+                <h6>
+                    Anti Rust Coating
+                    <p class="Italic">Revêtement anti-rouille</p>
+                </h6>
             </div>
 
-            <!-- COMMITMENT -->
-
-            <div class="ff-about-content">
-
-                <h3>Our Commitment</h3>
-
-                <p>
-                    Since its establishment in [Year Founded], FAST FERRUM has remained committed to building automotive
-                    components that drivers and technicians can trust. Through controlled processes, practical
-                    engineering, and defined quality standards, the brand continues to focus on reliability, proper fit,
-                    and everyday performance.
-                </p>
-
+            <div class="icon-item">
+                <div class="icon-circle"><img src="Brake Calipers/icon 2.png" alt=""></div>
+                <h6>Leak-free
+                    <p class="Italic">Étanchéité garantie</p>
+                </h6>
             </div>
 
-            <div class="ff-about-bottomline">
-                FAST FERRUM — BUILT WITH PURPOSE, ENGINEERED FOR CONFIDENCE.
+            <div class="icon-item">
+                <div class="icon-circle"><img src="Brake Calipers/icon 3.png" alt=""></div>
+                <h6>Assembly Hardware Included
+                    <p class="Italic">Kit de fixation inclus</p>
+                </h6>
             </div>
 
         </div>
 
     </section>
+
+    <!-- SECOND BUY -->
+
+    <section class="container intro">
+
+        <div class="buy-section">
+
+            <h2 class="buy-title">WHERE TO BUY</h2>
+
+            <div class="buy-buttons">
+                <a href="#" class="buy-btn"><img src="Logos/amazon.svg" alt=""></a>
+                <a href="#" class="buy-btn"><img src="Logos/PA Logo white.svg" alt=""></a>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="container faq-section">
+
+        <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+
+        <div class="faq-wrap">
+
+            <div class="faq-item active">
+                <div class="faq-question">
+                    Are Pro brake calipers suitable for regular daily driving?
+                    <span>⌄</span>
+                </div>
+
+                <div class="faq-answer">
+                    Yes, Pro brake calipers are fully suitable for daily driving. They are designed to provide smooth
+                    operation and dependable braking performance while also supporting more demanding driving
+                    situations.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do they perform well under high temperatures?
+                    <span>⌄</span>
+                </div>
+
+                <div class="faq-answer">
+                    Yes, FAST FERRUM Pro brake calipers are engineered to manage heat efficiently and maintain
+                    consistent braking performance during repeated or heavy braking.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do Pro brake calipers improve braking response?
+                    <span>⌄</span>
+                </div>
+
+                <div class="faq-answer">
+                    Yes, Pro brake calipers are designed to provide more controlled and precise brake engagement,
+                    helping improve overall braking feel and confidence compared to standard calipers.
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- =========================================================
 FOOTER
 ========================================================= -->
@@ -1147,7 +1275,7 @@ FOOTER
 
                 <h3>Quick Links</h3>
 
-                <a href="home.html">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="quality.html">Quality</a>
                 <a href="blogs.html">Blogs</a>
@@ -1181,22 +1309,61 @@ FOOTER
 
     </footer>
 
-    <!-- =========================================================
-JS
-========================================================= -->
-
     <script>
 
+        const carousel = document.querySelector('.carousel');
 
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
+        const track = carousel.querySelector('.carousel-track');
+        const slides = carousel.querySelectorAll('.slide');
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
+        const nextBtn = carousel.querySelector('.next');
+        const prevBtn = carousel.querySelector('.prev');
+
+        let index = 0;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+
+            index++;
+
+            if (index >= slides.length) {
+                index = 0;
+            }
+
+            updateCarousel();
+
+        });
+
+        prevBtn.addEventListener('click', () => {
+
+            index--;
+
+            if (index < 0) {
+                index = slides.length - 1;
+            }
+
+            updateCarousel();
+
+        });
+
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', () => {
+
+                item.classList.toggle('active');
+
+            });
+
         });
 
     </script>
-
 </body>
 
 </html>
