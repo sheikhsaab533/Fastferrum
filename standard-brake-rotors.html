@@ -68,21 +68,35 @@
 
         }
 
+
+        .topbar-wrap {
+            width: 1350px;
+            /* Same as your hero/banner */
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #005d92;
+        }
+
         .topbar {
             padding: 16px 0 8px;
+            padding-left: 0px;
+
             font-size: 10px;
-            color: #ffffff;
             font-weight: 600;
             letter-spacing: .3px;
-            background-color: #05689A;
-            width: 100%;
-            max-width: 100%;
-            margin: auto;
 
-            /* CHANGE THESE VALUES */
-            padding-left: 170px;
-            padding-right: px;
+            color: #fff;
+
+            width: 100%;
+            max-width: 1000px;
+            /* Same as your container */
+            margin: 0 auto;
+
+            padding-left: 40px;
+            /* Same as container left padding */
+            padding-right: 40px;
         }
+
 
         .navbar {
             display: flex;
@@ -96,27 +110,66 @@ HERO
 ========================================================= */
 
         .hero {
-            padding-top: 90px;
-            padding-bottom: 90px;
+            padding: 0;
+            background: #f5f5f5;
         }
 
-        .hero-wrap {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 50px;
+        .hero-wrapper {
+            position: relative;
+            width: 1350px;
+            max-width: 100%;
+            height: 660px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .52);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            padding-left: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero h1 {
-            font-size: 64px;
-            color: #6c6c6c;
-            line-height: 1.1;
+            width: 500px;
+            font-size: 36px;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 15px;
             font-weight: 700;
         }
 
-        .hero-image img {
-            max-width: 650px;
-            margin-left: auto;
+        .hero p {
+            width: 400px;
+            color: #e8e8e8;
+            font-size: 18px;
+            line-height: 1.7;
         }
 
         /* =========================================================
@@ -220,34 +273,6 @@ COLOR VARIANTS
         .elite .pad-info {
             background: #222;
             color: #fff;
-        }
-
-        /* =========================================================
-HERO
-========================================================= */
-
-        .hero {
-            padding-top: 90px;
-            padding-bottom: 90px;
-        }
-
-        .hero-wrap {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .hero h1 {
-            font-size: 64px;
-            color: #6c6c6c;
-            line-height: 1.1;
-            font-weight: 700;
-        }
-
-        .hero-image img {
-            max-width: 650px;
-            margin-left: auto;
         }
 
         /* =========================================================
@@ -376,63 +401,6 @@ HERO
         .nav-links a:hover {
             background: #0A6EA8;
             color: #fff;
-        }
-
-
-
-        /* =========================================================
-   HERO
-========================================================= */
-
-
-        .hero {
-            width: 100%;
-            margin: 0px;
-            padding-top: 40px;
-            padding-bottom: 10px;
-            background: #05689A;
-        }
-
-        /* FULL WIDTH BACKGROUND */
-
-        .hero-bg {
-            width: 100%;
-
-
-        }
-
-        /* CONTAINER CONTENT */
-
-        .hero-wrap {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-
-            align-items: center;
-
-            gap: 40px;
-        }
-
-        /* TEXT */
-
-        .hero h1 {
-            font-size: 30px;
-            line-height: 1.05;
-            color: #ffffff;
-            font-weight: 670;
-        }
-
-        /* IMAGE */
-
-        .hero-image {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .hero-image {
-            width: 100%;
-            max-width: 700px;
-            margin-bottom: 0px;
-            padding-bottom: 0px;
         }
 
         /* =========================================================
@@ -602,26 +570,22 @@ HERO
         .carousel {
             position: relative;
             overflow: hidden;
+            margin-bottom: 40px;
         }
 
         .carousel-track {
             display: flex;
             transition: transform .5s ease;
-            position: relative;
-            z-index: 1;
-            height: 800px;
         }
 
         .slide {
             flex: 0 0 100%;
-            position: relative;
         }
 
         .slide img {
             width: 100%;
-            display: block;
-            position: relative;
-            z-index: 1;
+            height: 500px;
+            object-fit: cover;
         }
 
         /* BUTTONS */
@@ -662,7 +626,10 @@ HERO
         }
 
         .icons-bar {
-            background: #005d92;
+            width: 1350px;
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #005d92;
             padding: 50px 40px;
         }
 
@@ -903,8 +870,12 @@ HEADER
 
     <header>
 
-        <div class="topbar">
-            CANADA'S #1 AUTO PARTS STORE
+         <div class="topbar-wrap">
+
+            <div class="topbar">
+                CANADA'S #1 AUTO PARTS STORE
+            </div>
+
         </div>
 
         <div class="container navbar">
@@ -945,7 +916,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        <a href="rack&pinions.html"> Rack & Pinions</a>
+                        
 
                     </div>
 
@@ -963,31 +934,27 @@ HEADER
     <!-- =========================================================
 HERO
 ========================================================= -->
-    <section class=" hero">
+      <section class="hero">
 
-        <!-- FULL WIDTH BACKGROUND -->
+        <div class="hero-wrapper">
 
-        <div class="hero-bg">
+            <img src="Brake Rotors/brake rotors Hero.png" class="hero-image">
 
-            <!-- CONTENT LIMITED TO CONTAINER -->
+            <div class="hero-overlay"></div>
 
-            <div class="container">
+            <div class="hero-content">
 
-                <div class="hero-wrap">
+                <h1>
+                    FAST FERRUM
+                    <br>
+                    Brake Rotors-Standard
+                </h1>
 
-                    <div>
-                        <h1>
-                            FAST FERRUM
-                            <br>
-                            Brake Rotors - STANDARD
-                        </h1>
-                    </div>
-
-                    <div class="hero-image">
-                        <img src="Brake Rotors/brake rotors Hero.png">
-                    </div>
-
-                </div>
+                <p>
+                    Precision engineered brake calipers built for
+                    superior control and dependable braking
+                    performance.
+                </p>
 
             </div>
 
@@ -1046,9 +1013,41 @@ HERO
 
         <div class="container features-box">
 
-            <div class="features-image">
-                <img src="Brake Rotors/brake pads Standard 2.png" alt="">
+           <div class="carousel">
+
+            <button class="carousel-btn prev">&#10094;</button>
+
+            <div class="carousel-track">
+
+                <div class="slide">
+                    <img src="Brake Rotors/Standard/1.jpeg">
+                </div>
+
+                <div class="slide">
+                    <img src="Brake Rotors/Standard/2.jpeg">
+                </div>
+
+                <div class="slide">
+                    <img src="Brake Rotors/Standard/3.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake Rotors/Standard/4.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake Rotors/Standard/5.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake Rotors/Standard/6.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake Rotors/Standard/7.jpeg">
+                </div>
+
             </div>
+
+            <button class="carousel-btn next">&#10095;</button>
+
+        </div>
 
             <div class="features-grid">
 
@@ -1094,7 +1093,7 @@ HERO
     </section>
 
     <!-- IMAGE CAROUSEL -->
-
+<!-- 
     <section class="carousel-section">
 
         <div class="carousel">
@@ -1133,7 +1132,7 @@ HERO
 
         </div>
 
-    </section>
+    </section> -->
 
     <!-- ICONS BAR -->
 
