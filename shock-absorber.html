@@ -67,21 +67,32 @@
             z-index: 999;
 
         }
+   .topbar-wrap {
+            width: 1350px;
+            /* Same as your hero/banner */
+            max-width: 100%;
+            margin: 0 auto;
+            background: #717171;
+        }
 
         .topbar {
             padding: 16px 0 8px;
+            padding-left: 0px;
+
             font-size: 10px;
-            color: #ffffff;
             font-weight: 600;
             letter-spacing: .3px;
-            background-color: #717171;
-            width: 100%;
-            max-width: 100%;
-            margin: auto;
 
-            /* CHANGE THESE VALUES */
-            padding-left: 170px;
-            padding-right: px;
+            color: #fff;
+
+            width: 100%;
+            max-width: 1000px;
+            /* Same as your container */
+            margin: 0 auto;
+
+            padding-left: 40px;
+            /* Same as container left padding */
+            padding-right: 40px;
         }
 
         .navbar {
@@ -322,45 +333,72 @@ COLOR VARIANTS
             color: #fff;
         }
 
-/* =========================================================
+        /* =========================================================
    HERO
 ========================================================= */
+     .hero {
+            padding: 0;
+            background: #f5f5f5;
+        }
 
-.hero {
-    width: 100%;
-    margin: 0;
-    padding: 40px 0 20px; /* top right/left bottom */
-    background: #fff;
-}
+        .hero-wrapper {
+            position: relative;
+            width: 1350px;
+            max-width: 100%;
+            height: 660px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
 
-.hero-bg {
-    width: 100%;
-}
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.hero-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    align-items: center;
-    gap: 40px;
-}
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .52);
+            z-index: 1;
+        }
 
-.hero h1 {
-    font-size: 30px;
-    line-height: 1.05;
-    color: #717171;
-    font-weight: 670;
-}
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            padding-left: 50px;
 
-.hero-image {
-    display: flex;
-    justify-content: flex-end;
-}
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.hero-image img {
-    width: 100%;
-    max-width: 700px;
-    margin-left: auto;
-}
+        .hero h1 {
+            width: 500px;
+            font-size: 36px;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            width: 400px;
+            color: #e8e8e8;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
         /* =========================================================
    HERO BUTTONS
 ========================================================= */
@@ -528,26 +566,22 @@ COLOR VARIANTS
         .carousel {
             position: relative;
             overflow: hidden;
+            margin-bottom: 40px;
         }
 
         .carousel-track {
             display: flex;
             transition: transform .5s ease;
-            position: relative;
-            z-index: 1;
-            height: 800px;
         }
 
         .slide {
             flex: 0 0 100%;
-            position: relative;
         }
 
         .slide img {
             width: 100%;
-            display: block;
-            position: relative;
-            z-index: 1;
+            height: 500px;
+            object-fit: cover;
         }
 
         /* BUTTONS */
@@ -588,6 +622,9 @@ COLOR VARIANTS
         }
 
         .icons-bar {
+            width: 1350px;
+            max-width: 100%;
+            margin: 0 auto;
             background: #717171;
             padding: 50px 40px;
         }
@@ -618,66 +655,67 @@ COLOR VARIANTS
             margin: 0 auto 18px;
         }
 
-.brake-comparison {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    margin-top: 60px;
-}
+        .brake-comparison {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-top: 60px;
+        }
 
-.compare-card {
-    text-align: center;
-}
+        .compare-card {
+            text-align: center;
+        }
 
-.compare-card img {
-    width: 100%;
-    max-width: 260px;
-    margin-bottom: 20px;
-}
+        .compare-card img {
+            width: 100%;
+            max-width: 260px;
+            margin-bottom: 20px;
+        }
 
-.compare-card h3 {
-    margin-bottom: 15px;
-}
+        .compare-card h3 {
+            margin-bottom: 15px;
+        }
 
-.pro-red {
-    color: #e30613;
-}
+        .pro-red {
+            color: #e30613;
+        }
 
-.compare-desc {
-    min-height: 70px;
-    margin-bottom: 0px;
-}
+        .compare-desc {
+            min-height: 70px;
+            margin-bottom: 0px;
+        }
 
-.compare-row {
-    min-height: 72px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 6px 0;
-}
+        .compare-row {
+            min-height: 72px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 6px 0;
+        }
 
-.compare-row strong {
-    display: block;
-    margin-bottom: 5px;
-}
+        .compare-row strong {
+            display: block;
+            margin-bottom: 5px;
+        }
 
-.compare-divider {
-    width: 140px;
-    height: 1px;
-    background: #d8d8d8;
-    margin: 20px auto;
-}
+        .compare-divider {
+            width: 140px;
+            height: 1px;
+            background: #d8d8d8;
+            margin: 20px auto;
+        }
 
-.compare-bottom {
-    font-weight: 700;
-    min-height: 80px;
-}
+        .compare-bottom {
+            font-weight: 700;
+            min-height: 80px;
+        }
 
-@media (max-width: 991px) {
-    .brake-comparison {
-        grid-template-columns: 1fr;
-    }
-}
+        @media (max-width: 991px) {
+            .brake-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .faq-section {
             padding: 0 40px 100px;
         }
@@ -746,7 +784,7 @@ COLOR VARIANTS
         footer {
             background: #fff;
             border-top: 1px solid #e5e5e5;
-           
+
         }
 
         .footer-grid {
@@ -849,8 +887,12 @@ HEADER
 
     <header>
 
-        <div class="topbar">
-            CANADA'S #1 AUTO PARTS STORE
+        <div class="topbar-wrap">
+
+            <div class="topbar">
+                CANADA'S #1 AUTO PARTS STORE
+            </div>
+
         </div>
 
         <div class="container navbar">
@@ -891,7 +933,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        <a href="rack&pinions.html"> Rack & Pinions</a>
+
 
                     </div>
 
@@ -909,56 +951,58 @@ HEADER
     <!-- =========================================================
 HERO
 ========================================================= -->
-    <section class=" hero">
+      <section class="hero">
 
-        <!-- FULL WIDTH BACKGROUND -->
+        <div class="hero-wrapper">
 
-        <div class="hero-bg">
+            <img src="Shock Absorbers/shock absorbers features.png" class="hero-image">
 
-            <!-- CONTENT LIMITED TO CONTAINER -->
+            <div class="hero-overlay"></div>
 
-            <div class="container">
+            <div class="hero-content">
 
-                <div class="hero-wrap">
+                <h1>
+                    FAST FERRUM
+                    <br>
+                    Shock Absorbers-PRO
+                </h1>
 
-                    <div>
-                        <h1>
-                            FAST FERRUM
-                            <br>
-                            Shock Absorbers-PRO
-                        </h1>
-                    </div>
-
-                    <div class="hero-image">
-                        <img src="Shock Absorbers/shock absorbers features.png">
-                    </div>
-
-                </div>
+                <p>
+                    Precision engineered brake calipers built for
+                    superior control and dependable braking
+                    performance.
+                </p>
 
             </div>
 
         </div>
 
     </section>
+
     <!-- PRODUCT INTRO -->
 
     <section class="container intro">
 
         <h2 class="section-title">
             Professional-Grade Shock Absorbers Engineered for Superior Ride Control
-            
+
         </h2>
 
         <div class="intro-grid">
 
             <div class="intro-text">
                 <p>
-                    FAST FERRUM Pro Shock Absorbers are engineered using premium-grade components designed to meet or exceed OEM standards. Built for drivers who expect enhanced ride comfort, improved vehicle stability, and dependable long-term performance, these shock absorbers are developed to deliver smoother handling with greater road confidence.
+                    FAST FERRUM Pro Shock Absorbers are engineered using premium-grade components designed to meet or
+                    exceed OEM standards. Built for drivers who expect enhanced ride comfort, improved vehicle
+                    stability, and dependable long-term performance, these shock absorbers are developed to deliver
+                    smoother handling with greater road confidence.
                 </p>
 
                 <p>
-                    
-Manufactured with precision damping technology and durable internal construction, FAST FERRUM Pro Shock Absorbers help reduce unwanted body movement, improve road contact, and maintain a refined driving experience across everyday commuting and demanding road conditions.
+
+                    Manufactured with precision damping technology and durable internal construction, FAST FERRUM Pro
+                    Shock Absorbers help reduce unwanted body movement, improve road contact, and maintain a refined
+                    driving experience across everyday commuting and demanding road conditions.
                 </p>
 
             </div>
@@ -992,8 +1036,40 @@ Manufactured with precision damping technology and durable internal construction
 
         <div class="container features-box">
 
-            <div class="features-image">
-                <img src="Shock Absorbers/shock absorbers features.png" alt="">
+            <div class="carousel">
+
+                <button class="carousel-btn prev">&#10094;</button>
+
+                <div class="carousel-track">
+
+                    <div class="slide">
+                        <img src="Shock Absorbers/1.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="Shock Absorbers/2.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="Shock Absorbers/3.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Shock Absorbers/4.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Shock Absorbers/5.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Shock Absorbers/6.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Shock Absorbers/7.jpeg">
+                    </div>
+
+                </div>
+
+                <button class="carousel-btn next">&#10095;</button>
+
             </div>
 
             <div class="features-grid">
@@ -1008,7 +1084,7 @@ Manufactured with precision damping technology and durable internal construction
                 <div class="feature">
                     <h3>Smooth & Controlled Handling</h3>
                     <p>
-                       Designed to minimize excessive bouncing and deliver a more refined driving experience.
+                        Designed to minimize excessive bouncing and deliver a more refined driving experience.
                     </p>
                 </div>
 
@@ -1029,7 +1105,7 @@ Manufactured with precision damping technology and durable internal construction
                 <div class="feature">
                     <h3>Enhanced Comfort & Driving Confidence</h3>
                     <p>
-                      Supports improved suspension response for smoother cornering and everyday comfort.
+                        Supports improved suspension response for smoother cornering and everyday comfort.
                     </p>
                 </div>
 
@@ -1040,7 +1116,7 @@ Manufactured with precision damping technology and durable internal construction
     </section>
 
     <!-- IMAGE CAROUSEL -->
-
+    <!-- 
     <section class="carousel-section">
 
         <div class="carousel">
@@ -1079,7 +1155,7 @@ Manufactured with precision damping technology and durable internal construction
 
         </div>
 
-    </section>
+    </section> -->
 
     <!-- ICONS BAR -->
 
@@ -1087,7 +1163,7 @@ Manufactured with precision damping technology and durable internal construction
 
         <div class="icons-grid">
 
-           <div class="icon-item">
+            <div class="icon-item">
                 <div class="icon-circle"><img src="Complete Strut assembly/icon 1.png" alt=""></div>
                 <h6>
                     Nitrogen Charged
@@ -1130,8 +1206,8 @@ Manufactured with precision damping technology and durable internal construction
         </div>
 
         <div class="divider"></div>
-   </section>
-       
+    </section>
+
 
     <!-- FAQ -->
 
@@ -1143,12 +1219,13 @@ Manufactured with precision damping technology and durable internal construction
 
             <div class="faq-item active">
                 <div class="faq-question">
-                   Are Pro shock absorbers suitable for everyday driving?
+                    Are Pro shock absorbers suitable for everyday driving?
                     <span>⌄</span>
                 </div>
 
                 <div class="faq-answer">
-                   Yes, Pro shock absorbers are designed for daily driving while delivering improved comfort, smoother suspension performance, and better vehicle control.
+                    Yes, Pro shock absorbers are designed for daily driving while delivering improved comfort, smoother
+                    suspension performance, and better vehicle control.
                 </div>
             </div>
 
@@ -1159,18 +1236,20 @@ Manufactured with precision damping technology and durable internal construction
                 </div>
 
                 <div class="faq-answer">
-                   Yes, they help reduce road impact and unwanted vehicle movement, creating a smoother and more controlled driving experience.
+                    Yes, they help reduce road impact and unwanted vehicle movement, creating a smoother and more
+                    controlled driving experience.
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                   Do Pro shock absorbers enhance handling performance?
+                    Do Pro shock absorbers enhance handling performance?
                     <span>⌄</span>
                 </div>
 
                 <div class="faq-answer">
-                    Yes, they are engineered to improve stability, suspension response, and overall driving confidence across different road conditions.
+                    Yes, they are engineered to improve stability, suspension response, and overall driving confidence
+                    across different road conditions.
                 </div>
             </div>
 

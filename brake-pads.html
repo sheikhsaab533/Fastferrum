@@ -430,51 +430,72 @@ HERO
    HERO BUTTONS
 ========================================================= */
 
-        .hero-buttons {
-            display: flex;
-            gap: 22px;
+        .hero {
+            padding: 0;
+            background: #f5f5f5;
         }
 
-        .hero-btn {
-            background: #fff;
-            color: #666;
-
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
-            padding: 8px 28px;
-
-            font-size: 14px;
-            font-weight: 500;
-
-            transition: .35s ease;
+        .hero-wrapper {
+            position: relative;
+            width: 1350px;
+            max-width: 100%;
+            height: 660px;
+            margin: 0 auto;
+            overflow: hidden;
         }
 
-        .hero-btn:hover {
-            background: #0A6EA8;
-            color: #fff;
-            transform: translateY(-3px);
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .arrow-circle {
-            width: 26px;
-            height: 26px;
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.52);
+            z-index: 1;
+        }
 
-            border-radius: 50%;
-            border: 1px solid #8b8b8b;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+
+            margin: 0 auto;
+            padding-left: 50px;
 
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-
-            font-size: 24px;
-            transition: .35s ease;
         }
 
-        .hero-btn:hover .arrow-circle {
-            border-color: #fff;
+        .hero h1 {
+            width: 500px;
+            font-size: 36px;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
+
+        .hero p {
+            width: 300px;
+            color: #e8e8e8;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
 
         /* =========================================================
    GLOBAL SECTION SPACING
@@ -649,7 +670,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        <a href="rack&pinions.html"> Rack & Pinions</a>
+                        
 
                     </div>
 
@@ -667,31 +688,40 @@ HEADER
     <!-- =========================================================
 HERO
 ========================================================= -->
-    <section class="hero">
+    
+ <section class="hero">
 
-        <!-- FULL WIDTH BACKGROUND -->
+        <div class="hero-wrapper">
 
-        <div class="hero-bg">
+            <img src="Product page brake pads/brake pads Hero.png" class="hero-image">
 
-            <!-- CONTENT LIMITED TO CONTAINER -->
+            <div class="hero-overlay"></div>
 
-            <div class="container">
+            <div class="hero-content">
 
-                <div class="hero-wrap">
+                <h1>
+                   Fast Ferrum 
+                   <br>
+                   Brake Pads
+                </h1>
 
-                    <div>
-                        <h1>
-                            FAST FERRUM
-                            <br>
-                            BRAKE PADS
-                        </h1>
-                    </div>
+                <!-- <p>
+                   What Fast Ferrum is
+                </p> -->
 
-                    <div class="hero-image">
-                        <img src="Brake pads/brake pads Hero.png">
-                    </div>
+                <!-- <div class="hero-buttons">
 
-                </div>
+                    <a href="#products" class="hero-btn">
+
+                        View Products
+
+                        <span class="arrow-circle">
+                            →
+                        </span>
+
+                    </a>
+
+                </div> -->
 
             </div>
 

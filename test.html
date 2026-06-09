@@ -68,21 +68,33 @@
 
         }
 
-        .topbar {
-            padding: 16px 0 8px;
-            font-size: 10px;
-            color: #777;
-            font-weight: 600;
-            letter-spacing: .3px;
+
+        .topbar-wrap {
+            width: 1350px;
+            /* Same as your hero/banner */
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #005d92;
         }
 
-        header {
+        .topbar {
+            padding: 16px 0 8px;
+            padding-left: 0px;
+
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .3px;
+
+            color: #fff;
+
             width: 100%;
-            background: #fff;
-            border-bottom: 1px solid #e8e8e8;
-            position: sticky;
-            top: 0;
-            z-index: 999;
+            max-width: 1000px;
+            /* Same as your container */
+            margin: 0 auto;
+
+            padding-left: 40px;
+            /* Same as container left padding */
+            padding-right: 40px;
         }
 
         .navbar {
@@ -90,6 +102,73 @@
             align-items: center;
             justify-content: space-between;
             padding: 20px 1px 0 28px;
+        }
+
+        /* =========================================================
+HERO
+========================================================= */
+
+        .hero {
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        .hero-wrapper {
+            position: relative;
+            width: 1350px;
+            max-width: 100%;
+            height: 660px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .52);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            padding-left: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            width: 500px;
+            font-size: 36px;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            width: 400px;
+            color: #e8e8e8;
+            font-size: 18px;
+            line-height: 1.7;
         }
 
         /* =========================================================
@@ -200,7 +279,7 @@ COLOR VARIANTS
 ========================================================= */
 
         .logo {
-            width: 160px;
+            width: 110px;
 
             /* CHANGE LOGO SPACING */
             margin-right: 40px;
@@ -321,72 +400,6 @@ COLOR VARIANTS
         .nav-links a:hover {
             background: #0A6EA8;
             color: #fff;
-        }
-
-        /* =========================================================
-   HERO
-========================================================= */
-        .hero {
-            padding: 0;
-            background: #f5f5f5;
-        }
-
-        .hero-wrapper {
-            position: relative;
-            width: 1350px;
-            max-width: 100%;
-            height: 660px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, .52);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 1000px;
-            height: 100%;
-            margin: 0 auto;
-            padding-left: 50px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .hero h1 {
-            width: 500px;
-            font-size: 36px;
-            line-height: 1.05;
-            color: #fff;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            width: 400px;
-            color: #e8e8e8;
-            font-size: 18px;
-            line-height: 1.7;
         }
 
         /* =========================================================
@@ -515,7 +528,7 @@ COLOR VARIANTS
         }
 
         .buy-btn {
-            background: #717171;
+            background: #005d92;
             color: #fff;
             padding: 20px 30px;
             text-decoration: none;
@@ -552,8 +565,7 @@ COLOR VARIANTS
             line-height: 1.7;
             color: #444;
         }
-
-        .carousel {
+ .carousel {
             position: relative;
             overflow: hidden;
             margin-bottom: 40px;
@@ -615,7 +627,7 @@ COLOR VARIANTS
             width: 1350px;
             max-width: 100%;
             margin: 0 auto;
-            background: #717171;
+            background-color: #005d92;
             padding: 50px 40px;
         }
 
@@ -623,7 +635,7 @@ COLOR VARIANTS
             max-width: 1180px;
             margin: auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             text-align: center;
         }
@@ -767,6 +779,10 @@ COLOR VARIANTS
 
         }
 
+
+
+
+
         /* =========================================================
    FOOTER
 ========================================================= */
@@ -774,7 +790,7 @@ COLOR VARIANTS
         footer {
             background: #fff;
             border-top: 1px solid #e5e5e5;
-
+            margin-top: 100px;
         }
 
         .footer-grid {
@@ -877,15 +893,19 @@ HEADER
 
     <header>
 
-        <div class="container topbar">
-            CANADA'S #1 AUTO PARTS STORE
+        <div class="topbar-wrap">
+
+            <div class="topbar">
+                CANADA'S #1 AUTO PARTS STORE
+            </div>
+
         </div>
 
         <div class="container navbar">
 
             <div class="logo">
                 <div class="logo-placeholder">
-                    <img src="Logos/fast ferrum pro.svg" alt="">
+                    <img src="Logos/Fast Ferrum basic.svg" alt="">
                 </div>
             </div>
 
@@ -920,6 +940,7 @@ HEADER
                             Complete Strut Assembly
                         </a>
 
+
                     </div>
 
                 </div>
@@ -940,7 +961,7 @@ HERO
 
         <div class="hero-wrapper">
 
-            <img src="Brake Calipers/brake pads Hero.png" class="hero-image">
+            <img src="Brake pads/brake pads Hero.png" class="hero-image">
 
             <div class="hero-overlay"></div>
 
@@ -949,7 +970,7 @@ HERO
                 <h1>
                     FAST FERRUM
                     <br>
-                    Brake Calipers-PRO
+                    Brake Pads-Standard
                 </h1>
 
                 <p>
@@ -968,31 +989,32 @@ HERO
     <section class="container intro">
 
         <h2 class="section-title">
-            Precision Engineered Brake Calipers Built for Superior Control
-
+            Pro Ceramic Brake Pads Engineered for Maximum Performance
         </h2>
 
         <div class="intro-grid">
 
             <div class="intro-text">
                 <p>
-                    FAST FERRUM Pro Brake Calipers are engineered using premium-grade components designed to meet or
-                    exceed OEM standards. Built for drivers who expect confident braking, improved heat management, and
-                    long-term reliability, these brake calipers deliver precise braking control with consistent clamping
-                    force.
+                    FAST FERRUM Standard Ceramic Brake Pads are engineered with a
+                    clean and smooth braking experience for dependable everyday
+                    driving.
                 </p>
 
                 <p>
-
-                    Manufactured with high-strength materials and precision-machined internals, FAST FERRUM Pro Brake
-                    Calipers are designed to support smoother braking performance, improved pedal feel, and dependable
-                    operation across daily driving and demanding conditions.
+                    Designed for daily use, these brake pads deliver low dust,
+                    reduced noise, and reliable stopping performance.
                 </p>
 
+                <p>
+                    Manufactured with advanced ceramic formulation and precision
+                    engineering, FAST FERRUM brake pads support smooth braking in
+                    urban, highway, and regular driving conditions.
+                </p>
             </div>
 
             <div>
-                <img src="Brake Calipers/Brake_Caliper_Mockup.jpg" alt="">
+                <img src="Brake pads/Brake pads 1 Basic.jpg" alt="">
             </div>
 
         </div>
@@ -1022,77 +1044,80 @@ HERO
 
             <div class="carousel">
 
-                <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn prev">&#10094;</button>
 
-                <div class="carousel-track">
+            <div class="carousel-track">
 
-                    <div class="slide">
-                        <img src="Brake Calipers/Brake Caliper/1.jpeg">
-                    </div>
-
-                    <div class="slide">
-                        <img src="Brake Calipers/Brake Caliper/2.jpeg">
-                    </div>
-
-                    <div class="slide">
-                        <img src="Brake Calipers/Brake Caliper/3.jpeg">
-                    </div>
-                    <div class="slide">
-                        <img src="Brake Calipers/Brake Caliper/4.jpeg">
-                    </div>
-                    <div class="slide">
-                        <img src="Brake Calipers/Brake Caliper/5.jpeg">
-                    </div>
-                    <div class="slide">
-                        <img src="Brake Calipers/Brake Caliper/6.jpeg">
-                    </div>
-                    <div class="slide">
-                        <img src="Brake Calipers/Brake Caliper/7.jpeg">
-                    </div>
-                    <div class="slide">
-                        <img src="Brake Calipers/Brake Caliper/8.jpeg">
-                    </div>
+                <div class="slide">
+                    <img src="Brake pads/Brake pads img/standard/1.jpeg">
                 </div>
 
-                <button class="carousel-btn next">&#10095;</button>
+                <div class="slide">
+                    <img src="Brake pads/Brake pads img/standard/2.jpeg">
+                </div>
 
+                <div class="slide">
+                    <img src="Brake pads/Brake pads img/standard/3.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake pads/Brake pads img/standard/4.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake pads/Brake pads img/standard/5.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake pads/Brake pads img/standard/6.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake pads/Brake pads img/standard/7.jpeg">
+                </div>
+                <div class="slide">
+                    <img src="Brake pads/Brake pads img/standard/8.jpeg">
+                </div>
             </div>
 
+            <button class="carousel-btn next">&#10095;</button>
+
+        </div>
 
             <div class="features-grid">
 
                 <div class="feature">
-                    <h3>Consistent Braking Force</h3>
+                    <h3>Clean & Smooth Braking</h3>
                     <p>
-                        Engineered to provide balanced and reliable clamping pressure for improved braking confidence.
+                        Carbon fiber and Kevlar reinforced ceramic compound delivers
+                        smoother braking performance.
                     </p>
                 </div>
 
                 <div class="feature">
-                    <h3>Smooth & Controlled Response</h3>
+                    <h3>OEM-Equivalent Fit & Feel</h3>
                     <p>
-                        Designed to deliver precise brake engagement with enhanced pedal feel.
+                        Designed to match original factory equipment for reliable
+                        braking performance.
                     </p>
                 </div>
 
                 <div class="feature">
-                    <h3>Durable High-Strength Construction</h3>
+                    <h3>Advanced Friction Formulation</h3>
                     <p>
-                        Built using premium materials for long-lasting durability and dependable operation.
+                        Formulated to support efficient pedal feel and consistent
+                        stopping power.
                     </p>
                 </div>
 
                 <div class="feature">
-                    <h3>OEM-Equivalent Fit & Performance</h3>
+                    <h3>Quiet Operation</h3>
                     <p>
-                        Designed for accurate fitment and factory-level braking compatibility.
+                        Engineered to help reduce braking noise during daily driving.
                     </p>
                 </div>
 
                 <div class="feature">
-                    <h3>Improved Heat Management</h3>
+                    <h3>Durable Ceramic Construction</h3>
                     <p>
-                        Optimized construction helps maintain stable performance under repeated braking conditions.
+                        Premium grade materials support reliable performance over
+                        time.
                     </p>
                 </div>
 
@@ -1102,9 +1127,9 @@ HERO
 
     </section>
 
-    <!-- IMAGE CAROUSEL
+    <!-- IMAGE CAROUSEL -->
 
-    <section class="carousel-section">
+    <!-- <section class="carousel-section">
 
         <div class="carousel">
 
@@ -1113,30 +1138,30 @@ HERO
             <div class="carousel-track">
 
                 <div class="slide">
-                    <img src="Brake Calipers/Brake Caliper/1.jpeg">
+                    <img src="Brake pads/Brake pads img/standard/1.jpeg">
                 </div>
 
                 <div class="slide">
-                    <img src="Brake Calipers/Brake Caliper/2.jpeg">
+                    <img src="Brake pads/Brake pads img/standard/2.jpeg">
                 </div>
 
                 <div class="slide">
-                    <img src="Brake Calipers/Brake Caliper/3.jpeg">
+                    <img src="Brake pads/Brake pads img/standard/3.jpeg">
                 </div>
                 <div class="slide">
-                    <img src="Brake Calipers/Brake Caliper/4.jpeg">
+                    <img src="Brake pads/Brake pads img/standard/4.jpeg">
                 </div>
                 <div class="slide">
-                    <img src="Brake Calipers/Brake Caliper/5.jpeg">
+                    <img src="Brake pads/Brake pads img/standard/5.jpeg">
                 </div>
                 <div class="slide">
-                    <img src="Brake Calipers/Brake Caliper/6.jpeg">
+                    <img src="Brake pads/Brake pads img/standard/6.jpeg">
                 </div>
                 <div class="slide">
-                    <img src="Brake Calipers/Brake Caliper/7.jpeg">
+                    <img src="Brake pads/Brake pads img/standard/7.jpeg">
                 </div>
                 <div class="slide">
-                    <img src="Brake Calipers/Brake Caliper/8.jpeg">
+                    <img src="Brake pads/Brake pads img/standard/8.jpeg">
                 </div>
             </div>
 
@@ -1153,24 +1178,31 @@ HERO
         <div class="icons-grid">
 
             <div class="icon-item">
-                <div class="icon-circle"><img src="Brake Calipers/icon 1.png" alt=""></div>
+                <div class="icon-circle"><img src="Brake pads/standard/Hardware included.svg" alt=""></div>
                 <h6>
-                    Anti Rust Coating
-                    <p class="Italic">Revêtement anti-rouille</p>
+                    CERAMIC FORMULATION
+                    <p class="Italic">FORMULATION CÉRAMIQUE</p>
                 </h6>
             </div>
 
             <div class="icon-item">
-                <div class="icon-circle"><img src="Brake Calipers/icon 2.png" alt=""></div>
-                <h6>Leak-free
-                    <p class="Italic">Étanchéité garantie</p>
+                <div class="icon-circle"><img src="Brake pads/standard/Hero icon.svg" alt=""></div>
+                <h6>HARDWARE INCLUDED
+                    <p class="Italic">MATÉRIEL INCLUS</p>
                 </h6>
             </div>
 
             <div class="icon-item">
-                <div class="icon-circle"><img src="Brake Calipers/icon 3.png" alt=""></div>
-                <h6>Assembly Hardware Included
-                    <p class="Italic">Kit de fixation inclus</p>
+                <div class="icon-circle"><img src="Brake pads/standard/Noise damping.svg" alt=""></div>
+                <h6>NOISE-DAMPING SHIMS
+                    <p class="Italic">CALES D'AMORTISSEMENT DU BRUIT</p>
+                </h6>
+            </div>
+
+            <div class="icon-item">
+                <div class="icon-circle"><img src="Brake pads/standard/Rotor friendly.svg" alt=""></div>
+                <h6>ROTOR-FRIENDLY
+                    <p class="Italic">COMPATIBLE AVEC LES ROTORS</p>
                 </h6>
             </div>
 
@@ -1194,8 +1226,190 @@ HERO
         </div>
 
         <div class="divider"></div>
-    </section>
 
+        <!-- PRODUCT GRID -->
+
+
+        <h2 class="container section-title">
+            FIND THE RIGHT BRAKE PADS FOR YOU.
+        </h2>
+
+        <div class="container brake-comparison">
+
+            <!-- STANDARD -->
+            <div class="compare-card">
+
+                <img src="Brake pads/Differentiator/standard.png" alt="Standard">
+
+                <h3>Brake Pads STANDARD</h3>
+
+                <p class="compare-desc">
+                    Reliable ceramic braking for everyday driving
+                </p>
+
+                <div class="compare-row">
+                    <strong>Braking Performance</strong>
+                    <span>Everyday</span>
+                </div>
+
+                <div class="compare-row">
+                    <strong>Price</strong>
+                    <span>$</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-row">
+                    <strong>Pedal Feel</strong>
+                    <span>Smooth</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>OEM-equivalent fit & feel</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Clean, smooth braking</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Quiet operation</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Durable ceramic construction</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Carbon fiber & Kevlar-reinforced compound</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-bottom">
+                    Up to long service life<br>
+                    Consistent everyday performance
+                </div>
+
+            </div>
+
+            <!-- PRO -->
+            <div class="compare-card">
+
+                <img src="Brake pads/Differentiator/pro png.png" alt="Pro">
+
+                <h3>Brake Pads <span class="pro-red">PRO</span></h3>
+
+                <p class="compare-desc">
+                    Maximum braking performance with confident control
+                </p>
+
+                <div class="compare-row">
+                    <strong>Braking Performance</strong>
+                    <span>Maximum</span>
+                </div>
+
+                <div class="compare-row">
+                    <strong>Price</strong>
+                    <span>$$</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-row">
+                    <strong>Pedal Feel</strong>
+                    <span>Controlled</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>OEM-equivalent fit & feel</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Strong, consistent stopping power</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Smooth & controlled pedal response</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Reduced noise & cleaner braking</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Carbon fiber & Kevlar-reinforced ceramic compound</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-bottom">
+                    Built for performance-focused daily driving<br>
+                    Enhanced durability
+                </div>
+
+            </div>
+
+            <!-- ELITE -->
+            <div class="compare-card">
+
+                <img src="Brake pads/Differentiator/elite.png" alt="Elite">
+
+                <h3>Brake Pads ELITE</h3>
+
+                <p class="compare-desc">
+                    Refined performance with enhanced braking confidence
+                </p>
+
+                <div class="compare-row">
+                    <strong>Braking Performance</strong>
+                    <span>Enhanced</span>
+                </div>
+
+                <div class="compare-row">
+                    <strong>Price</strong>
+                    <span>$$$</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-row">
+                    <strong>Pedal Feel</strong>
+                    <span>Refined</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>OEM-equivalent feel & precise fit</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Advanced ceramic matrix</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Enhanced braking performance</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Smooth, quiet operation</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Carbon fiber & Kevlar-reinforced ceramic compound</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-bottom">
+                    Thermally stable for consistent braking<br>
+                    Precision-engineered durability
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- FAQ -->
 
@@ -1207,38 +1421,37 @@ HERO
 
             <div class="faq-item active">
                 <div class="faq-question">
-                    Are Pro brake calipers suitable for regular daily driving?
+                    ARE STANDARD BRAKE PADS SUITABLE FOR HIGHWAY DRIVES?
                     <span>⌄</span>
                 </div>
 
                 <div class="faq-answer">
-                    Yes, Pro brake calipers are fully suitable for daily driving. They are designed to provide smooth
-                    operation and dependable braking performance while also supporting more demanding driving
-                    situations.
+                    Yes, FAST FERRUM Standard brake pads are designed for city and
+                    highway driving with dependable stopping performance.
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    Do they perform well under high temperatures?
+                    DO THEY PRODUCE EXCESSIVE NOISE?
                     <span>⌄</span>
                 </div>
 
                 <div class="faq-answer">
-                    Yes, FAST FERRUM Pro brake calipers are engineered to manage heat efficiently and maintain
-                    consistent braking performance during repeated or heavy braking.
+                    No, the ceramic formulation helps reduce vibration and braking
+                    noise during regular driving conditions.
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    Do Pro brake calipers improve braking response?
+                    ARE THEY DISC-FRIENDLY?
                     <span>⌄</span>
                 </div>
 
                 <div class="faq-answer">
-                    Yes, Pro brake calipers are designed to provide more controlled and precise brake engagement,
-                    helping improve overall braking feel and confidence compared to standard calipers.
+                    Yes, the material composition is engineered to support rotor
+                    longevity and smooth braking.
                 </div>
             </div>
 
@@ -1280,6 +1493,7 @@ FOOTER
                 <a href="quality.html">Quality</a>
                 <a href="blogs.html">Blogs</a>
                 <a href="contacts.html">Contact</a>
+
 
             </div>
 
