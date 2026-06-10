@@ -50,8 +50,11 @@
         .container {
             width: 100%;
             max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 40px;
+            margin: auto;
+
+            /* CHANGE THESE VALUES */
+            padding-left: 40px;
+            padding-right: px;
         }
 
         /* =========================================================
@@ -65,23 +68,14 @@
             position: sticky;
             top: 0;
             z-index: 999;
-
         }
 
         .topbar {
             padding: 16px 0 8px;
             font-size: 10px;
-            color: #ffffff;
+            color: #777;
             font-weight: 600;
             letter-spacing: .3px;
-            background-color: #717171;
-            width: 100%;
-            max-width: 100%;
-            margin: auto;
-
-            /* CHANGE THESE VALUES */
-            padding-left: 170px;
-            padding-right: px;
         }
 
         .navbar {
@@ -199,7 +193,7 @@ COLOR VARIANTS
 ========================================================= */
 
         .logo {
-            width: 160px;
+            width: 110px;
 
             /* CHANGE LOGO SPACING */
             margin-right: 40px;
@@ -322,45 +316,77 @@ COLOR VARIANTS
             color: #fff;
         }
 
-/* =========================================================
+
+        /* =========================================================
    HERO
 ========================================================= */
+        .hero {
+            padding: 0;
+            background: #f5f5f5;
+        }
 
-.hero {
-    width: 100%;
-    margin: 0;
-    padding: 40px 0 20px; /* top right/left bottom */
-    background: #fff;
-}
+        .hero-wrapper {
+            position: relative;
+            width: 1350px;
+            max-width: 100%;
+            height: 660px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
 
-.hero-bg {
-    width: 100%;
-}
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.hero-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    align-items: center;
-    gap: 40px;
-}
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.52);
+            z-index: 1;
+        }
 
-.hero h1 {
-    font-size: 30px;
-    line-height: 1.05;
-    color: #717171;
-    font-weight: 670;
-}
+        .hero-content {
+            position: relative;
+            z-index: 2;
 
-.hero-image {
-    display: flex;
-    justify-content: flex-end;
-}
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
 
-.hero-image img {
-    width: 100%;
-    max-width: 700px;
-    margin-left: auto;
-}
+            margin: 0 auto;
+            padding-left: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            width: 500px;
+            font-size: 36px;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            width: 300px;
+            color: #e8e8e8;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+
         /* =========================================================
    HERO BUTTONS
 ========================================================= */
@@ -431,313 +457,6 @@ COLOR VARIANTS
             color: #666;
         }
 
-        .intro {
-            padding: 80px 40px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 38px;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 50px;
-            line-height: 1.1;
-        }
-
-        .intro-grid {
-            max-width: 1000px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .intro-text p {
-            margin-bottom: 20px;
-            color: #444;
-            line-height: 1.8;
-            font-size: 14px;
-        }
-
-        .divider {
-            width: 320px;
-            height: 1px;
-            background: #cfcfcf;
-            margin: 80px auto;
-        }
-
-        .buy-section {
-            text-align: center;
-        }
-
-        .buy-title {
-            font-size: 38px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-        }
-
-        .buy-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            align-items: center;
-
-        }
-
-        .buy-btn {
-            background: #717171;
-            color: #fff;
-            padding: 20px 30px;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .features-wrap {
-            max-width: 1180px;
-            margin: auto;
-            padding: 0 40px 80px;
-        }
-
-        .features-box {
-            background: #e7e7e7;
-            padding: 50px;
-        }
-
-        .features-image {
-            margin-bottom: 40px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 35px;
-        }
-
-        .feature h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .feature p {
-            line-height: 1.7;
-            color: #444;
-        }
-
-        .carousel {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform .5s ease;
-            position: relative;
-            z-index: 1;
-            height: 800px;
-        }
-
-        .slide {
-            flex: 0 0 100%;
-            position: relative;
-        }
-
-        .slide img {
-            width: 100%;
-            display: block;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* BUTTONS */
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-
-            width: 60px;
-            height: 60px;
-
-            border: none;
-            border-radius: 50%;
-
-            background: #fff;
-
-            z-index: 998;
-            /* VERY IMPORTANT */
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            cursor: pointer;
-        }
-
-        /* LEFT */
-
-        .prev {
-            left: 20px;
-        }
-
-        /* RIGHT */
-
-        .next {
-            right: 20px;
-        }
-
-        .icons-bar {
-            background: #717171;
-            padding: 50px 40px;
-        }
-
-        .icons-grid {
-            max-width: 1180px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            text-align: center;
-        }
-
-        .Italic {
-            font-style: italic;
-            font-weight: 200
-        }
-
-        .icon-item {
-            color: #fff;
-        }
-
-        .icon-circle {
-            width: 90px;
-            height: 90px;
-            border: 0px solid #fff;
-            border-radius: 50%;
-            margin: 0 auto 18px;
-        }
-
-.brake-comparison {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    margin-top: 60px;
-}
-
-.compare-card {
-    text-align: center;
-}
-
-.compare-card img {
-    width: 100%;
-    max-width: 260px;
-    margin-bottom: 20px;
-}
-
-.compare-card h3 {
-    margin-bottom: 15px;
-}
-
-.pro-red {
-    color: #e30613;
-}
-
-.compare-desc {
-    min-height: 70px;
-    margin-bottom: 0px;
-}
-
-.compare-row {
-    min-height: 72px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 6px 0;
-}
-
-.compare-row strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.compare-divider {
-    width: 140px;
-    height: 1px;
-    background: #d8d8d8;
-    margin: 20px auto;
-}
-
-.compare-bottom {
-    font-weight: 700;
-    min-height: 80px;
-}
-
-@media (max-width: 991px) {
-    .brake-comparison {
-        grid-template-columns: 1fr;
-    }
-}
-        .faq-section {
-            padding: 0 40px 100px;
-        }
-
-        .faq-title {
-            text-align: center;
-            font-size: 42px;
-            font-weight: 900;
-            margin-bottom: 50px;
-        }
-
-        .faq-wrap {
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .faq-item {
-            background: #f5f5f5;
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
-        }
-
-        .faq-question {
-            padding: 26px 30px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 0 30px 25px;
-            line-height: 1.7;
-            color: #444;
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        @media(max-width:992px) {
-
-            .intro-grid,
-            .features-grid,
-            .icons-grid,
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title,
-            .buy-title,
-            .faq-title {
-                font-size: 32px;
-            }
-
-            .slide img {
-                height: 400px;
-            }
-
-        }
 
         /* =========================================================
    FOOTER
@@ -746,7 +465,7 @@ COLOR VARIANTS
         footer {
             background: #fff;
             border-top: 1px solid #e5e5e5;
-           
+
         }
 
         .footer-grid {
@@ -849,7 +568,7 @@ HEADER
 
     <header>
 
-        <div class="topbar">
+        <div class="container topbar">
             CANADA'S #1 AUTO PARTS STORE
         </div>
 
@@ -857,7 +576,7 @@ HEADER
 
             <div class="logo">
                 <div class="logo-placeholder">
-                    <img src="Logos/fast ferrum pro.svg" alt="">
+                    <img src="Logos/Fast Ferrum basic.svg" alt="">
                 </div>
             </div>
 
@@ -891,7 +610,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        <a href="rack&pinions.html"> Rack & Pinions</a>
+
 
                     </div>
 
@@ -909,129 +628,39 @@ HEADER
     <!-- =========================================================
 HERO
 ========================================================= -->
-    <section class=" hero">
+    <section class="hero">
 
-        <!-- FULL WIDTH BACKGROUND -->
+        <div class="hero-wrapper">
 
-        <div class="hero-bg">
+            <img src="Spark Plugs/Main/hero.jpeg" class="hero-image">
 
-            <!-- CONTENT LIMITED TO CONTAINER -->
+            <div class="hero-overlay"></div>
 
-            <div class="container">
+            <div class="hero-content">
 
-                <div class="hero-wrap">
-
-                    <div>
-                        <h1>
-                            FAST FERRUM
-                            <br>
-                            Spark Plugs-PRO
-                        </h1>
-                    </div>
-
-                    <div class="hero-image">
-                        <img src="Spark Plugs/Spark plugs main.png">
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    <!-- PRODUCT INTRO -->
-
-    <section class="container intro">
-
-        <h2 class="section-title">
-            Professional-Grade Spark Plugs Engineered for Efficient Ignition Performance
-            
-        </h2>
-
-        <div class="intro-grid">
-
-            <div class="intro-text">
-                <p>
-                    FAST FERRUM Pro Spark Plugs are engineered using premium-grade materials designed to meet or exceed OEM standards. Built for drivers who expect reliable engine performance, smoother combustion, and long-lasting durability, these spark plugs are developed to deliver consistent ignition and optimized engine response.
-                </p>
+                <h1>
+                    Fast Ferrum
+                    <br>
+                    Spark Plugs
+                </h1>
 
                 <p>
-                    
-Manufactured with precision electrode technology and advanced heat control characteristics, FAST FERRUM Pro Spark Plugs support efficient fuel combustion, stable engine operation, and dependable performance across daily driving and demanding conditions.
+                   Advanced ignition spark plugs engineered to maximize combustion efficiency and dependable engine performance.
                 </p>
 
-            </div>
+                <!-- <div class="hero-buttons">
 
-            <div>
-                <img src="Spark Plugs/Mockup (6).jpg" alt="">
-            </div>
+                    <a href="#products" class="hero-btn">
 
-        </div>
+                        View Products
 
-        <div class="divider"></div>
+                        <span class="arrow-circle">
+                            →
+                        </span>
 
-        <!-- WHERE TO BUY -->
+                    </a>
 
-        <div class="container buy-section">
-
-            <h2 class="buy-title">WHERE TO BUY</h2>
-
-            <div class="buy-buttons">
-                <a href="#" class="buy-btn"><img src="Logos/amazon.svg" alt=""></a>
-                <a href="#" class="buy-btn"><img src="Logos/PA Logo white.svg" alt=""></a>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FEATURES -->
-
-    <section class="container features-wrap">
-
-        <div class="container features-box">
-
-            <div class="features-image">
-                <img src="Spark Plugs/Spark plugs main.png" alt="">
-            </div>
-
-            <div class="features-grid">
-
-                <div class="feature">
-                    <h3>Optimized Ignition Performance</h3>
-                    <p>
-                       Engineered to deliver faster, more consistent spark generation for dependable engine operation.
-                    </p>
-                </div>
-
-                <div class="feature">
-                    <h3>Improved Engine Response</h3>
-                    <p>
-                      Designed to support smoother acceleration and refined throttle performance.
-                    </p>
-                </div>
-
-                <div class="feature">
-                    <h3>Advanced Heat Management</h3>
-                    <p>
-                       Built to maintain stable operation across varying engine temperatures.
-                    </p>
-                </div>
-
-                <div class="feature">
-                    <h3>OEM-Equivalent Precision Fit</h3>
-                    <p>
-                        Designed for seamless installation and factory-level compatibility.
-                    </p>
-                </div>
-
-                <div class="feature">
-                    <h3>Enhanced Combustion Efficiency</h3>
-                    <p>
-                       Supports cleaner fuel burn and contributes to consistent engine performance.
-                    </p>
-                </div>
+                </div> -->
 
             </div>
 
@@ -1039,138 +668,120 @@ Manufactured with precision electrode technology and advanced heat control chara
 
     </section>
 
-    <!-- IMAGE CAROUSEL -->
+    <!-- =========================================================
+BRAKE PADS
+========================================================= -->
 
-    <section class="carousel-section">
+    <section>
 
-        <div class="carousel">
+        <div class="container">
 
-            <button class="carousel-btn prev">&#10094;</button>
+            <div class="pads-wrapper">
 
-            <div class="carousel-track">
+                <!-- STANDARD -->
+                <!-- 
+                <div class="pad-card standard">
 
-                <div class="slide">
-                    <img src="Spark Plugs/1.jpeg">
+                    <div class="pad-info">
+
+                        <h2>
+                            Brake Rotors - STANDARD
+                        </h2>
+
+                        <p>
+                            Reliable and dependable braking performance built for daily driving and everyday road
+                            conditions.
+                        </p>
+
+                        <p>
+                            Engineered for smooth braking feel, stable heat management, and long-lasting durability with
+                            OE-style fit and consistent stopping performance.
+                        </p>
+
+                    </div>
+
+                    <a href="standard-brake-rotors.html" class="pad-image">
+
+                        <img src="Brake Rotors/Standard/Mockup.jpg">
+
+                        <div class="hover-overlay">
+                            <span>Learn More</span>
+                        </div>
+
+                    </a>
+
+                </div> -->
+
+                <!-- PRO -->
+
+                <div class="pad-card pro">
+
+                    <div class="pad-info">
+
+                        <h2>
+                            Spark Plugs - PRO
+                        </h2>
+
+                        <p>
+                            Performance-focused ignition efficiency engineered for responsive engine performance and
+                            demanding driving conditions.
+                        </p>
+
+                        <p>
+                            Designed with enhanced thermal stability and precision spark delivery to support smoother
+                            combustion, improved throttle response, and more consistent engine operation under repeated
+                            use.
+                        </p>
+
+                    </div>
+
+                    <a href="pro-spark-plugs.html" class="pad-image">
+
+                        <img src="Spark Plugs/Main/Pro.jpg">
+
+                        <div class="hover-overlay">
+                            <span>Learn More</span>
+                        </div>
+
+                    </a>
+
                 </div>
 
-                <div class="slide">
-                    <img src="Spark Plugs/2.jpeg">
+                <!-- ELITE -->
+
+                <div class="pad-card elite">
+
+                    <div class="pad-info">
+
+                        <h2>
+                            Spark Plugs - ELITE
+                        </h2>
+
+                        <p>
+                            Premium ignition performance developed for enthusiasts seeking elevated engine
+                            responsiveness and refined driving confidence.
+                        </p>
+
+                        <p>
+                            Advanced spark plug engineering delivers optimized combustion efficiency, improved heat
+                            management, stable ignition consistency, and precise engine performance even during
+                            performance-focused driving conditions.
+                        </p>
+
+                    </div>
+
+                    <a href="elite-spark-plugs.html" class="pad-image">
+
+                        <img src="Spark Plugs/Main/Elite.jpg">
+
+                        <div class="hover-overlay">
+                            <span>Learn More</span>
+                        </div>
+
+                    </a>
+
                 </div>
 
-                <div class="slide">
-                    <img src="Spark Plugs/3.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Spark Plugs/4.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Spark Plugs/5.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Spark Plugs/6.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Spark Plugs/7.jpeg">
-                </div>
-                
-            </div>
-
-            <button class="carousel-btn next">&#10095;</button>
-
-        </div>
-
-    </section>
-
-    <!-- ICONS BAR -->
-<!-- 
-    <section class=" icons-bar">
-
-        <div class="icons-grid">
-
-            <div class="icon-item">
-                <div class="icon-circle"><img src="Brake Calipers/icon 1.png" alt=""></div>
-                <h6>
-                    Anti Rust Coating
-                    <p class="Italic">Revêtement anti-rouille</p>
-                </h6>
-            </div>
-
-            <div class="icon-item">
-                <div class="icon-circle"><img src="Brake Calipers/icon 2.png" alt=""></div>
-                <h6>Leak-free
-                    <p class="Italic">Étanchéité garantie</p>
-                </h6>
-            </div>
-
-            <div class="icon-item">
-                <div class="icon-circle"><img src="Brake Calipers/icon 3.png" alt=""></div>
-                <h6>Assembly Hardware Included
-                    <p class="Italic">Kit de fixation inclus</p>
-                </h6>
-            </div>
-
-        </div>
-
-    </section> -->
-
-    <!-- SECOND BUY -->
-
-    <section class="container intro">
-
-        <div class="buy-section">
-
-            <h2 class="buy-title">WHERE TO BUY</h2>
-
-            <div class="buy-buttons">
-                <a href="#" class="buy-btn"><img src="Logos/amazon.svg" alt=""></a>
-                <a href="#" class="buy-btn"><img src="Logos/PA Logo white.svg" alt=""></a>
-            </div>
-
-        </div>
-
-        <div class="divider"></div>
-   </section>
-       
-
-    <!-- FAQ -->
-
-    <section class="container faq-section">
-
-        <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
-
-        <div class="faq-wrap">
-
-            <div class="faq-item active">
-                <div class="faq-question">
-                    Are Pro spark plugs suitable for everyday driving?
-                    <span>⌄</span>
-                </div>
-
-                <div class="faq-answer">
-                   Yes, Pro spark plugs are designed for daily driving while delivering dependable ignition performance and consistent engine operation.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    Do Pro spark plugs improve engine performance?
-                    <span>⌄</span>
-                </div>
-
-                <div class="faq-answer">
-                    Yes, they are engineered to support smoother combustion, improved responsiveness, and refined engine performance.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                  Are Pro spark plugs built for long-term durability?
-                    <span>⌄</span>
-                </div>
-
-                <div class="faq-answer">
-                    Yes, Pro spark plugs are manufactured using premium materials and precision engineering to support reliable long-term operation.
-                </div>
             </div>
 
         </div>
@@ -1212,6 +823,7 @@ FOOTER
                 <a href="blogs.html">Blogs</a>
                 <a href="contacts.html">Contact</a>
 
+
             </div>
 
             <div class="footer-links">
@@ -1240,61 +852,8 @@ FOOTER
 
     </footer>
 
-    <script>
 
-        const carousel = document.querySelector('.carousel');
 
-        const track = carousel.querySelector('.carousel-track');
-        const slides = carousel.querySelectorAll('.slide');
-
-        const nextBtn = carousel.querySelector('.next');
-        const prevBtn = carousel.querySelector('.prev');
-
-        let index = 0;
-
-        function updateCarousel() {
-            track.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        nextBtn.addEventListener('click', () => {
-
-            index++;
-
-            if (index >= slides.length) {
-                index = 0;
-            }
-
-            updateCarousel();
-
-        });
-
-        prevBtn.addEventListener('click', () => {
-
-            index--;
-
-            if (index < 0) {
-                index = slides.length - 1;
-            }
-
-            updateCarousel();
-
-        });
-
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        faqItems.forEach(item => {
-
-            const question = item.querySelector('.faq-question');
-
-            question.addEventListener('click', () => {
-
-                item.classList.toggle('active');
-
-            });
-
-        });
-
-    </script>
 </body>
 
 </html>

@@ -659,42 +659,66 @@ COLOR VARIANTS
             margin: 0 auto 18px;
         }
 
-        .products-grid {
-            max-width: 1180px;
-            margin: auto;
+        .brake-comparison {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 50px;
+            margin-top: 60px;
         }
 
-        .product-card {
+        .compare-card {
             text-align: center;
-            font-size: 15px;
         }
 
-        .product-card img {
-            height: 220px;
-            width: 220px;
-            object-fit: contain;
-            margin: auto;
+        .compare-card img {
+            width: 100%;
+            max-width: 260px;
+            margin-bottom: 20px;
         }
 
-        .product-card h3 {
-            margin: 25px 0 15px;
+        .compare-card h3 {
+            margin-bottom: 15px;
         }
 
-        .product-card p {
-            line-height: 1.8;
-            color: #444;
+        .pro-red {
+            color: #e30613;
         }
 
-        .product-divider {
-            width: 120px;
+        .compare-desc {
+            min-height: 70px;
+            margin-bottom: 0px;
+        }
+
+        .compare-row {
+            min-height: 72px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 6px 0;
+        }
+
+        .compare-row strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .compare-divider {
+            width: 140px;
             height: 1px;
-            background: #ccc;
-            margin: 25px auto;
+            background: #d8d8d8;
+            margin: 20px auto;
         }
 
+        .compare-bottom {
+            font-weight: 700;
+            min-height: 80px;
+        }
+
+        @media (max-width: 991px) {
+            .brake-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
         .faq-section {
             padding: 0 40px 100px;
         }
@@ -870,7 +894,7 @@ HEADER
 
     <header>
 
-         <div class="topbar-wrap">
+        <div class="topbar-wrap">
 
             <div class="topbar">
                 CANADA'S #1 AUTO PARTS STORE
@@ -916,7 +940,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        
+
 
                     </div>
 
@@ -934,11 +958,11 @@ HEADER
     <!-- =========================================================
 HERO
 ========================================================= -->
-      <section class="hero">
+    <section class="hero">
 
         <div class="hero-wrapper">
 
-            <img src="Brake Rotors/brake rotors Hero.png" class="hero-image">
+            <img src="Brake Rotors/brake rotors Standard 2.png" class="hero-image">
 
             <div class="hero-overlay"></div>
 
@@ -1013,41 +1037,38 @@ HERO
 
         <div class="container features-box">
 
-           <div class="carousel">
+            <div class="carousel">
 
-            <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn prev">&#10094;</button>
 
-            <div class="carousel-track">
+                <div class="carousel-track">
 
-                <div class="slide">
-                    <img src="Brake Rotors/Standard/1.jpeg">
+                    <div class="slide">
+                        <img src="Brake Rotors/Standard/1.jpg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="Brake Rotors/Standard/2.jpg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="Brake Rotors/Standard/3.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Rotors/Standard/4.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Rotors/Standard/5.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Rotors/Standard/6.jpg">
+                    </div>
+                   
                 </div>
 
-                <div class="slide">
-                    <img src="Brake Rotors/Standard/2.jpeg">
-                </div>
-
-                <div class="slide">
-                    <img src="Brake Rotors/Standard/3.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Brake Rotors/Standard/4.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Brake Rotors/Standard/5.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Brake Rotors/Standard/6.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Brake Rotors/Standard/7.jpeg">
-                </div>
+                <button class="carousel-btn next">&#10095;</button>
 
             </div>
-
-            <button class="carousel-btn next">&#10095;</button>
-
-        </div>
 
             <div class="features-grid">
 
@@ -1093,7 +1114,7 @@ HERO
     </section>
 
     <!-- IMAGE CAROUSEL -->
-<!-- 
+    <!-- 
     <section class="carousel-section">
 
         <div class="carousel">
@@ -1190,7 +1211,193 @@ HERO
 
         <div class="divider"></div>
 
+    
+
+    <!-- PRODUCT GRID -->
+
+
+
+    <h2 class="container section-title">
+        FIND THE RIGHT BRAKE ROTORS FOR YOU.
+    </h2>
+
+    <div class="container brake-comparison">
+
+        <!-- STANDARD -->
+        <div class="compare-card">
+
+            <img src="Brake Rotors/Differentiator/standard.png" alt="Standard">
+
+            <h3>Brake Rotors STANDARD</h3>
+
+            <p class="compare-desc">
+                Reliable rotor performance for everyday driving
+            </p>
+
+            <div class="compare-row">
+                <strong>Braking Performance</strong>
+                <span>Everyday</span>
+            </div>
+
+            <div class="compare-row">
+                <strong>Price</strong>
+                <span>$</span>
+            </div>
+
+            <div class="compare-divider"></div>
+
+            <div class="compare-row">
+                <strong>Brake Feel</strong>
+                <span>Smooth</span>
+            </div>
+
+            <div class="compare-row">
+                <span>OEM-equivalent fit & Performance</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Consistent everyday stopping</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Smooth, quiet operation</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Durable rotor construction</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Reduced vibration & stable braking</span>
+            </div>
+
+            <div class="compare-divider"></div>
+
+            <div class="compare-bottom">
+                Engineered for everyday durability<br>
+                Long service life
+            </div>
+
+        </div>
+
+        <!-- PRO -->
+        <div class="compare-card">
+
+            <img src="Brake Rotors/Differentiator/Pro.png" alt="Pro">
+
+            <h3>Brake Rotors <span class="pro-red">PRO</span></h3>
+
+            <p class="compare-desc">
+                Professional-grade braking power with stronger stopping confidence
+            </p>
+
+            <div class="compare-row">
+                <strong>Braking Performance</strong>
+                <span>Maximum</span>
+            </div>
+
+            <div class="compare-row">
+                <strong>Price</strong>
+                <span>$$</span>
+            </div>
+
+            <div class="compare-divider"></div>
+
+            <div class="compare-row">
+                <strong>Brake Feel</strong>
+                <span>Responsive</span>
+            </div>
+
+            <div class="compare-row">
+                <span>OOEM-equivalent fit & precision braking</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Strong & controlled braking capability</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Improved braking response</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Enhanced thermal resistance</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Controlled braking under load</span>
+            </div>
+
+            <div class="compare-divider"></div>
+
+            <div class="compare-bottom">
+                Built for demanding driving conditions<br>
+                Enhanced durability
+            </div>
+
+        </div>
+
+        <!-- ELITE -->
+        <div class="compare-card">
+
+            <img src="Brake Rotors/Differentiator/elite.png" alt="Elite">
+
+            <h3>Brake Rotors ELITE</h3>
+
+            <p class="compare-desc">
+                Premium braking refinement with elevated control
+            </p>
+
+            <div class="compare-row">
+                <strong>Braking Performance</strong>
+                <span>Enhanced</span>
+            </div>
+
+            <div class="compare-row">
+                <strong>Price</strong>
+                <span>$$$</span>
+            </div>
+
+            <div class="compare-divider"></div>
+
+            <div class="compare-row">
+                <strong>Brake Feel</strong>
+                <span>Refined</span>
+            </div>
+
+            <div class="compare-row">
+                <span>OEM-equivalent precision & premium control</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Enhanced braking confidence</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Refined braking stability</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Advanced heat dissipation</span>
+            </div>
+
+            <div class="compare-row">
+                <span>Reduced brake fade</span>
+            </div>
+
+            <div class="compare-divider"></div>
+
+            <div class="compare-bottom">
+                Performance-focused rotor design<br>
+                Precision-engineered durability
+            </div>
+
+        </div>
+
+    </div>
+
     </section>
+
     <!-- FAQ -->
 
     <section class="container faq-section">
