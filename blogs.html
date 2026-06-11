@@ -43,6 +43,16 @@
             display: block;
         }
 
+        .close-menu {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 34px;
+            cursor: pointer;
+        }
+
         /* =========================================================
    CHANGE WEBSITE SIDE SPACING HERE
 ========================================================= */
@@ -304,178 +314,180 @@
             font-weight: 700;
             color: #666;
         }
-/* =========================================================
+
+        /* =========================================================
    Css placement
 ========================================================= */
-/* ===================================
+        /* ===================================
    FAST FERRUM BLOG PAGE
 =================================== */
 
-.ff-blog {
-    background: #f5f5f5;
-    padding: 70px 0 100px;
-}
+        .ff-blog {
+            background: #f5f5f5;
+            padding: 70px 0 100px;
+        }
 
-.ff-blog-wrap {
-    max-width: 1150px;
-    margin: 0 auto;
-    padding: 0 25px;
-}
+        .ff-blog-wrap {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
 
-.ff-blog-title {
-    font-size: 30px;
-    font-weight: 700;
-    color: #0c1a0f;
-    margin-bottom: 60px;
-}
+        .ff-blog-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #0c1a0f;
+            margin-bottom: 60px;
+        }
 
-/* GRID */
+        /* GRID */
 
-.ff-blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-}
+        .ff-blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
 
-/* CARD */
+        /* CARD */
 
-.ff-blog-card {
-    background: #fff;
-    border: 1px solid #ececec;
-    overflow: hidden;
-    transition: .3s ease;
-}
+        .ff-blog-card {
+            background: #fff;
+            border: 1px solid #ececec;
+            overflow: hidden;
+            transition: .3s ease;
+        }
 
-.ff-blog-card:hover {
-    transform: translateY(-4px);
-}
+        .ff-blog-card:hover {
+            transform: translateY(-4px);
+        }
 
-/* IMAGE */
+        /* IMAGE */
 
-.ff-blog-image {
-    overflow: hidden;
-}
+        .ff-blog-image {
+            overflow: hidden;
+        }
 
-.ff-blog-image img {
-    width: 100%;
-    display: block;
-    transition: .4s ease;
-}
+        .ff-blog-image img {
+            width: 100%;
+            display: block;
+            transition: .4s ease;
+        }
 
-.ff-blog-card:hover .ff-blog-image img {
-    transform: scale(1.05);
-}
+        .ff-blog-card:hover .ff-blog-image img {
+            transform: scale(1.05);
+        }
 
-/* META */
+        /* META */
 
-.ff-blog-meta {
-    display: flex;
-    border-top: 1px solid #ececec;
-    border-bottom: 1px solid #ececec;
-}
+        .ff-blog-meta {
+            display: flex;
+            border-top: 1px solid #ececec;
+            border-bottom: 1px solid #ececec;
+        }
 
-.ff-blog-date {
-    width: 80px;
-    text-align: center;
-    padding: 12px 8px;
-    border-right: 1px solid #ececec;
-}
+        .ff-blog-date {
+            width: 80px;
+            text-align: center;
+            padding: 12px 8px;
+            border-right: 1px solid #ececec;
+        }
 
-.ff-blog-date span {
-    display: block;
-    font-size: 22px;
-    font-weight: 700;
-    color: #222;
-}
+        .ff-blog-date span {
+            display: block;
+            font-size: 22px;
+            font-weight: 700;
+            color: #222;
+        }
 
-.ff-blog-date strong {
-    display: block;
-    font-size: 13px;
-    font-weight: 700;
-    color: #222;
-}
+        .ff-blog-date strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #222;
+        }
 
-.ff-blog-info {
-    padding: 12px 16px;
-}
+        .ff-blog-info {
+            padding: 12px 16px;
+        }
 
-.ff-blog-info span {
-    display: block;
-    font-size: 11px;
-    color: #444;
-    margin-bottom: 4px;
-    font-weight: 500;
-}
+        .ff-blog-info span {
+            display: block;
+            font-size: 11px;
+            color: #444;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
 
-.ff-blog-info p {
-    font-size: 12px;
-    color: #999;
-    margin: 0;
-}
+        .ff-blog-info p {
+            font-size: 12px;
+            color: #999;
+            margin: 0;
+        }
 
-/* CONTENT */
+        /* CONTENT */
 
-.ff-blog-content {
-    padding: 20px 18px 24px;
-}
+        .ff-blog-content {
+            padding: 20px 18px 24px;
+        }
 
-.ff-blog-content h3 {
-    font-size: 20px;
-    line-height: 1.25;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 18px;
+        .ff-blog-content h3 {
+            font-size: 20px;
+            line-height: 1.25;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 18px;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
-.ff-blog-content p {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #999;
-    margin-bottom: 18px;
+        .ff-blog-content p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #999;
+            margin-bottom: 18px;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
-.ff-blog-content a {
-    font-size: 14px;
-    color: #e5b5a6;
-    font-weight: 500;
-    transition: .3s ease;
-}
+        .ff-blog-content a {
+            font-size: 14px;
+            color: #e5b5a6;
+            font-weight: 500;
+            transition: .3s ease;
+        }
 
-.ff-blog-content a:hover {
-    color: #0A6EA8;
-}
+        .ff-blog-content a:hover {
+            color: #0A6EA8;
+        }
 
-/* RESPONSIVE */
+        /* RESPONSIVE */
 
-@media (max-width: 992px) {
+        @media (max-width: 992px) {
 
-    .ff-blog-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+            .ff-blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-}
+        }
 
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
 
-    .ff-blog-grid {
-        grid-template-columns: 1fr;
-    }
+            .ff-blog-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .ff-blog-title {
-        font-size: 42px;
-    }
+            .ff-blog-title {
+                font-size: 42px;
+            }
 
-}
+        }
+
         /* =========================================================
    FOOTER
 ========================================================= */
@@ -483,7 +495,7 @@
         footer {
             background: #fff;
             border-top: 1px solid #e5e5e5;
-           
+
         }
 
         .footer-grid {
@@ -523,55 +535,257 @@
         /* =========================================================
    RESPONSIVE
 ========================================================= */
+        @media (max-width:768px) {
 
-        @media(max-width:992px) {
+            /* HEADER */
 
-            .pillars,
-            .products-grid,
-            .blog-grid,
-            .quality-grid,
-            .footer-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
             }
 
-            .hero h1 {
-                font-size: 56px;
+            .topbar {
+                text-align: center;
             }
-
-        }
-
-        @media(max-width:768px) {
-
-            /* this was overruling by container in above css */
-            /* .container {
-                width: 100%;
-                max-width: 1000px;
-                margin: auto;
-                padding-left: 0px;
-                padding-right: 0px;
-            } */
 
             .navbar {
-                flex-direction: column;
-                gap: 24px;
+                padding: 16px 0;
+            }
+
+            .navbar {
+
+                display: flex;
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                align-items: center;
+
+                padding: 16px 0;
+
+            }
+
+            .logo {
+
+                width: 110px;
+
+                margin-right: 0;
+
+                padding-left: 20px;
+
+            }
+
+            .menu-toggle {
+
+                display: block;
+
+                font-size: 38px;
+
+                cursor: pointer;
+
+                z-index: 10002;
+
+            }
+
+            .menu-overlay {
+
+                position: fixed;
+
+                top: 0;
+
+                left: 0;
+
+                width: 100%;
+
+                height: 100%;
+
+                background: rgba(0, 0, 0, .35);
+
+                opacity: 0;
+
+                visibility: hidden;
+
+                transition: .3s;
+
+                z-index: 9998;
+
+            }
+
+            .menu-overlay.active {
+
+                opacity: 1;
+
+                visibility: visible;
+
             }
 
             .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
+
+                position: fixed;
+
+                top: 0;
+
+                right: -100%;
+
+                width: 280px;
+
+                height: 100vh;
+
+                background: #fff;
+
+                display: flex !important;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                justify-content: flex-start;
+
+                padding: 90px 35px;
+
+                gap: 24px;
+
+                transition: .35s ease;
+
+                z-index: 9999;
+
             }
 
-            .hero {
+            .nav-links.active {
+
+                right: 0;
+
+            }
+
+            .nav-links a {
+
+                display: block;
+
+                width: 100%;
+
+                font-size: 18px;
+
+                padding: 10px 0;
+
+                color: #222;
+
+            }
+
+            .nav-links.active {
+
+                right: 0;
+
+            }
+
+            .nav-links a {
+
+                width: 100%;
+
+                font-size: 18px;
+
+            }
+
+            .dropdown-menu {
+
+                display: none;
+
+            }
+
+            .close-menu {
+
+                display: block;
+
+                position: absolute;
+
+                top: 30px;
+
+                right: 30px;
+
+                font-size: 34px;
+
+                cursor: pointer;
+
+            }
+
+            /* HERO */
+
+            .hero-wrapper {
                 height: 650px;
             }
 
+            .hero-content {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
             .hero h1 {
+                width: 100%;
                 font-size: 42px;
             }
 
-            .hero-buttons {
-                flex-direction: column;
+            .hero p {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            /* BLOG */
+
+            .ff-blog {
+                padding: 50px 0 70px;
+            }
+
+            .ff-blog-wrap {
+                padding: 0;
+            }
+
+            .ff-blog-title {
+                font-size: 28px;
+                margin-bottom: 35px;
+            }
+
+            .ff-blog-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .ff-blog-content {
+                padding: 18px;
+            }
+
+            .ff-blog-content h3 {
+                font-size: 18px;
+            }
+
+            .ff-blog-content p {
+                font-size: 13px;
+            }
+
+            .ff-blog-date {
+                width: 72px;
+            }
+
+            /* FOOTER */
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+
+                padding: 60px 0;
+                padding-left: 20px;
+            }
+
+            .logo {
+                margin-right: 0;
+                padding-left: 20px;
+            }
+
+            .copyright {
+                padding: 18px 20px;
+
+                font-size: 12px;
+
+                line-height: 1.8;
             }
 
         }
@@ -598,11 +812,23 @@ HEADER
                 </div>
             </div>
 
-            <div class="nav-links">
+            <div class="menu-toggle" id="menuToggle">
+                ☰
+            </div>
+
+            <div class="menu-overlay" id="menuOverlay"></div>
+
+            <div class="nav-links" id="navLinks">
+
+                <div class="close-menu" id="closeMenu">
+                    ✕
+                </div>
+
+
                 <a href="index.html">Home</a>
                 <div class="dropdown">
 
-                    <a href="#" class="dropdown-btn">
+                    <a href="index.html#products" class="dropdown-btn">
                         Products
                     </a>
 
@@ -626,7 +852,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                       
+
 
                     </div>
 
@@ -637,7 +863,7 @@ HEADER
                 <a href="contact.html">Contact</a>
             </div>
 
-        </div>
+
 
     </header>
 
@@ -645,7 +871,7 @@ HEADER
 HERO
 ========================================================= -->
 
-   <section class="hero">
+    <section class="hero">
 
         <div class="hero-wrapper">
 
@@ -656,11 +882,11 @@ HERO
             <div class="hero-content">
 
                 <h1>
-                  Blogs
+                    Blogs
                 </h1>
 
                 <p>
-                   General Info & Updates
+                    General Info & Updates
                 </p>
 
                 <!-- <div class="hero-buttons">
@@ -688,143 +914,146 @@ HERO
     <!-- =========================================================
 Content here
 ========================================================= -->
-<section class="ff-blog">
+    <section class="ff-blog">
 
-    <div class="ff-blog-wrap">
+        <div class="ff-blog-wrap">
 
-        <h2 class="ff-blog-title">
-            Blogs
-        </h2>
+            <h2 class="ff-blog-title">
+                Blogs
+            </h2>
 
-        <div class="ff-blog-grid">
+            <div class="ff-blog-grid">
 
-            <!-- BLOG CARD -->
+                <!-- BLOG CARD -->
 
-            <article class="ff-blog-card">
+                <article class="ff-blog-card">
 
-                <div class="ff-blog-image">
-                    <img src="Blog/brake pada ffect.png" alt="">
-                </div>
-
-                <div class="ff-blog-meta">
-
-                    <div class="ff-blog-date">
-                        <span>02</span>
-                        <strong>FEB</strong>
+                    <div class="ff-blog-image">
+                        <img src="Blog/brake pada ffect.png" alt="">
                     </div>
 
-                    <div class="ff-blog-info">
-                        <span>POST INFO</span>
-                        <p>By Fast Ferrum &nbsp; | &nbsp; Business</p>
+                    <div class="ff-blog-meta">
+
+                        <div class="ff-blog-date">
+                            <span>02</span>
+                            <strong>FEB</strong>
+                        </div>
+
+                        <div class="ff-blog-info">
+                            <span>POST INFO</span>
+                            <p>By Fast Ferrum &nbsp; | &nbsp; Business</p>
+                        </div>
+
                     </div>
 
-                </div>
+                    <div class="ff-blog-content">
 
-                <div class="ff-blog-content">
+                        <h3>
+                            How to Install Brake Calipers...
+                        </h3>
 
-                    <h3>
-                        How to Install Brake Calipers...
-                    </h3>
+                        <p>
+                            Learn the essential steps to install brake calipers correctly for safe braking performance
+                            and reliable vehicle control.
+                        </p>
 
-                    <p>
-                        Learn the essential steps to install brake calipers correctly for safe braking performance and reliable vehicle control.
-                    </p>
+                        <a href="#">
+                            Read More
+                        </a>
 
-                    <a href="#">
-                        Read More
-                    </a>
-
-                </div>
-
-            </article>
-
-            <!-- DUPLICATE CARD -->
-
-            <article class="ff-blog-card">
-
-                <div class="ff-blog-image">
-                    <img src="Blog/BrakePads-HERO-2308-600x400.png" alt="">
-                </div>
-
-                <div class="ff-blog-meta">
-
-                    <div class="ff-blog-date">
-                        <span>02</span>
-                        <strong>FEB</strong>
                     </div>
 
-                    <div class="ff-blog-info">
-                        <span>POST INFO</span>
-                        <p>By Fast Ferrum &nbsp; | &nbsp; Business</p>
+                </article>
+
+                <!-- DUPLICATE CARD -->
+
+                <article class="ff-blog-card">
+
+                    <div class="ff-blog-image">
+                        <img src="Blog/BrakePads-HERO-2308-600x400.png" alt="">
                     </div>
 
-                </div>
+                    <div class="ff-blog-meta">
 
-                <div class="ff-blog-content">
+                        <div class="ff-blog-date">
+                            <span>02</span>
+                            <strong>FEB</strong>
+                        </div>
 
-                    <h3>
-                        Do you need to change Shockers after every...
-                    </h3>
+                        <div class="ff-blog-info">
+                            <span>POST INFO</span>
+                            <p>By Fast Ferrum &nbsp; | &nbsp; Business</p>
+                        </div>
 
-                    <p>
-                        Discover when shock absorbers should be replaced and how proper maintenance improves comfort and handling.
-                    </p>
-
-                    <a href="#">
-                        Read More
-                    </a>
-
-                </div>
-
-            </article>
-
-            <!-- DUPLICATE -->
-
-            <article class="ff-blog-card">
-
-                <div class="ff-blog-image">
-                    <img src="Blog/Brake-Pads_worn_2.png" alt="">
-                </div>
-
-                <div class="ff-blog-meta">
-
-                    <div class="ff-blog-date">
-                        <span>02</span>
-                        <strong>FEB</strong>
                     </div>
 
-                    <div class="ff-blog-info">
-                        <span>POST INFO</span>
-                        <p>By Fast Ferrum &nbsp; | &nbsp; Business</p>
+                    <div class="ff-blog-content">
+
+                        <h3>
+                            Do you need to change Shockers after every...
+                        </h3>
+
+                        <p>
+                            Discover when shock absorbers should be replaced and how proper maintenance improves comfort
+                            and handling.
+                        </p>
+
+                        <a href="#">
+                            Read More
+                        </a>
+
                     </div>
 
-                </div>
+                </article>
 
-                <div class="ff-blog-content">
+                <!-- DUPLICATE -->
 
-                    <h3>
-                        If you don't remember when you changed sp...
-                    </h3>
+                <article class="ff-blog-card">
 
-                    <p>
-                        Signs your spark plugs may need replacement and how timely changes help maintain engine performance.
-                    </p>
+                    <div class="ff-blog-image">
+                        <img src="Blog/Brake-Pads_worn_2.png" alt="">
+                    </div>
 
-                    <a href="#">
-                        Read More
-                    </a>
+                    <div class="ff-blog-meta">
 
-                </div>
+                        <div class="ff-blog-date">
+                            <span>02</span>
+                            <strong>FEB</strong>
+                        </div>
 
-            </article>
+                        <div class="ff-blog-info">
+                            <span>POST INFO</span>
+                            <p>By Fast Ferrum &nbsp; | &nbsp; Business</p>
+                        </div>
 
-            <!-- Repeat more cards -->
+                    </div>
+
+                    <div class="ff-blog-content">
+
+                        <h3>
+                            If you don't remember when you changed sp...
+                        </h3>
+
+                        <p>
+                            Signs your spark plugs may need replacement and how timely changes help maintain engine
+                            performance.
+                        </p>
+
+                        <a href="#">
+                            Read More
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- Repeat more cards -->
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
     <!-- =========================================================
@@ -896,29 +1125,65 @@ JS
 
     <script>
 
-        const toggleBtn = document.getElementById('toggleBtn');
-        const productsGrid = document.getElementById('productsGrid');
+        const menu =
+            document.getElementById("menuToggle");
 
-        let expanded = false;
+        const nav =
+            document.getElementById("navLinks");
 
-        toggleBtn.addEventListener('click', () => {
+        const close =
+            document.getElementById("closeMenu");
 
-            expanded = !expanded;
+        const overlay =
+            document.getElementById("menuOverlay");
 
-            if (expanded) {
+        function openMenu() {
 
-                productsGrid.classList.add('expanded');
-                toggleBtn.innerText = 'View Less';
+            nav.classList.add("active");
 
-            } else {
+            overlay.classList.add("active");
 
-                productsGrid.classList.remove('expanded');
-                toggleBtn.innerText = 'View All';
+            menu.style.visibility = "hidden";
 
-            }
+        }
 
-        });
+        function closeMenu() {
 
+            nav.classList.remove("active");
+
+            overlay.classList.remove("active");
+
+            menu.style.visibility = "visible";
+
+        }
+
+        menu.addEventListener(
+            "click",
+            openMenu
+        );
+
+        close.addEventListener(
+            "click",
+            closeMenu
+        );
+
+        overlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+        document
+            .querySelectorAll(
+                ".nav-links a"
+            )
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
+
+            });
     </script>
 
 </body>

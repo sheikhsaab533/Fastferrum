@@ -43,6 +43,10 @@
             display: block;
         }
 
+        .close-menu {
+            display: none;
+        }
+
         /* =========================================================
    CHANGE WEBSITE SIDE SPACING HERE
 ========================================================= */
@@ -79,10 +83,15 @@
         }
 
         .navbar {
+
             display: flex;
-            align-items: center;
+
             justify-content: space-between;
-            padding: 20px 1px 0 28px;
+
+            align-items: center;
+
+            padding: 20px 0;
+
         }
 
         /* =========================================================
@@ -107,6 +116,18 @@
             color: #fff;
             ;
             font-weight: 700;
+        }
+
+        /* HAMBURGER */
+
+        .menu-toggle {
+
+            display: none;
+
+            font-size: 34px;
+
+            cursor: pointer;
+
         }
 
         /* =========================================================
@@ -467,8 +488,12 @@
             }
 
             .ff-about-quote h3 {
-                font-size: 50px;
-                text-transform: uppercase;
+
+                font-size: 16px;
+
+                line-height: 1.6;
+
+                text-transform: none;
 
             }
 
@@ -526,54 +551,172 @@
    RESPONSIVE
 ========================================================= */
 
-        @media(max-width:992px) {
-
-            .pillars,
-            .products-grid,
-            .blog-grid,
-            .quality-grid,
-            .footer-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 56px;
-            }
-
-        }
-
         @media(max-width:768px) {
 
-            /* this was overruling by container in above css */
-            /* .container {
-                width: 100%;
-                max-width: 1000px;
-                margin: auto;
-                padding-left: 0px;
-                padding-right: 0px;
-            } */
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
 
             .navbar {
-                flex-direction: column;
-                gap: 24px;
+
+                display: flex;
+
+                flex-direction: row;
+
+                justify-content: space-between;
+
+                align-items: center;
+
+                padding: 16px 0;
+
+            }
+
+            .logo {
+
+                width: 110px;
+
+                margin-right: 0;
+
+                padding-left: 20px;
+
+            }
+
+            .menu-toggle {
+
+                display: block;
+
+                font-size: 38px;
+
+                cursor: pointer;
+
+                z-index: 10002;
+
+            }
+
+            .menu-overlay {
+
+                position: fixed;
+
+                top: 0;
+
+                left: 0;
+
+                width: 100%;
+
+                height: 100%;
+
+                background: rgba(0, 0, 0, .35);
+
+                opacity: 0;
+
+                visibility: hidden;
+
+                transition: .3s;
+
+                z-index: 9998;
+
+            }
+
+            .menu-overlay.active {
+
+                opacity: 1;
+
+                visibility: visible;
+
             }
 
             .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
+
+                position: fixed;
+
+                top: 0;
+
+                right: -100%;
+
+                width: 280px;
+
+                height: 100vh;
+
+                background: #fff;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                justify-content: flex-start;
+
+                padding: 90px 35px;
+
+                gap: 24px;
+
+                transition: .35s ease;
+
+                z-index: 9999;
+
             }
 
-            .hero {
-                height: 650px;
+            .nav-links.active {
+
+                right: 0;
+
+            }
+
+            .nav-links a {
+
+                width: 100%;
+
+                font-size: 18px;
+
+            }
+
+            .dropdown-menu {
+
+                display: none;
+
+            }
+
+            .close-menu {
+
+                display: block;
+
+                position: absolute;
+
+                top: 30px;
+
+                right: 30px;
+
+                font-size: 34px;
+
+                cursor: pointer;
+
+            }
+
+            .hero-wrapper {
+                height: 520px;
+            }
+
+            .hero-content {
+                padding: 30px;
             }
 
             .hero h1 {
-                font-size: 42px;
+                width: 100%;
+                font-size: 30px !important;
             }
 
-            .hero-buttons {
-                flex-direction: column;
+            .hero p {
+                width: 100%;
+            }
+
+            .ff-about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
 
         }
@@ -596,15 +739,27 @@ HEADER
 
             <div class="logo">
                 <div class="logo-placeholder">
-                    <img src="Logos/Fast Ferrum basic.svg" alt="">
+                    <img src="Logos/Fast Ferrum basic.svg">
                 </div>
             </div>
 
-            <div class="nav-links">
+            <div class="menu-toggle" id="menuToggle">
+                ☰
+            </div>
+
+            <div class="menu-overlay" id="menuOverlay"></div>
+
+            <div class="nav-links" id="navLinks">
+
+                <div class="close-menu" id="closeMenu">
+                    ✕
+                </div>
+
                 <a href="index.html">Home</a>
+
                 <div class="dropdown">
 
-                    <a href="#" class="dropdown-btn">
+                    <a href="index.html#products" class="dropdown-btn">
                         Products
                     </a>
 
@@ -628,15 +783,16 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        
 
                     </div>
 
                 </div>
+
                 <a href="quality.html">Quality</a>
                 <a href="about.html">About</a>
                 <a href="blogs.html">Blogs</a>
                 <a href="contact.html">Contact</a>
+
             </div>
 
         </div>
@@ -647,7 +803,7 @@ HEADER
 HERO
 ========================================================= -->
 
- <section class="hero">
+    <section class="hero">
 
         <div class="hero-wrapper">
 
@@ -658,11 +814,11 @@ HERO
             <div class="hero-content">
 
                 <h1>
-                   About Us
+                    About Us
                 </h1>
 
                 <p>
-                   What Fast Ferrum is
+                    What Fast Ferrum is
                 </p>
 
                 <!-- <div class="hero-buttons">
@@ -984,28 +1140,65 @@ JS
 
     <script>
 
-        const toggleBtn = document.getElementById('toggleBtn');
-        const productsGrid = document.getElementById('productsGrid');
+        const menu =
+            document.getElementById("menuToggle");
 
-        let expanded = false;
+        const nav =
+            document.getElementById("navLinks");
 
-        toggleBtn.addEventListener('click', () => {
+        const close =
+            document.getElementById("closeMenu");
 
-            expanded = !expanded;
+        const overlay =
+            document.getElementById("menuOverlay");
 
-            if (expanded) {
+        function openMenu() {
 
-                productsGrid.classList.add('expanded');
-                toggleBtn.innerText = 'View Less';
+            nav.classList.add("active");
 
-            } else {
+            overlay.classList.add("active");
 
-                productsGrid.classList.remove('expanded');
-                toggleBtn.innerText = 'View All';
+            menu.style.visibility = "hidden";
 
-            }
+        }
 
-        });
+        function closeMenu() {
+
+            nav.classList.remove("active");
+
+            overlay.classList.remove("active");
+
+            menu.style.visibility = "visible";
+
+        }
+
+        menu.addEventListener(
+            "click",
+            openMenu
+        );
+
+        close.addEventListener(
+            "click",
+            closeMenu
+        );
+
+        overlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+        document
+            .querySelectorAll(
+                ".nav-links a"
+            )
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
+
+            });
 
     </script>
 

@@ -43,6 +43,16 @@
             display: block;
         }
 
+        .close-menu {
+            display: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 34px;
+            cursor: pointer;
+        }
+
         /* =========================================================
    CHANGE WEBSITE SIDE SPACING HERE
 ========================================================= */
@@ -68,7 +78,7 @@
 
         }
 
-          .topbar-wrap {
+        .topbar-wrap {
             width: 1350px;
             /* Same as your hero/banner */
             max-width: 100%;
@@ -338,7 +348,7 @@ COLOR VARIANTS
    HERO
 ========================================================= */
 
-           .hero {
+        .hero {
             padding: 0;
             background: #f5f5f5;
         }
@@ -565,7 +575,7 @@ COLOR VARIANTS
             color: #444;
         }
 
-      
+
         .carousel {
             position: relative;
             overflow: hidden;
@@ -624,7 +634,7 @@ COLOR VARIANTS
             right: 20px;
         }
 
-              .icons-bar {
+        .icons-bar {
             width: 1350px;
             max-width: 100%;
             margin: 0 auto;
@@ -720,7 +730,7 @@ COLOR VARIANTS
         }
 
         .faq-section {
-            padding: 0 40px 100px;
+            padding: 40px 40px 100px;
         }
 
         .faq-title {
@@ -828,56 +838,190 @@ COLOR VARIANTS
    RESPONSIVE
 ========================================================= */
 
-        @media(max-width:992px) {
-
-            .pillars,
-            .products-grid,
-            .blog-grid,
-            .quality-grid,
-            .footer-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 56px;
-            }
-
-        }
-
         @media(max-width:768px) {
 
-            /* this was overruling by container in above css */
-            /* .container {
-                width: 100%;
-                max-width: 1000px;
-                margin: auto;
-                padding-left: 0px;
-                padding-right: 0px;
-            } */
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .topbar {
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
 
             .navbar {
-                flex-direction: column;
-                gap: 24px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 0;
+            }
+
+            .logo {
+                width: 110px;
+                padding-left: 20px;
+                margin-right: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 38px;
+                cursor: pointer;
+                z-index: 10002;
+            }
+
+            .menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, .35);
+                opacity: 0;
+                visibility: hidden;
+                transition: .3s;
+                z-index: 9998;
+            }
+
+            .menu-overlay.active {
+                opacity: 1;
+                visibility: visible;
             }
 
             .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: #fff;
+                display: flex !important;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 90px 35px;
+                gap: 24px;
+                transition: .35s ease;
+                z-index: 9999;
             }
 
-            .hero {
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links .dropdown,
+            .nav-links a {
+                display: block;
+                width: 100%;
+            }
+
+            .nav-links a {
+                padding: 10px 0;
+                font-size: 18px;
+                color: #222;
+            }
+
+            .dropdown-menu {
+                display: none !important;
+            }
+
+            .dropdown-btn {
+                padding: 10px 0;
+            }
+
+            .close-menu {
+                display: block;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                font-size: 34px;
+                cursor: pointer;
+            }
+
+            .hero-wrapper {
                 height: 650px;
             }
 
+            .hero-content {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
             .hero h1 {
+                width: 100%;
                 font-size: 42px;
             }
 
-            .hero-buttons {
-                flex-direction: column;
+            .hero p {
+                width: 100%;
             }
 
+            .intro {
+                padding: 50px 20px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .features-wrap {
+                padding: 0 20px 50px;
+            }
+
+            .features-box {
+                padding: 20px;
+            }
+
+            .slide img {
+                height: 240px;
+            }
+
+            .icons-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+            }
+
+            .icon-circle {
+                width: 55px;
+                height: 55px;
+            }
+
+            .icon-item h6 {
+                font-size: 10px;
+                line-height: 1.3;
+            }
+
+            .Italic {
+                font-size: 9px;
+            }
+
+            .buy-buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .buy-btn {
+                width: 150px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px 0;
+                padding-left: 20px;
+            }
+
+            .copyright {
+                font-size: 12px;
+                padding: 18px 20px;
+                line-height: 1.8;
+            }
         }
     </style>
 </head>
@@ -890,7 +1034,7 @@ HEADER
 
     <header>
 
-         <div class="topbar-wrap">
+        <div class="topbar-wrap">
 
             <div class="topbar">
                 CANADA'S #1 AUTO PARTS STORE
@@ -906,13 +1050,23 @@ HEADER
                 </div>
             </div>
 
-            <div class="nav-links">
+            <div class="menu-toggle" id="menuToggle">
+                ☰
+            </div>
+
+            <div class="menu-overlay" id="menuOverlay"></div>
+
+            <div class="nav-links" id="navLinks">
+
+                <div class="close-menu" id="closeMenu">
+                    ✕
+                </div>
                 <a href="index.html">
                     <Home class="html">Home</Home>
                 </a>
                 <div class="dropdown">
 
-                    <a href="#" class="dropdown-btn">
+                    <a href="index.html#products" class="dropdown-btn">
                         Products
                     </a>
 
@@ -936,7 +1090,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        
+
                     </div>
 
                 </div>
@@ -970,7 +1124,8 @@ HERO
                 </h1>
 
                 <p>
-                    Precision-balanced hub assemblies engineered to support stable wheel movement and reliable driving performance.
+                    Precision-balanced hub assemblies engineered to support stable wheel movement and reliable driving
+                    performance.
                 </p>
 
             </div>
@@ -1035,41 +1190,41 @@ HERO
 
         <div class="container features-box">
 
-             <div class="carousel">
+            <div class="carousel">
 
-            <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn prev">&#10094;</button>
 
-            <div class="carousel-track">
+                <div class="carousel-track">
 
-                <div class="slide">
-                    <img src="Hub Assembly/1.jpeg">
+                    <div class="slide">
+                        <img src="Hub Assembly/1.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="Hub Assembly/2.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="Hub Assembly/3.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Hub Assembly/4.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Hub Assembly/5.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Hub Assembly/6.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Hub Assembly/7.jpeg">
+                    </div>
+
                 </div>
 
-                <div class="slide">
-                    <img src="Hub Assembly/2.jpeg">
-                </div>
-
-                <div class="slide">
-                    <img src="Hub Assembly/3.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Hub Assembly/4.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Hub Assembly/5.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Hub Assembly/6.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Hub Assembly/7.jpeg">
-                </div>
+                <button class="carousel-btn next">&#10095;</button>
 
             </div>
-
-            <button class="carousel-btn next">&#10095;</button>
-
-        </div>
 
             <div class="features-grid">
 
@@ -1208,7 +1363,7 @@ HERO
 
         </div>
 
-        <div class="divider"></div>
+        
     </section>
 
 
@@ -1373,7 +1528,59 @@ FOOTER
                 item.classList.toggle('active');
 
             });
+            const menu =
+                document.getElementById("menuToggle");
 
+            const nav =
+                document.getElementById("navLinks");
+
+            const close =
+                document.getElementById("closeMenu");
+
+            const overlay =
+                document.getElementById("menuOverlay");
+
+            function openMenu() {
+
+                nav.classList.add("active");
+                overlay.classList.add("active");
+                menu.style.visibility = "hidden";
+
+            }
+
+            function closeMenu() {
+
+                nav.classList.remove("active");
+                overlay.classList.remove("active");
+                menu.style.visibility = "visible";
+
+            }
+
+            menu.addEventListener(
+                "click",
+                openMenu
+            );
+
+            close.addEventListener(
+                "click",
+                closeMenu
+            );
+
+            overlay.addEventListener(
+                "click",
+                closeMenu
+            );
+
+            document
+                .querySelectorAll(".nav-links a")
+                .forEach(link => {
+
+                    link.addEventListener(
+                        "click",
+                        closeMenu
+                    );
+
+                });
         });
 
     </script>
