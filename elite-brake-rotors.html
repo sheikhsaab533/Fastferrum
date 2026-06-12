@@ -43,15 +43,16 @@
             display: block;
         }
 
-        .close-menu{
-    display:none;
-}
+        .close-menu {
+            display: none;
+        }
 
-.menu-toggle{
-    display:none;
-    font-size:34px;
-    cursor:pointer;
-}
+        .menu-toggle {
+            display: none;
+            font-size: 34px;
+            cursor: pointer;
+        }
+
         /* =========================================================
    CHANGE WEBSITE SIDE SPACING HERE
 ========================================================= */
@@ -77,7 +78,7 @@
 
         }
 
-            .topbar-wrap {
+        .topbar-wrap {
             width: 1350px;
             /* Same as your hero/banner */
             max-width: 100%;
@@ -229,7 +230,7 @@ HERO
         .hero-btn:hover .arrow-circle {
             border-color: #fff;
         }
-        
+
         /* =========================================================
 PRODUCT CARDS
 ========================================================= */
@@ -333,7 +334,7 @@ COLOR VARIANTS
             color: #fff;
         }
 
-       
+
         /* =========================================================
    LOGO
 ========================================================= */
@@ -809,7 +810,7 @@ COLOR VARIANTS
         footer {
             background: #fff;
             border-top: 1px solid #e5e5e5;
-            margin-top: 100px;
+            
         }
 
         .footer-grid {
@@ -850,190 +851,190 @@ COLOR VARIANTS
    RESPONSIVE
 ========================================================= */
 
-      @media(max-width:768px) {
+        @media(max-width:768px) {
 
-    .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
 
-    .topbar {
+            /* .topbar {
         text-align: center;
         padding-left: 20px;
         padding-right: 20px;
-    }
+    } */
 
-    .navbar {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px 0;
-    }
+            .navbar {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 0;
+            }
 
-    .logo {
-        width: 110px;
-        padding-left: 20px;
-        margin-right: 0;
-    }
+            .logo {
+                width: 110px;
+                padding-left: 20px;
+                margin-right: 0;
+            }
 
-    .menu-toggle {
-        display: block;
-        font-size: 38px;
-        cursor: pointer;
-        z-index: 10002;
-    }
+            .menu-toggle {
+                display: block;
+                font-size: 38px;
+                cursor: pointer;
+                z-index: 10002;
+            }
 
-    .menu-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,.35);
-        opacity: 0;
-        visibility: hidden;
-        transition: .3s;
-        z-index: 9998;
-    }
+            .menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, .35);
+                opacity: 0;
+                visibility: hidden;
+                transition: .3s;
+                z-index: 9998;
+            }
 
-    .menu-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
+            .menu-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
 
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background: #fff;
-        display: flex !important;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 90px 35px;
-        gap: 24px;
-        transition: .35s ease;
-        z-index: 9999;
-    }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: #fff;
+                display: flex !important;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 90px 35px;
+                gap: 24px;
+                transition: .35s ease;
+                z-index: 9999;
+            }
 
-    .nav-links.active {
-        right: 0;
-    }
+            .nav-links.active {
+                right: 0;
+            }
 
-    .nav-links .dropdown,
-    .nav-links a {
-        display: block;
-        width: 100%;
-    }
+            .nav-links .dropdown,
+            .nav-links a {
+                display: block;
+                width: 100%;
+            }
 
-    .nav-links a {
-        padding: 10px 0;
-        font-size: 18px;
-        color: #222;
-    }
+            .nav-links a {
+                padding: 10px 0;
+                font-size: 18px;
+                color: #222;
+            }
 
-    .dropdown-menu {
-        display: none !important;
-    }
+            .dropdown-menu {
+                display: none !important;
+            }
 
-    .dropdown-btn {
-        padding: 10px 0;
-    }
+            .dropdown-btn {
+                padding: 10px 0;
+            }
 
-    .close-menu {
-        display: block;
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        font-size: 34px;
-        cursor: pointer;
-    }
+            .close-menu {
+                display: block;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                font-size: 34px;
+                cursor: pointer;
+            }
 
-    .hero-wrapper {
-        height: 650px;
-    }
+            .hero-wrapper {
+                height: 650px;
+            }
 
-    .hero-content {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
+            .hero-content {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
 
-    .hero h1 {
-        width: 100%;
-        font-size: 42px;
-    }
+            .hero h1 {
+                width: 100%;
+                font-size: 42px;
+            }
 
-    .hero p {
-        width: 100%;
-    }
+            .hero p {
+                width: 100%;
+            }
 
-    .intro {
-        padding: 50px 20px;
-    }
+            .intro {
+                padding: 50px 20px;
+            }
 
-    .intro-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
 
-    .features-wrap {
-        padding: 0 20px 50px;
-    }
+            .features-wrap {
+                padding: 0 20px 50px;
+            }
 
-    .features-box {
-        padding: 20px;
-    }
+            .features-box {
+                padding: 20px;
+            }
 
-    .slide img {
-        height: 240px;
-    }
+            .slide img {
+                height: 240px;
+            }
 
-    .icons-grid {
-        grid-template-columns: repeat(4,1fr);
-        gap: 8px;
-    }
+            .icons-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+            }
 
-    .icon-circle {
-        width: 55px;
-        height: 55px;
-    }
+            .icon-circle {
+                width: 55px;
+                height: 55px;
+            }
 
-    .icon-item h6 {
-        font-size: 10px;
-        line-height: 1.3;
-    }
+            .icon-item h6 {
+                font-size: 10px;
+                line-height: 1.3;
+            }
 
-    .Italic {
-        font-size: 9px;
-    }
+            .Italic {
+                font-size: 9px;
+            }
 
-    .buy-buttons {
-        display:flex;
-        flex-direction:row;
-        justify-content:center;
-        gap:15px;
-    }
+            .buy-buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 15px;
+            }
 
-    .buy-btn {
-        width:150px;
-    }
+            .buy-btn {
+                width: 150px;
+            }
 
-    .footer-grid {
-        grid-template-columns:1fr;
-        gap:40px;
-        padding:60px 0;
-        padding-left:20px;
-    }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px 0;
+                padding-left: 20px;
+            }
 
-    .copyright {
-        font-size:12px;
-        padding:18px 20px;
-        line-height:1.8;
-    }
-}
+            .copyright {
+                font-size: 12px;
+                padding: 18px 20px;
+                line-height: 1.8;
+            }
+        }
     </style>
 </head>
 
@@ -1056,22 +1057,24 @@ HEADER
         <div class="container navbar">
 
             <div class="logo">
-                <div class="logo-placeholder">
-                    <img src="Logos/Elite Logo black.svg" alt="">
-                </div>
+                <a href="index.html" class="logo">
+                    <div class="logo-placeholder">
+                        <img src="Logos/Elite Logo black.svg" alt="">
+                    </div>
+                </a>
             </div>
 
             <div class="menu-toggle" id="menuToggle">
-    ☰
-</div>
+                ☰
+            </div>
 
-<div class="menu-overlay" id="menuOverlay"></div>
+            <div class="menu-overlay" id="menuOverlay"></div>
 
-<div class="nav-links" id="navLinks">
+            <div class="nav-links" id="navLinks">
 
-    <div class="close-menu" id="closeMenu">
-        ✕
-    </div>
+                <div class="close-menu" id="closeMenu">
+                    ✕
+                </div>
                 <a href="index.html">
                     <Home class="html">Home</Home>
                 </a>
@@ -1101,7 +1104,7 @@ HEADER
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
-                        
+
 
                     </div>
 
@@ -1119,7 +1122,7 @@ HEADER
     <!-- =========================================================
 HERO
 ========================================================= -->
-     <section class="hero">
+    <section class="hero">
 
         <div class="hero-wrapper">
 
@@ -1203,35 +1206,35 @@ HERO
 
             <div class="carousel">
 
-            <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn prev">&#10094;</button>
 
-            <div class="carousel-track">
+                <div class="carousel-track">
 
-                <div class="slide">
-                    <img src="Brake Rotors/Elite/1.jpeg">
+                    <div class="slide">
+                        <img src="Brake Rotors/Elite/1.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="Brake Rotors/Elite/2.jpeg">
+                    </div>
+
+                    <div class="slide">
+                        <img src="Brake Rotors/Elite/3.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Rotors/Elite/4.png">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Rotors/Elite/5.jpeg">
+                    </div>
+                    <div class="slide">
+                        <img src="Brake Rotors/Elite/6.jpeg">
+                    </div>
                 </div>
 
-                <div class="slide">
-                    <img src="Brake Rotors/Elite/2.jpeg">
-                </div>
+                <button class="carousel-btn next">&#10095;</button>
 
-                <div class="slide">
-                    <img src="Brake Rotors/Elite/3.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Brake Rotors/Elite/4.png">
-                </div>
-                <div class="slide">
-                    <img src="Brake Rotors/Elite/5.jpeg">
-                </div>
-                <div class="slide">
-                    <img src="Brake Rotors/Elite/6.jpeg">
-                </div>
-               </div>
-
-            <button class="carousel-btn next">&#10095;</button>
-
-        </div>
+            </div>
 
             <div class="features-grid">
 
@@ -1382,190 +1385,190 @@ HERO
 
         <div class="divider"></div>
 
-               <!-- PRODUCT GRID -->
+        <!-- PRODUCT GRID -->
 
-       
 
-    <h2 class="container section-title">
-        FIND THE RIGHT BRAKE ROTORS FOR YOU.
-    </h2>
 
-    <div class="container brake-comparison">
+        <h2 class="container section-title">
+            FIND THE RIGHT BRAKE ROTORS FOR YOU.
+        </h2>
 
-        <!-- STANDARD -->
-        <div class="compare-card">
+        <div class="container brake-comparison">
 
-            <img src="Brake Rotors/Differentiator/standard.png" alt="Standard">
+            <!-- STANDARD -->
+            <div class="compare-card">
 
-            <h3>Brake Rotors STANDARD</h3>
+                <img src="Brake Rotors/Differentiator/standard.png" alt="Standard">
 
-            <p class="compare-desc">
-                Reliable rotor performance for everyday driving
-            </p>
+                <h3>Brake Rotors STANDARD</h3>
 
-            <div class="compare-row">
-                <strong>Braking Performance</strong>
-                <span>Everyday</span>
+                <p class="compare-desc">
+                    Reliable rotor performance for everyday driving
+                </p>
+
+                <div class="compare-row">
+                    <strong>Braking Performance</strong>
+                    <span>Everyday</span>
+                </div>
+
+                <div class="compare-row">
+                    <strong>Price</strong>
+                    <span>$</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-row">
+                    <strong>Brake Feel</strong>
+                    <span>Smooth</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>OEM-equivalent fit & Performance</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Consistent everyday stopping</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Smooth, quiet operation</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Durable rotor construction</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Reduced vibration & stable braking</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-bottom">
+                    Engineered for everyday durability<br>
+                    Long service life
+                </div>
+
             </div>
 
-            <div class="compare-row">
-                <strong>Price</strong>
-                <span>$</span>
+            <!-- PRO -->
+            <div class="compare-card">
+
+                <img src="Brake Rotors/Differentiator/Pro.png" alt="Pro">
+
+                <h3>Brake Rotors <span class="pro-red">PRO</span></h3>
+
+                <p class="compare-desc">
+                    Professional-grade braking power with stronger stopping confidence
+                </p>
+
+                <div class="compare-row">
+                    <strong>Braking Performance</strong>
+                    <span>Maximum</span>
+                </div>
+
+                <div class="compare-row">
+                    <strong>Price</strong>
+                    <span>$$</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-row">
+                    <strong>Brake Feel</strong>
+                    <span>Responsive</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>OOEM-equivalent fit & precision braking</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Strong & controlled braking capability</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Improved braking response</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Enhanced thermal resistance</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Controlled braking under load</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-bottom">
+                    Built for demanding driving conditions<br>
+                    Enhanced durability
+                </div>
+
             </div>
 
-            <div class="compare-divider"></div>
+            <!-- ELITE -->
+            <div class="compare-card">
 
-            <div class="compare-row">
-                <strong>Brake Feel</strong>
-                <span>Smooth</span>
-            </div>
+                <img src="Brake Rotors/Differentiator/elite.png" alt="Elite">
 
-            <div class="compare-row">
-                <span>OEM-equivalent fit & Performance</span>
-            </div>
+                <h3>Brake Rotors ELITE</h3>
 
-            <div class="compare-row">
-                <span>Consistent everyday stopping</span>
-            </div>
+                <p class="compare-desc">
+                    Premium braking refinement with elevated control
+                </p>
 
-            <div class="compare-row">
-                <span>Smooth, quiet operation</span>
-            </div>
+                <div class="compare-row">
+                    <strong>Braking Performance</strong>
+                    <span>Enhanced</span>
+                </div>
 
-            <div class="compare-row">
-                <span>Durable rotor construction</span>
-            </div>
+                <div class="compare-row">
+                    <strong>Price</strong>
+                    <span>$$$</span>
+                </div>
 
-            <div class="compare-row">
-                <span>Reduced vibration & stable braking</span>
-            </div>
+                <div class="compare-divider"></div>
 
-            <div class="compare-divider"></div>
+                <div class="compare-row">
+                    <strong>Brake Feel</strong>
+                    <span>Refined</span>
+                </div>
 
-            <div class="compare-bottom">
-                Engineered for everyday durability<br>
-                Long service life
+                <div class="compare-row">
+                    <span>OEM-equivalent precision & premium control</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Enhanced braking confidence</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Refined braking stability</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Advanced heat dissipation</span>
+                </div>
+
+                <div class="compare-row">
+                    <span>Reduced brake fade</span>
+                </div>
+
+                <div class="compare-divider"></div>
+
+                <div class="compare-bottom">
+                    Performance-focused rotor design<br>
+                    Precision-engineered durability
+                </div>
+
             </div>
 
         </div>
 
-        <!-- PRO -->
-        <div class="compare-card">
-
-            <img src="Brake Rotors/Differentiator/Pro.png" alt="Pro">
-
-            <h3>Brake Rotors <span class="pro-red">PRO</span></h3>
-
-            <p class="compare-desc">
-                Professional-grade braking power with stronger stopping confidence
-            </p>
-
-            <div class="compare-row">
-                <strong>Braking Performance</strong>
-                <span>Maximum</span>
-            </div>
-
-            <div class="compare-row">
-                <strong>Price</strong>
-                <span>$$</span>
-            </div>
-
-            <div class="compare-divider"></div>
-
-            <div class="compare-row">
-                <strong>Brake Feel</strong>
-                <span>Responsive</span>
-            </div>
-
-            <div class="compare-row">
-                <span>OOEM-equivalent fit & precision braking</span>
-            </div>
-
-            <div class="compare-row">
-                <span>Strong & controlled braking capability</span>
-            </div>
-
-            <div class="compare-row">
-                <span>Improved braking response</span>
-            </div>
-
-            <div class="compare-row">
-                <span>Enhanced thermal resistance</span>
-            </div>
-
-            <div class="compare-row">
-                <span>Controlled braking under load</span>
-            </div>
-
-            <div class="compare-divider"></div>
-
-            <div class="compare-bottom">
-                Built for demanding driving conditions<br>
-                Enhanced durability
-            </div>
-
-        </div>
-
-        <!-- ELITE -->
-        <div class="compare-card">
-
-            <img src="Brake Rotors/Differentiator/elite.png" alt="Elite">
-
-            <h3>Brake Rotors ELITE</h3>
-
-            <p class="compare-desc">
-                Premium braking refinement with elevated control
-            </p>
-
-            <div class="compare-row">
-                <strong>Braking Performance</strong>
-                <span>Enhanced</span>
-            </div>
-
-            <div class="compare-row">
-                <strong>Price</strong>
-                <span>$$$</span>
-            </div>
-
-            <div class="compare-divider"></div>
-
-            <div class="compare-row">
-                <strong>Brake Feel</strong>
-                <span>Refined</span>
-            </div>
-
-            <div class="compare-row">
-                <span>OEM-equivalent precision & premium control</span>
-            </div>
-
-            <div class="compare-row">
-                <span>Enhanced braking confidence</span>
-            </div>
-
-            <div class="compare-row">
-                <span>Refined braking stability</span>
-            </div>
-
-            <div class="compare-row">
-                <span>Advanced heat dissipation</span>
-            </div>
-
-            <div class="compare-row">
-                <span>Reduced brake fade</span>
-            </div>
-
-            <div class="compare-divider"></div>
-
-            <div class="compare-bottom">
-                Performance-focused rotor design<br>
-                Precision-engineered durability
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
 
     <!-- FAQ -->
@@ -1627,11 +1630,11 @@ FOOTER
             <div>
 
                 <div class="logo" style="margin-bottom:25px;">
-
-                    <div class="logo-placeholder">
-                        <img src="Logos/Fast Ferrum basic.svg" alt="">
-                    </div>
-
+                    <a href="index.html" class="logo">
+                        <div class="logo-placeholder">
+                            <img src="Logos/Fast Ferrum basic.svg" alt="">
+                        </div>
+                    </a>
                 </div>
 
                 <p style="line-height:1.9;color:#777;">
@@ -1649,7 +1652,7 @@ FOOTER
                 <a href="about.html">About</a>
                 <a href="quality.html">Quality</a>
                 <a href="blogs.html">Blogs</a>
-                <a href="contacts.html">Contact</a>
+                <a href="contact.html">Contact</a>
 
 
             </div>
@@ -1731,59 +1734,59 @@ FOOTER
                 item.classList.toggle('active');
 
             });
-const menu =
-document.getElementById("menuToggle");
+            const menu =
+                document.getElementById("menuToggle");
 
-const nav =
-document.getElementById("navLinks");
+            const nav =
+                document.getElementById("navLinks");
 
-const close =
-document.getElementById("closeMenu");
+            const close =
+                document.getElementById("closeMenu");
 
-const overlay =
-document.getElementById("menuOverlay");
+            const overlay =
+                document.getElementById("menuOverlay");
 
-function openMenu() {
+            function openMenu() {
 
-    nav.classList.add("active");
-    overlay.classList.add("active");
-    menu.style.visibility = "hidden";
+                nav.classList.add("active");
+                overlay.classList.add("active");
+                menu.style.visibility = "hidden";
 
-}
+            }
 
-function closeMenu() {
+            function closeMenu() {
 
-    nav.classList.remove("active");
-    overlay.classList.remove("active");
-    menu.style.visibility = "visible";
+                nav.classList.remove("active");
+                overlay.classList.remove("active");
+                menu.style.visibility = "visible";
 
-}
+            }
 
-menu.addEventListener(
-    "click",
-    openMenu
-);
+            menu.addEventListener(
+                "click",
+                openMenu
+            );
 
-close.addEventListener(
-    "click",
-    closeMenu
-);
+            close.addEventListener(
+                "click",
+                closeMenu
+            );
 
-overlay.addEventListener(
-    "click",
-    closeMenu
-);
+            overlay.addEventListener(
+                "click",
+                closeMenu
+            );
 
-document
-.querySelectorAll(".nav-links a")
-.forEach(link => {
+            document
+                .querySelectorAll(".nav-links a")
+                .forEach(link => {
 
-    link.addEventListener(
-        "click",
-        closeMenu
-    );
+                    link.addEventListener(
+                        "click",
+                        closeMenu
+                    );
 
-});
+                });
         });
 
     </script>

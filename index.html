@@ -42,12 +42,13 @@
             width: 100%;
             display: block;
         }
-        
-.close-menu{
 
-display:none;
+        .close-menu {
 
-}
+            display: none;
+
+        }
+
         /* =========================================================
    CHANGE WEBSITE SIDE SPACING HERE
 ========================================================= */
@@ -803,6 +804,8 @@ NAVBAR
 
             .close-menu {
 
+                display: block;
+
                 position: absolute;
 
                 top: 30px;
@@ -874,6 +877,30 @@ NAVBAR
 
             }
 
+            .pillar-card {
+                padding: 20px;
+            }
+
+            .pillar-card h3,
+            .pillar-card p {
+                width: 100%;
+            }
+
+            .quality-inner {
+                gap: 30px;
+            }
+
+            .footer-grid {
+                gap: 40px;
+                padding: 60px 0;
+                padding-left: 20px;
+            }
+
+            .copyright {
+                font-size: 12px;
+                padding: 18px 20px;
+                line-height: 1.8;
+            }
         }
 
         @media(max-width:992px) {
@@ -910,9 +937,11 @@ HEADER
         <div class="container navbar">
 
             <div class="logo">
+                <a href="index.html" class="logo">
                 <div class="logo-placeholder">
                     <img src="Logos/Fast Ferrum basic.svg">
                 </div>
+                </a>
             </div>
 
             <!-- HAMBURGER -->
@@ -931,20 +960,45 @@ HEADER
                 </div>
 
                 <a href="index.html">Home</a>
+                <div class="dropdown">
 
-                <!-- PRODUCTS -->
-                <a href="index.html#products">
-                    Products
-                </a>
+                    <a href="index.html#products" class="dropdown-btn">
+                        Products
+                    </a>
 
+                    <div class="dropdown-menu">
+
+                        <a href="brake-calipers.html">Brake Calipers</a>
+                        <a href="brake-pads.html">Brake Pads</a>
+
+                        <a href="brake-rotors.html">Brake Rotors</a>
+                        <a href="control-arms.html">Control Arms</a>
+
+                        <a href="hub-assembly.html">Hub Assembly</a>
+                        <a href="shock-absorber.html">Shock Absorber</a>
+
+                        <a href="spark-plugs.html">Spark Plugs</a>
+                        <a href="sway-bars.html">Sway Bars</a>
+
+                        <a href="tie-rods.html">Tie Rods</a>
+                        <a href="cv-axle-shaft.html">CV Axle</a>
+
+                        <a href="complete-strut-assembly.html">
+                            Complete Strut Assembly
+                        </a>
+
+
+                    </div>
+
+                </div>
                 <a href="quality.html">Quality</a>
                 <a href="about.html">About</a>
                 <a href="blogs.html">Blogs</a>
                 <a href="contact.html">Contact</a>
-
             </div>
-
         </div>
+
+
 
     </header>
 
@@ -1348,11 +1402,11 @@ FOOTER
             <div>
 
                 <div class="logo" style="margin-bottom:25px;">
-
+<a href="index.html" class="logo">
                     <div class="logo-placeholder">
                         <img src="Logos/Fast Ferrum basic.svg" alt="">
                     </div>
-
+</a>
                 </div>
 
                 <p style="line-height:1.9;color:#777;">
@@ -1370,7 +1424,7 @@ FOOTER
                 <a href="about.html">About</a>
                 <a href="quality.html">Quality</a>
                 <a href="blogs.html">Blogs</a>
-                <a href="contacts.html">Contact</a>
+                <a href="contact.html">Contact</a>
 
 
             </div>

@@ -43,6 +43,15 @@
             display: block;
         }
 
+        .close-menu {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 34px;
+    cursor: pointer;
+}
         /* =========================================================
    CHANGE WEBSITE SIDE SPACING HERE
 ========================================================= */
@@ -545,57 +554,171 @@
    RESPONSIVE
 ========================================================= */
 
-        @media(max-width:992px) {
+      @media(max-width:768px) {
 
-            .pillars,
-            .products-grid,
-            .blog-grid,
-            .quality-grid,
-            .footer-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
-            .hero h1 {
-                font-size: 56px;
-            }
+    /* .topbar {
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    } */
 
-        }
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
 
-        @media(max-width:768px) {
+    .logo {
+        width: 110px;
+        margin-right: 0;
+        padding-left: 20px;
+    }
 
-            /* this was overruling by container in above css */
-            /* .container {
-                width: 100%;
-                max-width: 1000px;
-                margin: auto;
-                padding-left: 0px;
-                padding-right: 0px;
-            } */
+    .menu-toggle {
+        display: block;
+        font-size: 38px;
+        cursor: pointer;
+        z-index: 10002;
+    }
 
-            .navbar {
-                flex-direction: column;
-                gap: 24px;
-            }
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.35);
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        z-index: 9998;
+    }
 
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
 
-            .hero {
-                height: 650px;
-            }
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: #fff;
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 90px 35px;
+        gap: 24px;
+        transition: .35s ease;
+        z-index: 9999;
+    }
 
-            .hero h1 {
-                font-size: 42px;
-            }
+    .nav-links.active {
+        right: 0;
+    }
 
-            .hero-buttons {
-                flex-direction: column;
-            }
+    .nav-links .dropdown,
+    .nav-links a {
+        display: block;
+        width: 100%;
+    }
 
-        }
+    .nav-links a {
+        padding: 10px 0;
+        font-size: 18px;
+        color: #222;
+    }
+
+    .dropdown-menu {
+        display: none !important;
+    }
+
+    .dropdown-btn {
+        padding: 10px 0;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-size: 34px;
+        cursor: pointer;
+    }
+
+    .hero-wrapper {
+        height: 500px;
+    }
+
+    .hero-content {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .hero h1 {
+        width: 100%;
+        font-size: 38px;
+    }
+
+    .hero p {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .ff-contact {
+        padding: 50px 0;
+    }
+
+    .ff-contact-wrap {
+        padding: 0 20px;
+    }
+
+    .ff-contact-top {
+        grid-template-columns: 1fr;
+        margin-bottom: 50px;
+    }
+
+    .ff-contact-info {
+        padding: 35px 25px;
+    }
+
+    .ff-contact-form-box {
+        padding: 40px 25px;
+    }
+
+    .ff-contact-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .ff-contact-title {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 0;
+        padding-left: 20px;
+    }
+
+    .copyright {
+        font-size: 12px;
+        padding: 18px 20px;
+        line-height: 1.8;
+    }
+}
     </style>
 </head>
 
@@ -614,16 +737,29 @@ HEADER
         <div class="container navbar">
 
             <div class="logo">
+                <a href="index.html" class="logo">
                 <div class="logo-placeholder">
                     <img src="Logos/Fast Ferrum basic.svg" alt="">
                 </div>
+                </a>
             </div>
 
-            <div class="nav-links">
+            <div class="menu-toggle" id="menuToggle">
+    ☰
+</div>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<div class="nav-links" id="navLinks">
+
+    <div class="close-menu" id="closeMenu">
+        ✕
+    </div>
+
                 <a href="index.html">Home</a>
                 <div class="dropdown">
 
-                    <a href="#" class="dropdown-btn">
+                    <a href="index.html#products" class="dropdown-btn">
                         Products
                     </a>
 
@@ -830,11 +966,11 @@ FOOTER
             <div>
 
                 <div class="logo" style="margin-bottom:25px;">
-
+<a href="index.html" class="logo">
                     <div class="logo-placeholder">
                         <img src="Logos/Fast Ferrum basic.svg" alt="">
                     </div>
-
+</a>
                 </div>
 
                 <p style="line-height:1.9;color:#777;">
@@ -852,7 +988,7 @@ FOOTER
                 <a href="about.html">About</a>
                 <a href="quality.html">Quality</a>
                 <a href="blogs.html">Blogs</a>
-                <a href="contacts.html">Contact</a>
+                <a href="contact.html">Contact</a>
 
             </div>
 
@@ -886,32 +1022,34 @@ FOOTER
 JS
 ========================================================= -->
 
-    <script>
+   <script>
+const menu = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
+const close = document.getElementById("closeMenu");
+const overlay = document.getElementById("menuOverlay");
 
-        const toggleBtn = document.getElementById('toggleBtn');
-        const productsGrid = document.getElementById('productsGrid');
+function openMenu() {
+    nav.classList.add("active");
+    overlay.classList.add("active");
+    menu.style.visibility = "hidden";
+}
 
-        let expanded = false;
+function closeMenu() {
+    nav.classList.remove("active");
+    overlay.classList.remove("active");
+    menu.style.visibility = "visible";
+}
 
-        toggleBtn.addEventListener('click', () => {
+menu.addEventListener("click", openMenu);
+close.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
 
-            expanded = !expanded;
-
-            if (expanded) {
-
-                productsGrid.classList.add('expanded');
-                toggleBtn.innerText = 'View Less';
-
-            } else {
-
-                productsGrid.classList.remove('expanded');
-                toggleBtn.innerText = 'View All';
-
-            }
-
-        });
-
-    </script>
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+    link.addEventListener("click", closeMenu);
+});
+</script>
 
 </body>
 
