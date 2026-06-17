@@ -832,6 +832,10 @@ COLOR VARIANTS
             color: #777;
         }
 
+        .mobile-products {
+            display: none;
+        }
+
         /* =========================================================
    RESPONSIVE
 ========================================================= */
@@ -1023,6 +1027,51 @@ COLOR VARIANTS
                 padding: 18px 20px;
                 line-height: 1.8;
             }
+
+            .desktop-dropdown {
+                display: none !important;
+            }
+
+            .mobile-products {
+                display: block;
+                width: 100%;
+            }
+
+            .mobile-products-title {
+
+                width: 100%;
+                padding: 10px 0px;
+                font-size: 18px;
+                cursor: pointer;
+            }
+
+            .mobile-products-list {
+
+                display: none;
+
+                margin-top: 10px;
+
+                border: 1px solid #ddd;
+
+                background: #fff;
+
+                padding: 15px;
+
+                max-height: 320px;
+
+                overflow-y: auto;
+            }
+
+            .mobile-products.active .mobile-products-list {
+                display: block;
+            }
+
+            .mobile-products-list a {
+
+                display: block;
+
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -1047,9 +1096,9 @@ HEADER
 
             <div class="logo">
                 <a href="index.html" class="logo">
-                <div class="logo-placeholder">
-                    <img src="Logos/fast ferrum pro.svg" alt="">
-                </div>
+                    <div class="logo-placeholder">
+                        <img src="Logos/fast ferrum pro.svg" alt="">
+                    </div>
                 </a>
             </div>
 
@@ -1065,42 +1114,67 @@ HEADER
                     ✕
                 </div>
 
-                <a href="index.html">
-                    <Home class="index.html">Home</Home>
-                </a>
-                <div class="dropdown">
+                <a href="index.html">Home</a>
 
-                    <a href="index.html#products" class="dropdown-btn">Product</a>
+                <!-- DESKTOP PRODUCTS -->
+                <div class="dropdown desktop-dropdown">
+
+                    <a href="index.html#products" class="dropdown-btn">
+                        Products
+                    </a>
 
                     <div class="dropdown-menu">
 
                         <a href="brake-calipers.html">Brake Calipers</a>
                         <a href="brake-pads.html">Brake Pads</a>
-
                         <a href="brake-rotors.html">Brake Rotors</a>
                         <a href="control-arms.html">Control Arms</a>
-
                         <a href="hub-assembly.html">Hub Assembly</a>
                         <a href="shock-absorber.html">Shock Absorber</a>
-
                         <a href="spark-plugs.html">Spark Plugs</a>
                         <a href="sway-bars.html">Sway Bars</a>
-
                         <a href="tie-rods.html">Tie Rods</a>
                         <a href="cv-axle-shaft.html">CV Axle</a>
-
                         <a href="complete-strut-assembly.html">
                             Complete Strut Assembly
                         </a>
 
+                    </div>
+
+                </div>
+
+                <!-- MOBILE PRODUCTS -->
+                <div class="mobile-products">
+
+                    <div class="mobile-products-title">
+                        Products
+                    </div>
+
+                    <div class="mobile-products-list">
+
+                        <a href="brake-calipers.html">Brake Calipers</a>
+                        <a href="brake-pads.html">Brake Pads</a>
+                        <a href="brake-rotors.html">Brake Rotors</a>
+                        <a href="control-arms.html">Control Arms</a>
+                        <a href="hub-assembly.html">Hub Assembly</a>
+                        <a href="shock-absorber.html">Shock Absorber</a>
+                        <a href="spark-plugs.html">Spark Plugs</a>
+                        <a href="sway-bars.html">Sway Bars</a>
+                        <a href="tie-rods.html">Tie Rods</a>
+                        <a href="cv-axle-shaft.html">CV Axle</a>
+                        <a href="complete-strut-assembly.html">
+                            Complete Strut Assembly
+                        </a>
 
                     </div>
 
                 </div>
+
                 <a href="quality.html">Quality</a>
                 <a href="about.html">About</a>
                 <a href="blogs.html">Blogs</a>
                 <a href="contact.html">Contact</a>
+
             </div>
 
         </div>
@@ -1449,7 +1523,7 @@ FOOTER
                 <a href="about.html">About</a>
                 <a href="quality.html">Quality</a>
                 <a href="blogs.html">Blogs</a>
-                <a href="contact.html">Contact</a>
+                
 
             </div>
 
@@ -1584,7 +1658,19 @@ FOOTER
                     );
 
                 });
+            const mobileProducts =
+                document.querySelector(".mobile-products");
+
+            const mobileProductsTitle =
+                document.querySelector(".mobile-products-title");
+
+            mobileProductsTitle.addEventListener("click", () => {
+
+                mobileProducts.classList.toggle("active");
+
+            });
         });
+
 
     </script>
 </body>
